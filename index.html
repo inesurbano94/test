@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías Rocha — Personal Trainer em Lisboa</title>
+<meta name="description" content="Treino personalizado em Lisboa. Isaías Rocha, Personal Trainer — método individual, acompanhamento próximo e resultados reais. Marca a tua sessão experimental via WhatsApp.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Isaías Rocha — Personal Trainer em Lisboa">
+<meta property="og:description" content="Treino personalizado. Resultados reais. Sem atalhos.">
+<meta property="og:locale" content="pt_PT">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23161512'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23f4efe6' text-anchor='middle'%3EIR%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!--
+  ============================================================
+  CONTENT NOTE (for whoever edits this next):
+  - All copy lives in this single file, grouped by <section id="...">.
+  - To add an English version later: duplicate this file as en.html,
+    translate the text nodes only (markup/classes stay identical),
+    then add a language switcher in the nav (.nav__lang).
+  - WhatsApp number lives in ONE place: assets/js/main.js -> WHATSAPP_NUMBER.
+    Every CTA button reads from there via [data-whatsapp] + main.js.
+  - Photos are placeholders (Unsplash/Picsum, duotone-filtered). Replace
+    the <img src="..."> values in the Hero, Sobre and Serviços sections
+    with real photography before launch — see README.md.
+  ============================================================
+-->
+
+<a class="skip-link" href="#contacto">Ir para contacto</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">Isaías Rocha</a>
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#metodo">Método</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#" class="nav__cta btn btn--sm btn--primary" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Navegação móvel">
+    <a href="#sobre">Sobre</a>
+    <a href="#metodo">Método</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#localizacao">Localização</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a href="#" class="btn btn--primary btn--block" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=80" alt="" class="hero__img">
+      <div class="hero__scrim"></div>
+    </div>
+    <div class="hero__content container">
+      <p class="eyebrow reveal">Personal Trainer · Lisboa</p>
+      <h1 class="hero__title reveal">Treino feito<br>à tua medida.<br><em>Resultados que&nbsp;ficam.</em></h1>
+      <p class="hero__sub reveal">Acompanhamento individual, próximo e sem fórmulas genéricas — para quem quer treinar com propósito e ver progresso real, sessão após sessão.</p>
+      <div class="hero__actions reveal">
+        <a href="#" class="btn btn--primary btn--lg" data-whatsapp="Olá Isaías, gostava de marcar uma sessão experimental." target="_blank" rel="noopener">Marcar sessão experimental</a>
+        <a href="#metodo" class="btn btn--ghost btn--lg">Conhecer o método</a>
+      </div>
+    </div>
+    <div class="hero__stats container reveal">
+      <div class="stat"><span class="stat__num">8+</span><span class="stat__label">Anos de experiência</span></div>
+      <div class="stat"><span class="stat__num">300+</span><span class="stat__label">Clientes acompanhados</span></div>
+      <div class="stat"><span class="stat__num">100%</span><span class="stat__label">Planos individuais</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="sobre" id="sobre">
+    <div class="container sobre__grid">
+      <div class="sobre__media reveal">
+        <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?auto=format&fit=crop&w=1200&q=80" alt="Isaías Rocha, Personal Trainer" class="sobre__img">
+      </div>
+      <div class="sobre__text reveal">
+        <p class="eyebrow">Sobre</p>
+        <h2>Treino é ciência,<br>mas também é escuta.</h2>
+        <p class="lede">Chamo-me Isaías Rocha. Ajudo pessoas em Lisboa a construir força, saúde e confiança através de treino personalizado — sem planos genéricos, sem promessas vazias.</p>
+        <p>Comecei este percurso pela minha própria transformação e há mais de oito anos dedico-me a ajudar outros a atravessar o mesmo caminho — com método, disciplina e uma relação de confiança construída sessão a sessão. Cada cliente chega com uma história, um corpo e uma vida diferentes; o meu trabalho é desenhar um plano que respeite isso e, ainda assim, exija evolução constante.</p>
+        <blockquote class="pullquote">"Não treino corpos. Treino pessoas que querem tornar-se mais capazes — dentro e fora do ginásio."</blockquote>
+        <ul class="creds">
+          <li>Licenciatura em Ciências do Desporto</li>
+          <li>Certificação Internacional em Personal Training</li>
+          <li>Especialização em Força &amp; Recomposição Corporal</li>
+          <li>Formação contínua em Prevenção de Lesões</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MÉTODO ============ -->
+  <section class="metodo" id="metodo">
+    <div class="container">
+      <p class="eyebrow reveal center">O processo</p>
+      <h2 class="section-title reveal center">Um método simples,<br>aplicado com rigor.</h2>
+      <div class="metodo__grid">
+        <div class="step reveal">
+          <span class="step__num">01</span>
+          <h3>Avaliação inicial</h3>
+          <p>Conversamos sobre objetivos, histórico e rotina. Avaliamos postura, mobilidade e condição física para perceber o ponto de partida real.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">02</span>
+          <h3>Plano personalizado</h3>
+          <p>Desenho um programa de treino — e, se fizer sentido, orientação nutricional — talhado para o teu corpo, tempo disponível e objetivo.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">03</span>
+          <h3>Acompanhamento próximo</h3>
+          <p>Sessões guiadas de perto, ajustadas em tempo real. Correção técnica, progressão de cargas e responsabilização em cada treino.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">04</span>
+          <h3>Evolução mensurável</h3>
+          <p>Revisões periódicas com métricas concretas — força, composição corporal e performance — para garantir que o plano continua a fazer sentido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <p class="eyebrow reveal center">Serviços</p>
+      <h2 class="section-title reveal center">Escolhe o formato<br>que se encaixa na tua vida.</h2>
+
+      <div class="servicos__grid">
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50?auto=format&fit=crop&w=900&q=80" alt="">
+          </div>
+          <div class="card__body">
+            <h3>Treino Individual</h3>
+            <p class="card__desc">Sessões 1:1, presenciais em Lisboa. Foco total em ti — técnica, progressão e acompanhamento próximo em cada repetição.</p>
+            <ul class="card__list">
+              <li>Plano 100% personalizado</li>
+              <li>Avaliações periódicas de progresso</li>
+              <li>Local à escolha: estúdio, ginásio ou ar livre</li>
+            </ul>
+            <a href="#" class="card__link" data-whatsapp="Olá Isaías, tenho interesse no Treino Individual. Pode enviar-me mais informação?" target="_blank" rel="noopener">Pedir informação →</a>
+          </div>
+        </article>
+
+        <article class="card card--featured reveal">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=900&q=80" alt="">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Mais popular</span>
+            <h3>Treino em Duo</h3>
+            <p class="card__desc">Para casais, amigos ou colegas que preferem treinar acompanhados sem perder a atenção individual — mesma exigência, mais motivação.</p>
+            <ul class="card__list">
+              <li>Planos ajustados a cada pessoa</li>
+              <li>Custo por sessão mais acessível</li>
+              <li>Energia e responsabilização partilhada</li>
+            </ul>
+            <a href="#" class="card__link" data-whatsapp="Olá Isaías, tenho interesse no Treino em Duo. Pode enviar-me mais informação?" target="_blank" rel="noopener">Pedir informação →</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="">
+          </div>
+          <div class="card__body">
+            <h3>Treino Online</h3>
+            <p class="card__desc">Para quem viaja, tem agenda imprevisível ou prefere treinar por conta própria com supervisão real. Planos semanais e acompanhamento à distância.</p>
+            <ul class="card__list">
+              <li>Programa de treino semanal</li>
+              <li>Check-ins regulares por vídeo/mensagem</li>
+              <li>Ajustes contínuos ao plano</li>
+            </ul>
+            <a href="#" class="card__link" data-whatsapp="Olá Isaías, tenho interesse no Treino Online. Pode enviar-me mais informação?" target="_blank" rel="noopener">Pedir informação →</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="servicos__note reveal center">Preços disponibilizados por sessão de avaliação — sem planos-tipo, sem pacotes genéricos.</p>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <p class="eyebrow reveal center">Reviews</p>
+      <h2 class="section-title reveal center">Resultados contados<br>por quem os viveu.</h2>
+
+      <div class="reviews__grid">
+        <figure class="review reveal">
+          <blockquote>"Treinei em vários ginásios sem grande consistência. Com o Isaías percebi finalmente o que é ser acompanhada a sério — técnica, progressão, atenção a cada detalhe."</blockquote>
+          <figcaption>
+            <span class="review__avatar">MC</span>
+            <div>
+              <span class="review__name">Mariana C.</span>
+              <span class="review__result">−9 kg em 5 meses</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>"O que mais valorizo é a exigência combinada com bom senso. Nunca senti risco de lesão e a evolução de força foi muito acima do que esperava."</blockquote>
+          <figcaption>
+            <span class="review__avatar">RP</span>
+            <div>
+              <span class="review__name">Rui P.</span>
+              <span class="review__result">+18 kg no agachamento</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>"Comecei sem qualquer experiência em treino de força, com receio de me magoar. Hoje treino três vezes por semana com confiança total na técnica."</blockquote>
+          <figcaption>
+            <span class="review__avatar">SF</span>
+            <div>
+              <span class="review__name">Sofia F.</span>
+              <span class="review__result">1 ano de acompanhamento</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>"Viajo com frequência e o treino online do Isaías foi a solução perfeita — planos adaptados à minha agenda e check-ins que mantêm a responsabilização."</blockquote>
+          <figcaption>
+            <span class="review__avatar">JT</span>
+            <div>
+              <span class="review__name">João T.</span>
+              <span class="review__result">Cliente online desde 2023</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCALIZAÇÃO ============ -->
+  <section class="localizacao" id="localizacao">
+    <div class="container localizacao__grid">
+      <div class="localizacao__text reveal">
+        <p class="eyebrow">Localização</p>
+        <h2>Treina em Lisboa,<br>onde fizer sentido.</h2>
+        <p class="lede">Sessões presenciais em estúdio privado, ginásio parceiro ou ao ar livre — e treino online para qualquer lugar do mundo.</p>
+        <ul class="loc-list">
+          <li>
+            <span class="loc-list__title">Estúdio privado</span>
+            <span class="loc-list__desc">Parque das Nações, Lisboa — treino individual em ambiente reservado.</span>
+          </li>
+          <li>
+            <span class="loc-list__title">Ar livre</span>
+            <span class="loc-list__desc">Parque Eduardo VII e Passeio Ribeirinho — para quem prefere treinar fora de portas.</span>
+          </li>
+          <li>
+            <span class="loc-list__title">Ao domicílio</span>
+            <span class="loc-list__desc">Disponível em zonas selecionadas da Grande Lisboa, mediante consulta.</span>
+          </li>
+          <li>
+            <span class="loc-list__title">Online</span>
+            <span class="loc-list__desc">Acompanhamento à distância, em qualquer lugar do mundo.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="localizacao__map reveal">
+        <iframe
+          title="Mapa de Lisboa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99609.5!2d-9.1657!3d38.7223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933800dae1eb1%3A0xa14caebaeae0850!2sLisboa!5e0!3m2!1spt-PT!2spt!4v1700000000000"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="contacto" id="contacto">
+    <div class="container contacto__inner">
+      <p class="eyebrow reveal center">Contacto</p>
+      <h2 class="section-title reveal center">Dá o primeiro passo.<br>A conversa começa aqui.</h2>
+      <p class="contacto__sub reveal center">Envia uma mensagem e responde-se, normalmente, no mesmo dia. Sem compromisso — só uma conversa sobre os teus objetivos.</p>
+
+      <div class="contacto__cta reveal">
+        <a href="#" class="btn btn--primary btn--xl" data-whatsapp="Olá Isaías, gostava de marcar uma sessão experimental." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
+          Marcar sessão experimental
+        </a>
+        <div class="contacto__alt">
+          <a href="mailto:isaias.rocha.pt@gmail.com">isaias.rocha.pt@gmail.com</a>
+          <a href="https://instagram.com/isaiasrocha.pt" target="_blank" rel="noopener">@isaiasrocha.pt</a>
+        </div>
+        <p class="contacto__hours">Segunda a sábado · 07h–21h</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#top" class="footer__logo">Isaías Rocha</a>
+    <nav class="footer__links" aria-label="Navegação de rodapé">
+      <a href="#sobre">Sobre</a>
+      <a href="#metodo">Método</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <p class="footer__copy">© <span id="year"></span> Isaías Rocha · Personal Trainer, Lisboa</p>
+  </div>
+</footer>
+
+<a href="#" class="fab" id="fab" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener" aria-label="Contactar via WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
