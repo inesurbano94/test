@@ -8,7 +8,7 @@
      TODO: replace with the real number before launch.
   ---------------------------------------------------------- */
   const WHATSAPP_NUMBER = "351900000000";
-  const DEFAULT_MESSAGE = "Olá Isaías, gostava de saber mais sobre o treino personalizado.";
+  const DEFAULT_MESSAGE = "Olá Isaías, gostava de saber mais sobre o treino personalizado em Lisboa.";
 
   document.querySelectorAll("[data-whatsapp]").forEach((el) => {
     const msg = el.getAttribute("data-whatsapp") || DEFAULT_MESSAGE;
