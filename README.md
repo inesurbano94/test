@@ -13,15 +13,16 @@ assets/js/main.js      menu mobile, scroll reveal, botão flutuante, links de Wh
 ## Antes de publicar
 
 1. **Número de WhatsApp** — editar `WHATSAPP_NUMBER` em `assets/js/main.js` (linha ~10).
-   Todos os botões "Falar no WhatsApp" / "Marcar sessão" leem deste único sítio.
-2. **Fotografias** — as imagens atuais são placeholders do Unsplash (a preto e branco/duotone
-   via CSS). Substituir os `src` das `<img>` em Hero, Sobre e Serviços por fotografia real
-   do Isaías (idealmente still shots de treino, retrato editorial, mesma paleta tonal).
-3. **Contactos** — atualizar e-mail e Instagram na secção `#contacto`.
-4. **Mapa** — o iframe do Google Maps na secção `#localizacao` mostra Lisboa de forma genérica;
-   pode ser substituído por um embed apontado à morada exata do estúdio.
-5. **Textos** — reviews, credenciais e estatísticas (anos de experiência, nº clientes) são
-   exemplos de referência — confirmar valores reais.
+   Todos os botões "WhatsApp" / "Marcar avaliação gratuita" leem deste único sítio.
+2. **Fotografia (Sobre)** — `.sobre__media .ph-photo` em `assets/css/style.css` é um gradiente
+   dourado/castanho placeholder. Substituir por uma foto real do Isaías (`background-image`
+   ou trocar por `<img>`), mantendo o cartão `.sobre__caption` sobreposto no canto inferior.
+3. **Mapa (Localização)** — `.loc-map` é uma grelha CSS com um pin decorativo. Substituir por
+   um embed do Google Maps (iframe) apontado à morada/zona real, dentro do mesmo `.loc-card`.
+4. **Contactos** — atualizar e-mail e Instagram na secção `#contacto`.
+5. **Textos e preços** — reviews, credenciais, estatísticas e os 3 planos em `#servicos`
+   (Sessão Avulsa 45€, Acompanhamento Mensal 320€, Transformação 12 Semanas 850€) são
+   exemplos de referência — confirmar valores e nomes reais antes de publicar.
 
 ## Adicionar versão em inglês
 
