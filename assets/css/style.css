@@ -513,33 +513,35 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .testimonial {
   background: var(--beige);
   border-radius: var(--radius);
-  padding: clamp(2rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 3vw, 2.5rem) clamp(1.75rem, 3vw, 2.25rem);
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 .testimonial__header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 1.75rem;
+  text-align: center;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
 }
 .testimonial__avatar {
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  width: 3rem; height: 3rem;
+  width: 5.75rem; height: 5.75rem;
   border-radius: 50%;
   background: linear-gradient(155deg, #e8cd9d 0%, #b6874a 55%, #6b4a24 100%);
-  color: var(--cream);
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  box-shadow: 0 12px 28px -12px rgba(28,23,18,0.35), 0 0 0 3px var(--paper), 0 0 0 4px rgba(182,135,74,0.3);
 }
-.testimonial__who { display: flex; flex-direction: column; gap: 0.35rem; }
-.testimonial__name { font-size: 0.92rem; font-weight: 600; color: var(--ink); }
-.testimonial__stars { display: flex; gap: 0.15rem; }
+.testimonial__avatar svg { width: 52%; height: 52%; color: rgba(246,242,234,0.92); }
+.testimonial__who { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+.testimonial__name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.testimonial__stars { display: flex; gap: 0.15rem; justify-content: center; }
 .testimonial__stars svg { width: 0.8rem; height: 0.8rem; color: var(--gold); }
+.testimonial:nth-child(1) .testimonial__avatar { background: linear-gradient(155deg, #ecd4a6 0%, #b6874a 55%, #6b4a24 100%); }
+.testimonial:nth-child(2) .testimonial__avatar { background: linear-gradient(155deg, #d9c39a 0%, #8f6a3e 55%, #4a3218 100%); }
+.testimonial:nth-child(3) .testimonial__avatar { background: linear-gradient(155deg, #e3c8a0 0%, #a67744 55%, #5c3e1f 100%); }
 .testimonial__headline {
   font-family: var(--serif);
   font-weight: 500;
