@@ -84,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 }
 .eyebrow::before { content: ""; width: 1.35rem; height: 1px; background: currentColor; flex-shrink: 0; }
 .eyebrow.center { justify-content: center; }
-.reviews .eyebrow, .hero .eyebrow { color: var(--gold-light); }
+.hero .eyebrow { color: var(--gold-light); }
 
 .section-title { font-size: clamp(1.9rem, 3.4vw, 2.75rem); max-width: 32ch; text-wrap: balance; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
@@ -266,9 +266,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
 }
 .hero__content { position: relative; z-index: 1; padding-bottom: 4rem; }
 .hero__title {
-  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
   color: var(--cream);
-  max-width: 15ch;
+  max-width: 21ch;
   margin-bottom: 0.55em;
 }
 .hero__title em { font-style: italic; color: var(--gold-light); }
@@ -294,10 +294,11 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
 
 /* ---------- Sections generic ---------- */
 section { padding: clamp(5rem, 10vw, 9rem) 0; }
+.objetivos { background: var(--cream); }
 .sobre { background: var(--paper); }
 .metodo { background: var(--cream); }
 .servicos { background: var(--paper); }
-.reviews { background: var(--cream); }
+.resultados { background: var(--cream); }
 .localizacao { background: var(--paper); }
 .contacto { background: var(--cream); }
 
@@ -328,6 +329,16 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .sobre__caption span { display: block; font-size: 0.78rem; color: rgba(246,242,234,0.65); margin-top: 0.15rem; }
 .sobre__text h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); max-width: 22ch; }
 .lede { font-size: 1.1rem; color: var(--ink); }
+.pullquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--ink);
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 1.75rem 0;
+}
 .cred-chips { list-style: none; padding: 0; margin: 1.75rem 0 2rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .cred-chips li {
   font-size: 0.82rem; color: var(--ink-soft);
@@ -336,10 +347,45 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   padding: 0.5rem 1rem;
 }
 
+/* ---------- Objetivos (goal cards) ---------- */
+.objetivos__sub { max-width: 56ch; margin: 0 auto; font-size: 1.05rem; }
+.goals__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.goal-card {
+  background: var(--cream);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+.goal-card:hover { background: var(--paper); }
+.goal-card__icon {
+  display: inline-block;
+  width: 2.1rem; height: 2.1rem; color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.goal-card__icon svg { width: 100%; height: 100%; }
+.goal-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.goal-card p { font-size: 0.9rem; margin: 0 0 1.25rem; flex: 1; }
+.goal-card__link {
+  font-size: 0.85rem; font-weight: 500; color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  transition: color 0.25s ease;
+}
+.goal-card__link:hover { color: var(--gold); }
+
 /* ---------- Método ---------- */
 .metodo__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--line);
   margin-top: 3.5rem;
@@ -357,6 +403,10 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 }
 .step h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .step p { font-size: 0.92rem; margin: 0; }
+.metodo__note {
+  margin-top: 2.5rem; font-size: 0.92rem; color: var(--ink-soft); text-align: center;
+}
+.metodo__note strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- Serviços (pricing) ---------- */
 .servicos__sub { max-width: 52ch; margin: 0 auto; font-size: 1.05rem; }
@@ -412,36 +462,49 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .price-card--featured .price-card__features li { color: rgba(246,242,234,0.82); }
 .price-card__features svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; color: var(--gold); }
 .price-card--featured .price-card__features svg { color: var(--gold-light); }
-.servicos__note { margin-top: 3rem; font-size: 0.9rem; color: var(--ink-soft); font-style: italic; }
+.servicos__note { margin-top: 3rem; font-size: 0.9rem; color: var(--ink-soft); font-style: italic; text-align: center; }
 
-/* ---------- Reviews ---------- */
-.reviews__grid {
+/* Compact price table (per-location pricing inside a card) */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.price-table th, .price-table td {
+  padding: 0.55rem 0.4rem;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+.price-table th:first-child, .price-table td:first-child { text-align: left; color: var(--ink); }
+.price-table th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; color: var(--ink-soft); }
+.price-table td { font-family: var(--serif); font-size: 0.95rem; }
+.price-table td:first-child { font-family: var(--sans); font-size: 0.85rem; }
+.price-card--featured .price-table th,
+.price-card--featured .price-table td { color: rgba(246,242,234,0.75); border-color: rgba(246,242,234,0.16); }
+.price-card--featured .price-table th:first-child,
+.price-card--featured .price-table td:first-child { color: var(--cream); }
+.price-card__note { font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 1.5rem; }
+.price-card--featured .price-card__note { color: rgba(246,242,234,0.65); }
+
+/* ---------- Resultados ---------- */
+.resultados__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
   margin-top: 3.5rem;
 }
-.review {
+.resultado {
   background: var(--beige);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 2.25rem 2rem;
 }
-.review__stars { display: flex; gap: 0.2rem; margin-bottom: 1.25rem; }
-.review__stars svg { width: 1rem; height: 1rem; color: var(--gold); }
-.review blockquote {
-  margin: 0 0 1.75rem;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: var(--ink);
-}
-.review figcaption { display: flex; align-items: center; gap: 0.85rem; }
-.review__avatar {
-  width: 2.5rem; height: 2.5rem; border-radius: 50%;
-  background: linear-gradient(155deg, #e8cd9d 0%, #b6874a 55%, #6b4a24 100%);
-  flex-shrink: 0;
-}
-.review__name { display: block; font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-.review__result { display: block; font-size: 0.8rem; color: var(--ink-soft); }
+.resultado__icon { display: inline-block; width: 1.6rem; height: 1.6rem; color: var(--gold); margin-bottom: 1.5rem; }
+.resultado__icon svg { width: 100%; height: 100%; }
+.resultado p { font-family: var(--serif); font-size: 1.15rem; line-height: 1.45; color: var(--ink); margin: 0; }
+.resultados__cta { margin-top: 3rem; }
 
 /* ---------- Localização ---------- */
 .localizacao__intro { max-width: 60ch; margin: 0 0 3rem; }
@@ -471,6 +534,14 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .loc-panel__list svg { width: 1.2rem; height: 1.2rem; color: var(--gold); flex-shrink: 0; margin-top: 0.15rem; }
 .loc-panel__title { display: block; font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 0.2rem; }
 .loc-panel__desc { display: block; font-size: 0.86rem; color: var(--ink-soft); }
+.loc-panel__actions { display: flex; flex-direction: column; gap: 0.85rem; }
+.loc-panel__maps {
+  align-self: center;
+  font-size: 0.85rem; color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.loc-panel__maps:hover { color: var(--gold); border-color: currentColor; }
 
 /* ---------- Contacto ---------- */
 .contacto__inner { text-align: center; }
@@ -534,7 +605,8 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 
   .pricing__grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
 
-  .reviews__grid { grid-template-columns: 1fr; }
+  .goals__grid { grid-template-columns: repeat(2, 1fr); }
+  .resultados__grid { grid-template-columns: 1fr; }
 
   .loc-card { grid-template-columns: 1fr; }
   .loc-map { min-height: 220px; }
@@ -542,8 +614,10 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 
 @media (max-width: 560px) {
   .metodo__grid { grid-template-columns: 1fr; }
+  .goals__grid { grid-template-columns: 1fr; }
   .hero__stats { gap: 1.75rem; flex-wrap: wrap; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
+  .price-table { font-size: 0.8rem; }
   .contacto__alt { flex-direction: column; gap: 0.75rem; }
 }
