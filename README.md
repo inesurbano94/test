@@ -30,8 +30,8 @@ Não existe uma terceira superfície nem uma escala de cinzentos à parte: texto
 sombras (`--shadow`) são todos tons/opacidades derivados do teal. `--on-accent`
 (branco) é a única exceção — texto/ícone sobre um preenchimento sólido de teal
 (botões, badge, botão flutuante). Os placeholders de foto (`.ph-photo`, em
-Sobre, Contacto e Localização) usam `color-mix()` para gerar o gradiente só a
-partir de teal/creme/branco — nunca um cinzento à parte.
+Sobre e Contacto) usam `color-mix()` para gerar o gradiente só a partir de
+teal/creme/branco — nunca um cinzento à parte.
 
 O verde do WhatsApp foi **removido** nesta revisão: os CTAs de WhatsApp usam
 agora `--accent` (teal), por regra explícita do sistema de cores ("não
@@ -82,13 +82,18 @@ de partida se um cliente real disser algo semelhante.
    O briefing não indica um número — está por confirmar.
 2. **Testemunhos (`#resultados`)** — nomes, avatares e classificações são fictícios
    (ver acima). Substituir pelos 3 testemunhos reais antes de publicar.
-3. **Fotografia (Sobre + Localização + Contacto)** — `.sobre__media .ph-photo`, os três
-   `.ph-photo` da grelha `.loc-grid` (VivaGym / Ao domicílio / Outdoor) e o `.ph-photo` de
-   `.contacto__media` em `assets/css/style.css` são gradientes placeholder derivados de
-   teal/creme (a foto do hero já é real — `assets/img/isaias-hero.webp`). Substituir os cinco
-   por fotos reais (do Isaías, do ginásio, de uma sessão em casa e de uma sessão outdoor) antes
-   de publicar — trocar o `<div class="ph-photo">` por `<img>`, mantendo o cartão
-   `.sobre__caption` sobreposto no canto inferior da foto do Sobre.
+3. **Fotografia** — dois tipos de placeholder em uso, ambos por substituir antes de publicar:
+   - `.sobre__media .ph-photo` e o `.ph-photo` de `.contacto__media` são gradientes derivados
+     de teal/creme via `color-mix()` (ver `assets/css/style.css`) — trocar o
+     `<div class="ph-photo">` por `<img>`, mantendo o cartão `.sobre__caption` sobreposto no
+     canto inferior da foto do Sobre.
+   - Os 3 cartões de `.loc-grid` (VivaGym / Ao domicílio / Outdoor) já usam `<img>` reais, mas
+     `assets/img/loc-vivagym.jpg`, `loc-domicilio.jpg` e `loc-outdoor.jpg` são **fotos de stock
+     genéricas** — não são o Isaías, os seus clientes, nem a VivaGym Almirante Reis. Servem só
+     para pré-visualizar a secção; substituir pelos ficheiros reais (mesmos nomes, para não
+     precisar de tocar no HTML) antes de publicar.
+   
+   A foto do hero já é real (`assets/img/isaias-hero.webp`).
 4. **Localização** — o botão "Ver localização no Google Maps" no cartão da VivaGym já aponta
    para uma pesquisa real da VivaGym Almirante Reis. Não há mapa incorporado nesta secção
    (substituído por 3 cartões com foto); adicionar um embed (iframe) só se o Isaías preferir
