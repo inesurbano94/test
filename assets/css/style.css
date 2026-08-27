@@ -756,7 +756,13 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 }
 .contacto__sub { max-width: 40ch; margin: 0 0 2.25rem; font-size: 1.05rem; }
 .contacto__cta { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; }
-.contacto__media .ph-photo { width: 100%; aspect-ratio: 4/5; }
+.contacto__media img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: var(--hairline);
+}
 .contacto__alt { display: flex; gap: 2rem; font-size: 0.92rem; }
 .contacto__alt a { color: var(--ink-soft); border-bottom: 1px solid transparent; transition: border-color 0.25s ease, color 0.25s ease; }
 .contacto__alt a:hover { color: var(--accent); border-color: currentColor; }
