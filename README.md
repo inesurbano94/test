@@ -7,7 +7,8 @@ Site de página única em português (pt-PT), estático (HTML/CSS/JS puros — s
 ```
 index.html            todo o conteúdo/marcação, organizado por <section id="...">
 assets/css/style.css   sistema de design (cores, tipografia, layout, animações)
-assets/js/main.js      menu mobile, scroll reveal, botão flutuante, links de WhatsApp
+assets/js/main.js      menu mobile, scroll reveal, botão flutuante, links de WhatsApp,
+                        setas prev/next do carrossel de testemunhos (#resultados)
 ```
 
 ## Sistema de design

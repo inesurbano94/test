@@ -61,4 +61,27 @@
   /* ---------------- Footer year ---------------- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------- Resultados testimonial rail ---------------- */
+  const rail = document.getElementById("resultadosRail");
+  const railPrev = document.getElementById("resultadosPrev");
+  const railNext = document.getElementById("resultadosNext");
+  if (rail && railPrev && railNext) {
+    const cardStep = () => {
+      const card = rail.querySelector(".testimonial");
+      if (!card) return rail.clientWidth;
+      const gap = parseFloat(getComputedStyle(rail).columnGap || 0);
+      return card.getBoundingClientRect().width + gap;
+    };
+    const updateRailNav = () => {
+      const max = rail.scrollWidth - rail.clientWidth - 1;
+      railPrev.disabled = rail.scrollLeft <= 0;
+      railNext.disabled = rail.scrollLeft >= max;
+    };
+    railPrev.addEventListener("click", () => rail.scrollBy({ left: -cardStep(), behavior: "smooth" }));
+    railNext.addEventListener("click", () => rail.scrollBy({ left: cardStep(), behavior: "smooth" }));
+    rail.addEventListener("scroll", updateRailNav, { passive: true });
+    window.addEventListener("resize", updateRailNav);
+    updateRailNav();
+  }
 })();
