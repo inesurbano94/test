@@ -45,10 +45,11 @@ de partida se um cliente real disser algo semelhante.
    O briefing não indica um número — está por confirmar.
 2. **Testemunhos (`#resultados`)** — nomes, avatares e classificações são fictícios
    (ver acima). Substituir pelos 3 testemunhos reais antes de publicar.
-3. **Fotografia (Sobre)** — `.sobre__media .ph-photo` em `assets/css/style.css` é um gradiente
-   dourado/castanho placeholder (a foto do hero já é real — `assets/img/isaias-hero.webp`).
-   Substituir também esta por uma foto real do Isaías (`background-image` ou trocar por
-   `<img>`), mantendo o cartão `.sobre__caption` sobreposto no canto inferior.
+3. **Fotografia (Sobre + Mostra)** — `.sobre__media .ph-photo` e os dois `.ph-photo` da secção
+   `.mostra` (entre Resultados e Localização) em `assets/css/style.css` são gradientes zinc
+   placeholder (a foto do hero já é real — `assets/img/isaias-hero.webp`). Substituir os três
+   por fotos reais (do Isaías e de sessões de treino) antes de publicar — trocar o `<div class="ph-photo">`
+   por `<img>`, mantendo o cartão `.sobre__caption` sobreposto no canto inferior da foto do Sobre.
 4. **Mapa (Localização)** — `.loc-map` é uma grelha CSS com um pin decorativo. O botão "Ver
    localização no Google Maps" já aponta para uma pesquisa real da VivaGym Almirante Reis;
    pode ser substituído por um embed (iframe) se preferires um mapa incorporado.
