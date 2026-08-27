@@ -321,69 +321,73 @@
             <span class="resultados__rating-text">5.0 · Avaliações reais no Google</span>
           </div>
 
-          <div class="resultados__nav">
-            <button type="button" class="rail-btn" id="resultadosPrev" aria-label="Testemunho anterior" aria-controls="resultadosRail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-            </button>
-            <button type="button" class="rail-btn" id="resultadosNext" aria-label="Testemunho seguinte" aria-controls="resultadosRail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-            </button>
+        </div>
+
+        <div class="resultados__rail-wrap">
+          <button type="button" class="rail-arrow rail-arrow--prev" id="resultadosPrev" aria-label="Testemunho anterior" aria-controls="resultadosRail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+
+          <div class="resultados__rail reveal" id="resultadosRail" role="region" aria-label="Testemunhos de clientes" tabindex="0">
+            <figure class="testimonial">
+              <div class="testimonial__top">
+                <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
+                <span class="testimonial__who">
+                  <span class="testimonial__name">Mariana C.</span>
+                  <span class="testimonial__stars" aria-label="5 de 5 estrelas">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <h3 class="testimonial__headline">Melhorei a minha postura e sinto muito mais confiança no meu corpo.</h3>
+              <blockquote class="testimonial__body">Comecei a treinar com o Isaías por causa de um desconforto na zona lombar. Hoje sinto o corpo muito mais alinhado e forte — e isso mudou também a forma como me sinto no dia a dia, não só no ginásio.</blockquote>
+            </figure>
+
+            <figure class="testimonial">
+              <div class="testimonial__top">
+                <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
+                <span class="testimonial__who">
+                  <span class="testimonial__name">Rui A.</span>
+                  <span class="testimonial__stars" aria-label="5 de 5 estrelas">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <h3 class="testimonial__headline">Finalmente comecei a ver resultados no ganho de massa muscular.</h3>
+              <blockquote class="testimonial__body">Já tinha tentado treinar sozinho, sem grande evolução. Com um plano feito à minha medida e ajustado sempre que precisava, finalmente vejo os resultados que procurava há tempo — mais força e mais massa muscular.</blockquote>
+            </figure>
+
+            <figure class="testimonial">
+              <div class="testimonial__top">
+                <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
+                <span class="testimonial__who">
+                  <span class="testimonial__name">Beatriz S.</span>
+                  <span class="testimonial__stars" aria-label="5 de 5 estrelas">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <h3 class="testimonial__headline">Sinto-me mais forte, com mais energia e muito mais consistente.</h3>
+              <blockquote class="testimonial__body">O que mais mudou foi a consistência. O acompanhamento por WhatsApp e os ajustes constantes ao plano fazem toda a diferença — sinto-me mais forte, com mais energia no dia a dia, e finalmente consigo manter uma rotina.</blockquote>
+            </figure>
           </div>
+
+          <button type="button" class="rail-arrow rail-arrow--next" id="resultadosNext" aria-label="Testemunho seguinte" aria-controls="resultadosRail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
-
-        <div class="resultados__rail reveal" id="resultadosRail" role="region" aria-label="Testemunhos de clientes" tabindex="0">
-          <figure class="testimonial">
-            <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-            </span>
-            <h3 class="testimonial__headline">Melhorei a minha postura e sinto muito mais confiança no meu corpo.</h3>
-            <blockquote class="testimonial__body">Comecei a treinar com o Isaías por causa de um desconforto na zona lombar. Hoje sinto o corpo muito mais alinhado e forte — e isso mudou também a forma como me sinto no dia a dia, não só no ginásio.</blockquote>
-            <figcaption class="testimonial__footer">
-              <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-              <span class="testimonial__name">Mariana C.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="testimonial">
-            <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-            </span>
-            <h3 class="testimonial__headline">Finalmente comecei a ver resultados no ganho de massa muscular.</h3>
-            <blockquote class="testimonial__body">Já tinha tentado treinar sozinho, sem grande evolução. Com um plano feito à minha medida e ajustado sempre que precisava, finalmente vejo os resultados que procurava há tempo — mais força e mais massa muscular.</blockquote>
-            <figcaption class="testimonial__footer">
-              <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-              <span class="testimonial__name">Rui A.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="testimonial">
-            <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-            </span>
-            <h3 class="testimonial__headline">Sinto-me mais forte, com mais energia e muito mais consistente.</h3>
-            <blockquote class="testimonial__body">O que mais mudou foi a consistência. O acompanhamento por WhatsApp e os ajustes constantes ao plano fazem toda a diferença — sinto-me mais forte, com mais energia no dia a dia, e finalmente consigo manter uma rotina.</blockquote>
-            <figcaption class="testimonial__footer">
-              <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-              <span class="testimonial__name">Beatriz S.</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="resultados__cta center reveal">
-        <a href="#" class="btn btn--primary btn--lg" data-whatsapp="Olá Isaías, gostava de começar a treinar e sentir estes resultados. Pode ajudar-me?" target="_blank" rel="noopener">Quero começar a sentir a diferença</a>
       </div>
     </div>
   </section>
