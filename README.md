@@ -10,6 +10,18 @@ assets/css/style.css   sistema de design (cores, tipografia, layout, animações
 assets/js/main.js      menu mobile, scroll reveal, botão flutuante, links de WhatsApp
 ```
 
+## Sistema de design
+
+Baseado na referência de IA [Awesomic](https://styles.refero.design/style/8512e28d-5385-4c20-a336-214568c4370c)
+(styles.refero.design): escala neutra zinc-gray, um único acento laranja vivo
+(`#ff5a00`) usado como pontuação funcional (badges, ícones, CTAs), uma única
+família geométrica sans-serif (Plus Jakarta Sans) em vários pesos, cantos bem
+arredondados (36px em cartões, 14px em botões, pill em badges/chips) e
+contornos finos de 1px a substituir sombras como principal ferramenta de
+elevação. O verde do WhatsApp mantém-se como exceção deliberada — é um acento
+funcional (identifica o canal), não decorativo. Todos os tokens vivem em
+`:root` no topo de `assets/css/style.css`.
+
 ## Fonte de verdade do conteúdo
 
 Todo o texto (bio, certificações, método, preços, localização) vem do documento
