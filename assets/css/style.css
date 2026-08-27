@@ -24,6 +24,10 @@
    - --on-accent is the one exception token: the text/icon color used
      on top of a *solid teal fill* (buttons, the FAB, badges), so it
      stays legible. It is white, not a fourth brand color.
+   - --star is a second, narrowly-scoped exception: a specific green
+     (#76DB5D), used only for star-rating icons (.testimonial__stars,
+     .resultados__rating-stars), by explicit client request — reads as
+     a familiar "review score" color. Never used for anything else.
 
    TYPOGRAPHY SYSTEM
    The hero headline (--text-hero-size) is the only intentionally
@@ -64,6 +68,7 @@
   --accent-tint: rgba(28, 60, 61, 0.08);        /* accent wash, e.g. eyebrow badges */
   --accent-tint-strong: rgba(28, 60, 61, 0.14);
   --on-accent: var(--color-white);              /* text/icons on a solid teal fill (buttons, FAB, badges) */
+  --star: #76db5d;                              /* scoped exception: star-rating icons only, by request */
 
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: var(--font);
@@ -328,20 +333,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   max-width: 42ch;
   margin-bottom: 1.75rem;
 }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
 
-.hero__stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(1.5rem, 3vw, 2.75rem);
-  padding-top: 1.5rem;
-  border-top: var(--hairline);
-}
-.stat { display: flex; flex-direction: column; gap: 0.2rem; }
-.stat__num { font-family: var(--serif); font-weight: 700; font-size: clamp(1.3rem, 1.9vw, 1.75rem); color: var(--accent); }
-.stat__label { font-size: 0.78rem; color: var(--ink-soft); letter-spacing: 0.03em; }
-
-.hero__photo { position: relative; }
+/* Slight asymmetric nudge — photo up, text down — for a less static,
+   more editorial balance than a perfectly centered pair of columns. */
+.hero__content { position: relative; top: 1rem; }
+.hero__photo { position: relative; top: -1.25rem; }
 .hero__photo::before {
   content: "";
   position: absolute; inset: -8% -10%;
@@ -362,7 +359,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
 /* ---------- Sections generic ---------- */
 /* Every section background is white or cream — no other surface exists. */
 section { padding: clamp(5rem, 10vw, 9rem) 0; }
-.objetivos { background: var(--surface-strong); }
+.objetivos { background: var(--surface); }
 .sobre { background: var(--surface); }
 .metodo { background: var(--surface-strong); }
 .servicos { background: var(--surface); }
@@ -436,13 +433,13 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   border-bottom: var(--hairline);
 }
 .goal-card {
-  background: var(--surface-strong);
+  background: var(--surface);
   padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   transition: background 0.3s ease;
 }
-.goal-card:hover { background: var(--surface); }
+.goal-card:hover { background: var(--surface-strong); }
 .goal-card__icon {
   display: inline-block;
   width: 2.1rem; height: 2.1rem; color: var(--accent);
@@ -574,7 +571,7 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   gap: 0.65rem;
 }
 .resultados__rating-stars { display: flex; gap: 0.15rem; }
-.resultados__rating-stars svg { width: 0.85rem; height: 0.85rem; color: var(--accent); }
+.resultados__rating-stars svg { width: 0.85rem; height: 0.85rem; color: var(--star); }
 .resultados__rating-text { font-size: 0.85rem; color: var(--ink-soft); }
 
 /* Right column — horizontally scrollable card rail with overlaid nav arrows */
@@ -609,16 +606,12 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   gap: 1.5rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   padding: 0.5rem 0.25rem 1.5rem;
   margin: -0.5rem -0.25rem -1.5rem;
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;
-  -webkit-mask-image: linear-gradient(to right, black calc(100% - 3.5rem), transparent 100%);
-  mask-image: linear-gradient(to right, black calc(100% - 3.5rem), transparent 100%);
-  transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;
 }
-.resultados__rail.is-end { -webkit-mask-image: none; mask-image: none; }
 .resultados__rail:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .resultados__rail::-webkit-scrollbar { height: 6px; }
 .resultados__rail::-webkit-scrollbar-track { background: transparent; }
@@ -626,7 +619,10 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 
 .testimonial {
   scroll-snap-align: start;
-  flex: 0 0 clamp(270px, 30vw, 340px);
+  /* Exactly 2 full cards fit the rail's own width, so a card is never
+     partially visible at rest — no crop, no fade, just a clean edge.
+     The 3rd card sits fully off-screen until "next" is clicked. */
+  flex: 0 0 calc((100% - 1.5rem) / 2);
   background: var(--surface);
   border: var(--hairline);
   border-radius: var(--radius-card);
@@ -652,7 +648,7 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .testimonial__who { display: flex; flex-direction: column; gap: 0.4rem; }
 .testimonial__name { font-size: 1rem; font-weight: 600; color: var(--ink); }
 .testimonial__stars { display: flex; gap: 0.15rem; }
-.testimonial__stars svg { width: 0.75rem; height: 0.75rem; color: var(--accent); }
+.testimonial__stars svg { width: 0.75rem; height: 0.75rem; color: var(--star); }
 .testimonial__headline {
   font-family: var(--serif);
   font-weight: 600;
@@ -802,7 +798,6 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .hero__title.reveal { transition-delay: 0.05s; }
 .hero__sub.reveal { transition-delay: 0.15s; }
 .hero__actions.reveal { transition-delay: 0.25s; }
-.hero__stats.reveal { transition-delay: 0.35s; }
 .hero__photo.reveal { transition-delay: 0.2s; }
 
 /* ==========================================================
@@ -815,7 +810,8 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 
   .hero { padding: 7rem 0 3rem; }
   .hero__layout { grid-template-columns: 1fr; gap: 2.75rem; }
-  .hero__photo { order: 2; max-width: 420px; margin: 0 auto; }
+  .hero__content { top: 0; }
+  .hero__photo { order: 2; top: 0; max-width: 420px; margin: 0 auto; }
   .hero__photo-img { aspect-ratio: 4 / 4.6; }
 
   .sobre__grid { grid-template-columns: 1fr; }
@@ -844,7 +840,6 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 @media (max-width: 560px) {
   .metodo__grid { grid-template-columns: 1fr; }
   .goals__grid { grid-template-columns: 1fr; }
-  .hero__stats { gap: 1.75rem; flex-wrap: wrap; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
   .price-table { font-size: 0.8rem; }

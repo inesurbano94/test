@@ -77,7 +77,6 @@
       const max = rail.scrollWidth - rail.clientWidth - 1;
       railPrev.disabled = rail.scrollLeft <= 0;
       railNext.disabled = rail.scrollLeft >= max;
-      rail.classList.toggle("is-end", rail.scrollLeft >= max);
     };
     railPrev.addEventListener("click", () => rail.scrollBy({ left: -cardStep(), behavior: "smooth" }));
     railNext.addEventListener("click", () => rail.scrollBy({ left: cardStep(), behavior: "smooth" }));

@@ -39,6 +39,12 @@ introduzir verdes, castanhos ou dourados não relacionados"). Se no futuro se
 quiser reverter isto para o verde de marca do WhatsApp como exceção funcional,
 é uma decisão a confirmar com o Isaías — não fazer sem validar.
 
+Existe uma segunda exceção, também por pedido explícito: `--star` (`#76DB5D`)
+é usado **só** nos ícones de classificação por estrelas (`.testimonial__stars`,
+`.resultados__rating-stars`) — nunca noutro sítio. Não reutilizar este verde
+para mais nada; se precisar de outro elemento "success/positivo" no futuro,
+confirmar com o Isaías se deve ser este mesmo verde ou o teal do sistema.
+
 **Tipografia.** Uma família geométrica sans-serif (Plus Jakarta Sans) em vários
 pesos. Duas escalas de heading apenas:
 
