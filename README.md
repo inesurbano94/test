@@ -22,7 +22,7 @@ numa regra de componente — declarar/reutilizar um token primeiro.
 | Token | Hex | Uso |
 |---|---|---|
 | `--color-white` | `#FFFFFF` | fundo de página por defeito |
-| `--color-cream` | `#F0EDE7` | a *outra* superfície — substitui todos os fundos fortes/escuros de antes (hero, footer, cartão de preço em destaque, banner "Mostra", avatares) e a alternância entre secções |
+| `--color-cream` | `#F0EDE7` | a *outra* superfície — substitui todos os fundos fortes/escuros de antes (hero, footer, cartão de preço em destaque) e a alternância entre secções |
 | `--color-teal` | `#1C3C3D` | o único acento — botões, links, ícones, badges e elementos selecionados/alta ênfase. Nunca usado como fundo de secção inteira |
 
 Não existe uma terceira superfície nem uma escala de cinzentos à parte: texto
@@ -30,8 +30,8 @@ Não existe uma terceira superfície nem uma escala de cinzentos à parte: texto
 sombras (`--shadow`) são todos tons/opacidades derivados do teal. `--on-accent`
 (branco) é a única exceção — texto/ícone sobre um preenchimento sólido de teal
 (botões, badge, botão flutuante). Os placeholders de foto (`.ph-photo`, em
-Sobre e Mostra) usam `color-mix()` para gerar o gradiente só a partir de
-teal/creme/branco — nunca um cinzento à parte.
+Sobre, Contacto e Localização) usam `color-mix()` para gerar o gradiente só a
+partir de teal/creme/branco — nunca um cinzento à parte.
 
 O verde do WhatsApp foi **removido** nesta revisão: os CTAs de WhatsApp usam
 agora `--accent` (teal), por regra explícita do sistema de cores ("não
@@ -45,7 +45,7 @@ pesos. Duas escalas de heading apenas:
 - `--text-hero-size` — só o `<h1>` do hero. É o único heading intencionalmente maior.
 - `--text-section-title-size` (aplicado via a classe `.section-title`) — todos
   os outros headings principais de secção (Sobre, Objetivos, Método, Serviços,
-  Resultados, Mostra, Localização, FAQ, Contacto), sem exceção. Qualquer h2 de
+  Resultados, Localização, FAQ, Contacto), sem exceção. Qualquer h2 de
   secção novo tem de levar a classe `.section-title`; ajustar só `max-width`
   por secção se for preciso controlar a quebra de linha, nunca o `font-size`.
 
@@ -82,15 +82,17 @@ de partida se um cliente real disser algo semelhante.
    O briefing não indica um número — está por confirmar.
 2. **Testemunhos (`#resultados`)** — nomes, avatares e classificações são fictícios
    (ver acima). Substituir pelos 3 testemunhos reais antes de publicar.
-3. **Fotografia (Sobre + Mostra + Contacto)** — `.sobre__media .ph-photo`, os dois `.ph-photo` da
-   secção `.mostra` (entre Resultados e Localização) e o `.ph-photo` de `.contacto__media` em
-   `assets/css/style.css` são gradientes placeholder derivados de teal/creme (a foto do hero já
-   é real — `assets/img/isaias-hero.webp`). Substituir os quatro por fotos reais (do Isaías e de
-   sessões de treino) antes de publicar — trocar o `<div class="ph-photo">` por `<img>`, mantendo
-   o cartão `.sobre__caption` sobreposto no canto inferior da foto do Sobre.
-4. **Mapa (Localização)** — `.loc-map` é uma grelha CSS com um pin decorativo. O botão "Ver
-   localização no Google Maps" já aponta para uma pesquisa real da VivaGym Almirante Reis;
-   pode ser substituído por um embed (iframe) se preferires um mapa incorporado.
+3. **Fotografia (Sobre + Localização + Contacto)** — `.sobre__media .ph-photo`, os três
+   `.ph-photo` da grelha `.loc-grid` (VivaGym / Ao domicílio / Outdoor) e o `.ph-photo` de
+   `.contacto__media` em `assets/css/style.css` são gradientes placeholder derivados de
+   teal/creme (a foto do hero já é real — `assets/img/isaias-hero.webp`). Substituir os cinco
+   por fotos reais (do Isaías, do ginásio, de uma sessão em casa e de uma sessão outdoor) antes
+   de publicar — trocar o `<div class="ph-photo">` por `<img>`, mantendo o cartão
+   `.sobre__caption` sobreposto no canto inferior da foto do Sobre.
+4. **Localização** — o botão "Ver localização no Google Maps" no cartão da VivaGym já aponta
+   para uma pesquisa real da VivaGym Almirante Reis. Não há mapa incorporado nesta secção
+   (substituído por 3 cartões com foto); adicionar um embed (iframe) só se o Isaías preferir
+   ter o mapa visível diretamente na página.
 5. **Contacto** — o briefing só menciona WhatsApp como canal de marcação; não há e-mail nem
    Instagram confirmados, por isso não aparecem no site. Adicionar em `#contacto` (e no
    JSON-LD no `<head>`) se o Isaías quiser divulgá-los.

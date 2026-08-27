@@ -669,69 +669,54 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   flex: 1;
 }
 
-/* ---------- Mostra (photo + CTA banner) ---------- */
-.mostra { background: var(--surface-strong); padding: clamp(4rem, 8vw, 6rem) 0; }
-.mostra__inner {
+/* ---------- Localização ---------- */
+.localizacao__intro { max-width: 52ch; margin: 0 auto 3.5rem; }
+.localizacao__intro .lede { margin: 0; }
+
+.loc-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr 1fr;
-  align-items: center;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
-.mostra__media { aspect-ratio: 4 / 5; }
-.mostra__media .ph-photo { height: 100%; }
-.mostra__media--a .ph-photo {
+.loc-card {
+  display: flex;
+  flex-direction: column;
+}
+.loc-card__media { aspect-ratio: 5 / 4; margin-bottom: 1.5rem; }
+.loc-card__media .ph-photo { width: 100%; height: 100%; }
+.loc-card__media--a .ph-photo {
   background: linear-gradient(155deg,
     color-mix(in srgb, var(--color-teal) 14%, var(--color-cream)) 0%,
     color-mix(in srgb, var(--color-teal) 40%, var(--color-cream)) 60%,
     color-mix(in srgb, var(--color-teal) 70%, var(--color-white)) 100%);
 }
-.mostra__media--b .ph-photo {
+.loc-card__media--b .ph-photo {
+  background: linear-gradient(205deg,
+    color-mix(in srgb, var(--color-teal) 10%, var(--color-cream)) 0%,
+    color-mix(in srgb, var(--color-teal) 32%, var(--color-cream)) 55%,
+    color-mix(in srgb, var(--color-teal) 58%, var(--color-white)) 100%);
+}
+.loc-card__media--c .ph-photo {
   background: linear-gradient(205deg,
     color-mix(in srgb, var(--color-teal) 22%, var(--color-cream)) 0%,
     color-mix(in srgb, var(--color-teal) 48%, var(--color-cream)) 55%,
     color-mix(in srgb, var(--color-teal) 78%, var(--color-white)) 100%);
 }
-.mostra__content { text-align: center; padding: 0 clamp(0, 1vw, 1rem); }
-.mostra__content h2.section-title { max-width: 20ch; margin: 0 auto 0.65em; }
-.mostra__content h2 em { font-style: normal; color: var(--accent); }
-.mostra__content p { color: var(--ink-soft); font-size: 1rem; max-width: 36ch; margin: 0 auto 2rem; }
-
-/* ---------- Localização ---------- */
-.localizacao__intro { max-width: 60ch; margin: 0 0 3rem; }
-.localizacao__intro .lede { margin: 0; }
-.loc-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: var(--hairline);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--surface);
-}
-.loc-map {
-  min-height: 360px;
-  background-color: var(--surface-strong);
-  background-image:
-    linear-gradient(rgba(28, 60, 61, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 60, 61, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-  display: flex; align-items: center; justify-content: center;
-}
-.loc-map__pin { width: 2.2rem; height: 2.2rem; color: var(--accent); }
-.loc-panel { background: var(--surface); padding: clamp(1.75rem, 3vw, 2.75rem); }
-.loc-panel h3 { font-size: 1.3rem; margin-bottom: 1.5rem; }
-.loc-panel__list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 1.35rem; }
-.loc-panel__list li { display: flex; gap: 0.85rem; }
-.loc-panel__list svg { width: 1.2rem; height: 1.2rem; color: var(--accent); flex-shrink: 0; margin-top: 0.15rem; }
-.loc-panel__title { display: block; font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 0.2rem; }
-.loc-panel__desc { display: block; font-size: 0.86rem; color: var(--ink-soft); }
-.loc-panel__actions { display: flex; flex-direction: column; gap: 0.85rem; }
-.loc-panel__maps {
-  align-self: center;
-  font-size: 0.85rem; color: var(--ink-soft);
+.loc-card__title { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.loc-card__text { font-size: 0.92rem; margin: 0; }
+.loc-card__link {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
   border-bottom: 1px solid transparent;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
-.loc-panel__maps:hover { color: var(--accent); border-color: currentColor; }
+.loc-card__link:hover { color: var(--accent); border-color: currentColor; }
+
+.loc-footer { margin-top: 3.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+.loc-footer__hours { font-size: 0.85rem; color: var(--ink-soft); letter-spacing: 0.02em; margin: 0; }
 
 /* ---------- FAQ ---------- */
 .faq__intro { max-width: 60ch; margin: 0 0 2.5rem; }
@@ -865,12 +850,7 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   .rail-arrow { display: none; }
   .testimonial { flex-basis: min(78vw, 340px); }
 
-  .mostra__inner { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-  .mostra__content { order: -1; }
-  .mostra__media { aspect-ratio: 16 / 10; }
-
-  .loc-card { grid-template-columns: 1fr; }
-  .loc-map { min-height: 220px; }
+  .loc-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 2.5rem; }
 }
 
 @media (max-width: 560px) {
