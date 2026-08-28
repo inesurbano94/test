@@ -1,74 +1,181 @@
 # Business requirements — Isaías Rocha, Personal Trainer
 
-> **Nota de origem:** este documento não substitui o briefing original
-> ("Isaías Rocha — Briefing"), que nunca esteve neste repositório. Foi
-> reconstruído a partir do conteúdo já confirmado e publicado no site
-> (`index.html`) e do `README.md`. Se o briefing original existir,
-> substituir este ficheiro pelo seu conteúdo real — sobretudo as secções
-> marcadas como **por confirmar**.
+> **Fonte:** "Isaías Rocha — Briefing" (Google Doc).
+> https://docs.google.com/document/d/10t7MxX1WNEfC01GMzpQ-alLi9YfjdJI02l1GX2eprEg/edit
+> Este ficheiro é uma cópia sincronizada do documento acima — última
+> sincronização: 28 de agosto de 2026. Se o Google Doc for atualizado,
+> pedir para ressincronizar (o link é a fonte oficial).
 
-## Negócio
+## 1. Acerca de
 
-Personal Training individual em Lisboa, com foco em acompanhamento
-próximo (WhatsApp) e treino adaptado à pessoa, não um formato genérico.
+Isaías Rocha, Personal Trainer, natural de Minas Gerais, Brasil.
 
-**Sobre o treinador:** Isaías Rocha, brasileiro, natural de Minas
-Gerais. Formação em exercício físico, Pilates e massagem. Certificações:
-Técnico de Exercício Físico (TEF), Professor de Pilates, Certificação
-Clínica das Conchas, Massagem Desportiva/Terapêutica/Relaxante (CEM).
-Também dá aulas de Cycling, treino em circuito, GAP e Pilates.
+Paixão por ensinar e ajudar pessoas — acompanhar alguém ao longo do
+tempo e vê-lo perceber a sua própria evolução: sentir-se mais forte,
+mover-se melhor, perder peso, ganhar massa muscular ou ganhar mais
+confiança no próprio corpo.
 
-## Público-alvo / objetivos que o site endereça
+Um bom treino começa por conhecer a pessoa: objetivo, forma como se
+movimenta, limitações, experiência e até como chega a cada sessão. Há
+dias para desafiar mais e outros em que é preciso adaptar.
 
-1. Alívio de dores e fortalecimento (zona lombar, joelhos)
-2. Ganhar massa muscular e força
-3. Perder peso e melhorar condição física
-4. Postura, mobilidade e fortalecimento
-5. Começar — ou voltar — a treinar (sem experiência prévia)
-6. Tonificação
+Formação em exercício físico, Pilates e diferentes áreas de massagem —
+conhecimento mais profundo do corpo, movimento e execução dos
+exercícios, aplicado diariamente no acompanhamento dos clientes.
 
-## Formatos / locais de treino
+Trabalho sério, mas os treinos são também um momento positivo do dia:
+"Podemos trabalhar com rigor, rir e desfrutar do processo ao mesmo
+tempo."
 
-| Formato | Local | Notas |
-|---|---|---|
-| Presencial | VivaGym Almirante Reis | Requer mensalidade do ginásio (~€30/mês) |
-| Ao domicílio | Grande Lisboa | Treinador desloca-se |
-| Outdoor | Consoante disponibilidade | — |
+Além do Personal Training, dá aulas de **Cycling, treino em circuito,
+GAP e Pilates**.
 
-## Preços (confirmados via FAQ do site)
+**Quote:** "O que me deixa mais feliz é ver um cliente perceber a sua
+evolução e saber que estamos, juntos, cada vez mais perto do
+objetivo."
 
-- Sessão individual avulso no VivaGym: **€30**
-- Packs mensais (1x ou 2x/semana): existem, valores **por confirmar**
-- Ao domicílio: a partir de **€40**
+### Certificações
 
-## Horário
+- Técnico de Exercício Físico — TEF
+- Professor de Pilates
+- Certificação Clínica das Conchas
+- Massagem Desportiva — CEM
+- Massagem Terapêutica — CEM
+- Massagem Relaxante — CEM
 
-06:00–21:00 · cancelamentos até 24h antes.
+### Valores / forma de treinar
 
-## Canal de contacto
+- **Um treino feito para ti** — sem treinos iguais para toda a gente;
+  avalia objetivos, mobilidade, flexibilidade, experiência, limitações
+  e condição física para construir um treino individual.
+- **Técnica e atenção aos detalhes** — o objetivo não é fazer mais
+  repetições, é treinar melhor, evoluir e construir resultados de
+  forma segura e consistente.
+- **Proximidade e confiança** — conhecer a pessoa, não só o plano de
+  treino; ouvir, adaptar, motivar, criar um ambiente descontraído.
 
-Apenas **WhatsApp** — sem e-mail ou Instagram confirmados no briefing
-original. Todos os CTAs do site apontam para o mesmo número, centralizado
-em `assets/js/main.js` (`WHATSAPP_NUMBER`).
+## 2. Treino — objetivos (como posso ajudar)
+
+Os mesmos 6 objetivos já publicados em `#objetivos`:
+
+1. **Alívio de dores e fortalecimento** — treinos adaptados para quem
+   sente dores/desconfortos (zona lombar, joelhos), com foco em
+   fortalecimento muscular, mobilidade e movimento no dia a dia.
+2. **Ganhar massa muscular e força** — treino progressivo e
+   personalizado para força, massa muscular e confiança.
+3. **Perder peso e melhorar a condição física** — plano adaptado ao
+   nível e rotina, para atividade física, condição cardiovascular e
+   consistência.
+4. **Postura, mobilidade e fortalecimento** — força, mobilidade e
+   consciência corporal adaptadas às características e limitações de
+   cada pessoa.
+5. **Começar — ou voltar — a treinar** — para quem não sabe por onde
+   começar, como executar corretamente os movimentos, ou como criar
+   uma rotina sustentável.
+6. **Tonificação** — treino orientado para melhorar a composição
+   corporal, definir a musculatura e aumentar a sensação de firmeza.
+
+## 3. Serviços e preços (fonte oficial — o site atual não mostra isto)
+
+> O site removeu a secção "Serviços" a pedido do cliente (ver
+> `README.md`). Os valores abaixo são a fonte de verdade caso a secção
+> volte a ser publicada — não repor no site sem confirmar com o
+> Isaías.
+
+### Personal Training — 1:1
+
+45 minutos · treino individual. Inclui treino personalizado, plano de
+treino, acompanhamento por WhatsApp e análise por balança de
+bioimpedância a cada 2 meses.
+
+**VivaGym Almirante Reis**
+
+| Frequência | Preço |
+|---|---|
+| Sessão avulso | €30 |
+| 1x / semana | €120/mês |
+| 2x / semana | €200/mês |
+| Mensalidade VivaGym (obrigatória) | +€30/mês |
+
+**Ao domicílio — Grande Lisboa**
+
+| Frequência | Preço |
+|---|---|
+| Sessão avulso | €40 |
+| 1x / semana | €160/mês |
+| 2x / semana | €280/mês |
+
+### Personal Training — Bring Your Friend (a Dois)
+
+45 minutos · treino personalizado para duas pessoas. Inclui treino
+personalizado, plano de treino, acompanhamento por WhatsApp, avaliação
+física a cada 2 meses e análise por balança de bioimpedância.
+
+| Frequência | Preço |
+|---|---|
+| Sessão avulso | €45 |
+| 1x / semana | €180/mês |
+| 2x / semana | €300/mês |
+
+Disponível: VivaGym · Domicílio · Outdoor.
+
+### Avaliação Física + Plano de Treino
+
+**€50** · renovação a cada 2 meses. Inclui conversa sobre objetivos,
+avaliação física, plano de treino personalizado e análise por balança
+de bioimpedância (peso, massa muscular, massa gorda, água corporal,
+IMC). Local: VivaGym Almirante Reis.
+
+## 4. Como é um treino (secção "Método" — removida do site atual)
+
+1. **Falamos sobre ti** — objetivos, experiência de treino, rotina,
+   cirurgias, lesões ou limitações.
+2. **Avaliamos o ponto de partida** — avaliação física e exercícios
+   para compreender mobilidade e movimento.
+3. **Construímos e acompanhamos o teu treino** — plano personalizado,
+   acompanhamento da evolução e ajustes sempre que necessário.
+
+Entre sessões: acompanhamento por WhatsApp para dúvidas sobre
+exercícios ou execução.
+
+## 5. Localização
+
+| Formato | Local |
+|---|---|
+| Presencial | VivaGym Almirante Reis — Lisboa |
+| Ao domicílio | Grande Lisboa |
+| Outdoor | Mediante disponibilidade |
+
+**Horário:** 06:00–21:00 · **Cancelamentos:** até 24h antes ·
+**Marcações:** WhatsApp · CTA: "Ver localização no Google Maps"
+
+## 6. Canal de contacto
+
+Apenas **WhatsApp** — o briefing não confirma e-mail nem Instagram.
+Todos os CTAs do site apontam para o mesmo número, centralizado em
+`assets/js/main.js` (`WHATSAPP_NUMBER`).
 
 ## Por confirmar / em aberto
 
-Itens já sinalizados no `README.md` que continuam pendentes:
+Itens que o briefing não resolve, já sinalizados no `README.md`:
 
 - [ ] **Número de WhatsApp real** — ainda é um placeholder (`351900000000`)
 - [ ] **Testemunhos reais** — os 3 atuais em `#resultados` (nomes,
       avaliações, texto) são fictícios, só para pré-visualizar o layout
-- [ ] **Fotografia real** — foto de Sobre (atualmente um placeholder
-      gradiente) e as 4 fotos de stock (VivaGym, domicílio, outdoor,
-      Contacto) precisam de ser substituídas por fotos reais do Isaías
-      e/ou clientes (com consentimento)
-- [ ] **Valores dos packs mensais** — só a sessão avulso e o valor ao
-      domicílio estão confirmados
+- [ ] **Fotografia real** — foto de Sobre (placeholder gradiente) e as
+      4 fotos de stock (VivaGym, domicílio, outdoor, Contacto)
+      precisam de ser substituídas por fotos reais
+- [ ] **FAQ** — o documento tem uma secção "Questions" (Separador 3)
+      sem conteúdo; as 5 perguntas atuais em `#faq` foram escritas a
+      partir do resto do briefing, não copiadas de uma lista de FAQ
+      oficial
 - [ ] **E-mail / Instagram** — adicionar a `#contacto` e ao JSON-LD só
       se o Isaías quiser divulgar
 
-## Fora de âmbito (removido a pedido do cliente)
+## Fora de âmbito no site atual (mas presente no briefing)
 
-O site já teve uma secção de **Método** (processo em 3 passos) e de
-**Serviços** (cartões de preços: Avaliação, PT 1:1, PT a Dois) — foram
-removidas a pedido explícito. Não repor sem confirmar com o Isaías.
+- Secção **Serviços** (preços — ver §3 acima)
+- Secção **Método** (processo em 3 passos — ver §4 acima)
+
+Ambas removidas do `index.html` a pedido explícito do cliente; o
+conteúdo fica preservado aqui caso se decida repor.

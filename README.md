@@ -68,8 +68,13 @@ styles.refero.design).
 ## Fonte de verdade do conteúdo
 
 Todo o texto (bio, certificações, método, preços, localização) vem do documento
-"Isaías Rocha — Briefing". Qualquer novo facto, preço ou afirmação deve ser
+"Isaías Rocha — Briefing" — cópia sincronizada em
+[`docs/business-requirements.md`](docs/business-requirements.md), com o link
+para o Google Doc original. Qualquer novo facto, preço ou afirmação deve ser
 confirmado com o Isaías antes de entrar no site.
+
+Sistema de design, requisitos de negócio e material de marca estão organizados
+em `docs/` — ver `docs/design-system.md` e `docs/business-requirements.md`.
 
 **Secções removidas a pedido do cliente:** o site já não tem uma secção de
 Método (o processo em 3 passos: "Falamos sobre ti" / "Avaliamos o ponto de
