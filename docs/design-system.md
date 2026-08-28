@@ -23,6 +23,27 @@ teal via `--ink`, `--ink-soft`, `--ink-faint`, `--line`, `--shadow`.
 `--on-accent` (branco) é texto sobre teal sólido. `--star` (`#76DB5D`) é
 uma exceção isolada, só para os ícones de classificação por estrelas.
 
+**Exceção confirmada — o hero:** o teal nunca é fundo de secção inteira,
+exceto no `.hero`, que passou a ter fundo teal sólido (estilo inspirado
+na AG1 — hero escuro, headline serif clara, botão/eyebrow invertidos).
+Só o hero tem esta exceção; nenhuma outra secção deve reutilizá-la sem
+confirmação explícita. Isto trouxe uma família de tokens "invertidos"
+para texto/contornos sobre teal, espelhando os equivalentes claros:
+
+| Em fundo claro | Em fundo teal (hero) |
+|---|---|
+| `--ink-soft` | `--on-accent-soft` |
+| `--line` | `--on-accent-line` |
+| `--accent-tint` | `--on-accent-tint` |
+
+E as variantes de componente que usam estes tokens: `.eyebrow--on-accent`,
+`.btn--on-accent` (CTA principal — creme sólido, texto teal) e
+`.btn--ghost-on-accent` (CTA secundário — contorno claro, texto claro).
+
+**Nav:** deixou de ser transparente-até-scroll — tem fundo branco sólido
+sempre (para ler bem sobre o hero teal), com uma sombra subtil a
+aparecer só ao fazer scroll.
+
 ## Tipografia
 
 Duas famílias:

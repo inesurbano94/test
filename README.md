@@ -23,7 +23,7 @@ numa regra de componente — declarar/reutilizar um token primeiro.
 |---|---|---|
 | `--color-white` | `#FFFFFF` | fundo de página por defeito |
 | `--color-cream` | `#F0EDE7` | a *outra* superfície — substitui todos os fundos fortes/escuros de antes (hero, footer, cartão de preço em destaque) e a alternância entre secções |
-| `--color-teal` | `#1C3C3D` | o único acento — botões, links, ícones, badges e elementos selecionados/alta ênfase. Nunca usado como fundo de secção inteira |
+| `--color-teal` | `#1C3C3D` | o único acento — botões, links, ícones, badges e elementos selecionados/alta ênfase. Não é usado como fundo de secção inteira, exceto no hero (exceção confirmada — ver `docs/design-system.md`) |
 
 Não existe uma terceira superfície nem uma escala de cinzentos à parte: texto
 (`--ink`, `--ink-soft`, `--ink-faint`), contornos (`--line`/`--hairline`) e

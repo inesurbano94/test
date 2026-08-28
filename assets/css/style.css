@@ -15,15 +15,23 @@
      section rhythm that used to run on a neutral gray. There is no
      third surface shade — every section is white or cream.
    - Deep teal (--accent) is the single accent: buttons, links, icons,
-     badges and any other high-emphasis/selected element. It never
-     appears as a full section background.
+     badges and any other high-emphasis/selected element. It does not
+     appear as a full section background — with exactly one deliberate
+     exception: `.hero`, styled after an AG1-style hero (solid dark
+     surface, light serif headline, light-on-dark button/eyebrow
+     variants). See TYPOGRAPHY SYSTEM and the --on-accent-* tokens
+     below. No other section may reuse this exception without the
+     same explicit confirmation.
    - Everything else — body text (--ink/--ink-soft/--ink-faint),
      hairline borders (--line), muted washes (--accent-tint) and
      shadows (--shadow) — is a tint/shade mixed from teal, cream or
      white only, never an unrelated gray scale.
-   - --on-accent is the one exception token: the text/icon color used
-     on top of a *solid teal fill* (buttons, the FAB, badges), so it
-     stays legible. It is white, not a fourth brand color.
+   - --on-accent and its three siblings (--on-accent-soft,
+     --on-accent-line, --on-accent-tint) are the text/border/wash
+     colors used on top of a *solid teal fill* — buttons, the FAB,
+     badges, and now the hero. They mirror --ink/--ink-soft/--line/
+     --accent-tint exactly, just inverted for a dark surface: white or
+     white-tinted, not a fourth brand color.
    - --star is a second, narrowly-scoped exception: a specific green
      (#76DB5D), used only for star-rating icons (.testimonial__stars,
      .resultados__rating-stars), by explicit client request — reads as
@@ -76,6 +84,9 @@
   --accent-tint: rgba(28, 60, 61, 0.08);        /* accent wash, e.g. eyebrow badges */
   --accent-tint-strong: rgba(28, 60, 61, 0.14);
   --on-accent: var(--color-white);              /* text/icons on a solid teal fill (buttons, FAB, badges) */
+  --on-accent-soft: rgba(255, 255, 255, 0.72);  /* secondary text on a solid teal surface — mirrors --ink-soft */
+  --on-accent-line: rgba(255, 255, 255, 0.22);  /* hairline borders on a solid teal surface — mirrors --line */
+  --on-accent-tint: rgba(255, 255, 255, 0.12);  /* wash on a solid teal surface — mirrors --accent-tint */
   --star: #76db5d;                              /* scoped exception: star-rating icons only, by request */
 
   --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -157,6 +168,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   margin: 0 0 1.25rem;
 }
 .eyebrow.center { margin-left: auto; margin-right: auto; }
+/* On a solid-teal surface (currently only the hero — see below) */
+.eyebrow--on-accent { background: var(--on-accent-tint); color: var(--on-accent); }
 
 /* Section title — every main heading except the hero uses this token.
    Shares its font-family/weight/letter-spacing with .hero__title (see
@@ -209,6 +222,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   color: var(--ink);
 }
 .btn--outline-ink:hover { border-color: var(--ink); transform: translateY(-2px); }
+/* On a solid-teal surface (currently only the hero — see below) */
+.btn--on-accent { background: var(--color-cream); color: var(--ink); }
+.btn--on-accent:hover { background: var(--color-white); transform: translateY(-2px); }
+.btn--ghost-on-accent { background: transparent; border-color: var(--on-accent-line); color: var(--on-accent); }
+.btn--ghost-on-accent:hover { background: var(--on-accent-tint); border-color: var(--on-accent); transform: translateY(-2px); }
 .btn--sm { padding: 0.55rem 1.15rem; font-size: 0.82rem; }
 .btn--lg { padding: 1.05rem 2.1rem; font-size: 1rem; }
 .btn--xl { padding: 1.25rem 2.6rem; font-size: 1.05rem; }
@@ -221,14 +239,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 1.1rem 0;
-  transition: background 0.4s var(--ease), padding 0.4s var(--ease), border-color 0.4s var(--ease);
-  border-bottom: 1px solid transparent;
+  transition: padding 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  background: var(--surface);
+  border-bottom: var(--hairline);
 }
 .nav.is-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px) saturate(1.2);
   padding: 0.75rem 0;
-  border-bottom: 1px solid var(--line);
+  box-shadow: 0 12px 24px -18px var(--shadow);
 }
 .nav__inner {
   max-width: var(--container);
@@ -313,22 +330,22 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   min-height: 100svh;
   display: flex;
   align-items: center;
-  color: var(--ink);
+  color: var(--on-accent);
   overflow: hidden;
   padding: 6.5rem 0 2.5rem;
-  background: var(--surface-strong);
+  background: var(--accent); /* scoped exception — see TYPOGRAPHY/COLOR note above */
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .hero__ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid var(--line);
+  border: 1px solid var(--on-accent-line);
 }
 .hero__ring--1 { width: 640px; height: 640px; top: -16%; right: -10%; }
-.hero__ring--2 { width: 440px; height: 440px; bottom: -14%; right: 8%; border-color: rgba(28, 60, 61, 0.08); }
+.hero__ring--2 { width: 440px; height: 440px; bottom: -14%; right: 8%; border-color: rgba(255, 255, 255, 0.12); }
 .hero__glow {
   position: absolute; top: 18%; right: 4%; width: 520px; height: 520px; border-radius: 50%;
-  background: radial-gradient(circle at 45% 40%, rgba(28, 60, 61, 0.08), rgba(28, 60, 61, 0) 70%);
+  background: radial-gradient(circle at 45% 40%, var(--on-accent-tint), rgba(255, 255, 255, 0) 70%);
 }
 .hero__layout {
   position: relative; z-index: 1;
@@ -343,14 +360,14 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   font-size: var(--text-hero-size);
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--on-accent);
   max-width: 17ch;
   margin-bottom: 0.5em;
 }
-.hero__title em { font-style: normal; color: var(--accent); }
+.hero__title em { font-style: normal; color: var(--color-cream); }
 .hero__sub {
   font-size: clamp(0.96rem, 1.1vw, 1.05rem);
-  color: var(--ink-soft);
+  color: var(--on-accent-soft);
   max-width: 42ch;
   margin-bottom: 1.75rem;
 }
@@ -363,7 +380,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
 .hero__photo::before {
   content: "";
   position: absolute; inset: -8% -10%;
-  background: radial-gradient(circle at 30% 20%, rgba(28, 60, 61, 0.1), rgba(28, 60, 61, 0) 62%);
+  background: radial-gradient(circle at 30% 20%, var(--on-accent-tint), rgba(255, 255, 255, 0) 62%);
   filter: blur(6px);
   z-index: -1;
 }
@@ -373,8 +390,11 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   object-fit: cover;
   object-position: center 22%;
   border-radius: var(--radius-card);
-  border: var(--hairline);
-  box-shadow: 0 24px 48px -28px var(--shadow);
+  border: 1px solid var(--on-accent-line);
+  /* Only place a shadow isn't teal-derived: a teal-tinted shadow would
+     vanish against the hero's own teal background — needs to be darker
+     than the surface it's cast on, so plain black at low opacity. */
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.35);
 }
 
 /* ---------- Sections generic ---------- */
