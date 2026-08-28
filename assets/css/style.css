@@ -30,22 +30,26 @@
      a familiar "review score" color. Never used for anything else.
 
    TYPOGRAPHY SYSTEM
-   The hero headline (--text-hero-size) is the only intentionally
-   larger heading on the page. Every other main section heading uses
-   `.section-title`, which is pinned to --text-section-title-size —
-   do not give any section heading a bespoke font-size; wrap width can
-   still vary per section via max-width. `.section-title` is also the
-   one place that switches to the premium serif (--font-serif,
-   Newsreader) instead of the geometric sans — every other heading,
-   label and body element (h1, testimonial headlines, nav, footer)
-   stays on --serif/--sans. Eyebrows/section labels share one token
-   set (--eyebrow-size/--eyebrow-weight/--eyebrow-tracking) via the
-   `.eyebrow` class, applied identically in every section.
+   Every top-level page/section title — the hero `.hero__title` and
+   every `.section-title` — shares one typographic treatment: the
+   premium serif (--font-serif, Newsreader), font-weight 500,
+   letter-spacing -0.01em. The hero headline (--text-hero-size) is
+   the only one that's intentionally larger; every other main section
+   heading is pinned to --text-section-title-size. Do not give a
+   title a bespoke font-family, weight or font-size — only max-width
+   varies per section, to control line wrap. Everything else that
+   isn't a top-level title (testimonial headlines, nav/footer
+   wordmark, goal-card labels, FAQ summaries) stays on the geometric
+   sans (--serif/--sans) — that contrast is what makes the serif read
+   as "this is a title" rather than becoming the whole page's voice.
+   Eyebrows/section labels share one token set (--eyebrow-size/
+   --eyebrow-weight/--eyebrow-tracking) via the `.eyebrow` class,
+   applied identically in every section.
 
    Layout system (36px cards / 14px buttons / pill chips, hairline
    borders instead of drop shadows, one geometric sans) is unchanged
    from the original Awesomic-inspired build; only the color, the
-   heading-size rules and the .section-title serif above are new.
+   heading-size rules and the title serif above are new.
    ========================================================== */
 
 :root {
@@ -154,7 +158,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .eyebrow.center { margin-left: auto; margin-right: auto; }
 
-/* Section title — every main heading except the hero uses this token */
+/* Section title — every main heading except the hero uses this token.
+   Shares its font-family/weight/letter-spacing with .hero__title (see
+   TYPOGRAPHY SYSTEM above); only the size differs. */
 .section-title {
   font-family: var(--font-serif);
   font-size: var(--text-section-title-size);
@@ -333,7 +339,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   width: 100%;
 }
 .hero__title {
+  font-family: var(--font-serif);
   font-size: var(--text-hero-size);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--ink);
   max-width: 17ch;
   margin-bottom: 0.5em;
