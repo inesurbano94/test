@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
 
@@ -232,10 +232,6 @@
         </div>
 
         <div class="resultados__rail-wrap">
-          <button type="button" class="rail-arrow rail-arrow--prev" id="resultadosPrev" aria-label="Testemunho anterior" aria-controls="resultadosRail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-          </button>
-
           <div class="resultados__rail reveal" id="resultadosRail" role="region" aria-label="Testemunhos de clientes" tabindex="0">
             <figure class="testimonial">
               <div class="testimonial__top">
@@ -292,9 +288,14 @@
             </figure>
           </div>
 
-          <button type="button" class="rail-arrow rail-arrow--next" id="resultadosNext" aria-label="Testemunho seguinte" aria-controls="resultadosRail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
+          <div class="rail-arrows">
+            <button type="button" class="rail-arrow rail-arrow--prev" id="resultadosPrev" aria-label="Testemunho anterior" aria-controls="resultadosRail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button type="button" class="rail-arrow rail-arrow--next" id="resultadosNext" aria-label="Testemunho seguinte" aria-controls="resultadosRail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
