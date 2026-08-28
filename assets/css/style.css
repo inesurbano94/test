@@ -703,16 +703,11 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .loc-footer__hours { font-size: 0.85rem; color: var(--ink-soft); letter-spacing: 0.02em; margin: 0; }
 
 /* ---------- FAQ ---------- */
-.faq__layout {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
-}
-.faq__intro { max-width: 32ch; }
+.faq__intro { max-width: 60ch; margin: 0 0 2.5rem; }
 .faq__intro .lede { margin: 0; }
 .faq__list {
   border-top: var(--hairline);
+  margin-top: 1rem;
 }
 .faq-item {
   border-bottom: var(--hairline);
@@ -844,9 +839,6 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
   .resultados__sub { max-width: none; }
   .rail-arrow { display: none; }
   .testimonial { flex-basis: min(78vw, 340px); }
-
-  .faq__layout { grid-template-columns: 1fr; gap: 1.5rem; }
-  .faq__intro { max-width: none; }
 
   .loc-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 2.5rem; }
 }
