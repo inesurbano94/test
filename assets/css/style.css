@@ -436,35 +436,33 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; }
 .goals__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  margin-top: 3.5rem;
-  border-top: var(--hairline);
-  border-bottom: var(--hairline);
+  gap: 1rem;
+  margin-top: 3rem;
 }
 .goal-card {
-  background: var(--surface);
-  padding: 2.25rem 2rem;
   display: flex;
-  flex-direction: column;
-  transition: background 0.3s ease;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--surface);
+  border: var(--hairline);
+  border-radius: var(--radius-btn);
+  padding: 1.15rem 1.35rem;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease);
 }
-.goal-card:hover { background: var(--surface-strong); }
-.goal-card__icon {
-  display: inline-block;
-  width: 2.1rem; height: 2.1rem; color: var(--accent);
-  margin-bottom: 1.25rem;
-}
+.goal-card:hover { background: var(--surface-strong); border-color: var(--accent); transform: translateY(-2px); }
+.goal-card h3 { flex: 1; min-width: 0; font-size: 0.96rem; font-weight: 600; line-height: 1.3; margin: 0; color: var(--ink); }
+.goal-card__meta { display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+.goal-card__icon { display: flex; width: 1.6rem; height: 1.6rem; color: var(--accent); }
 .goal-card__icon svg { width: 100%; height: 100%; }
-.goal-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
-.goal-card p { font-size: 0.9rem; margin: 0 0 1.25rem; flex: 1; }
-.goal-card__link {
-  font-size: 0.85rem; font-weight: 600; color: var(--ink);
-  border-top: var(--hairline);
-  padding-top: 1rem;
-  transition: color 0.25s ease;
+.goal-card__arrow {
+  display: flex; align-items: center; justify-content: center;
+  width: 1.1rem; height: 1.1rem;
+  color: var(--ink-faint);
+  transition: color 0.25s ease, transform 0.25s var(--ease);
 }
-.goal-card__link:hover { color: var(--accent); }
+.goal-card__arrow svg { width: 100%; height: 100%; }
+.goal-card:hover .goal-card__arrow { color: var(--accent); transform: translateX(2px); }
 
 /* ---------- Resultados (editorial testimonial rail) ---------- */
 .resultados__layout {
