@@ -50,8 +50,8 @@ pesos. Duas escalas de heading apenas:
 
 - `--text-hero-size` — só o `<h1>` do hero. É o único heading intencionalmente maior.
 - `--text-section-title-size` (aplicado via a classe `.section-title`) — todos
-  os outros headings principais de secção (Sobre, Objetivos, Método, Serviços,
-  Resultados, Localização, FAQ, Contacto), sem exceção. Qualquer h2 de
+  os outros headings principais de secção (Sobre, Objetivos, Resultados,
+  Localização, FAQ, Contacto), sem exceção. Qualquer h2 de
   secção novo tem de levar a classe `.section-title`; ajustar só `max-width`
   por secção se for preciso controlar a quebra de linha, nunca o `font-size`.
 
@@ -70,6 +70,14 @@ styles.refero.design).
 Todo o texto (bio, certificações, método, preços, localização) vem do documento
 "Isaías Rocha — Briefing". Qualquer novo facto, preço ou afirmação deve ser
 confirmado com o Isaías antes de entrar no site.
+
+**Secções removidas a pedido do cliente:** o site já não tem uma secção de
+Método (o processo em 3 passos: "Falamos sobre ti" / "Avaliamos o ponto de
+partida" / "Construímos e acompanhamos o teu treino") nem de Serviços
+(cartões de preços: Avaliação, Personal Training 1:1 e a Dois). O briefing
+continua a ter esse conteúdo — não foi apagado da fonte, só retirado do
+site — por isso é normal reencontrá-lo lá se se voltar a consultar o
+documento. Não repor estas secções sem confirmar com o Isaías.
 
 **Exceção conhecida — `#resultados`:** o briefing não tem testemunhos de
 clientes reais (sem nomes, fotos ou classificações). Os 3 cartões de
@@ -106,9 +114,6 @@ de partida se um cliente real disser algo semelhante.
 5. **Contacto** — o briefing só menciona WhatsApp como canal de marcação; não há e-mail nem
    Instagram confirmados, por isso não aparecem no site. Adicionar em `#contacto` (e no
    JSON-LD no `<head>`) se o Isaías quiser divulgá-los.
-6. **Preços e serviços** — confirmar que os valores em `#servicos` (Avaliação 50€, Personal
-   Training 1:1 e a Dois) continuam atualizados antes de publicar; são os do briefing mas
-   podem mudar com o tempo.
 
 ## Adicionar versão em inglês
 
