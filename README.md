@@ -73,8 +73,9 @@ Todo o texto (bio, certificações, método, preços, localização) vem do docu
 para o Google Doc original. Qualquer novo facto, preço ou afirmação deve ser
 confirmado com o Isaías antes de entrar no site.
 
-Sistema de design, requisitos de negócio e material de marca estão organizados
-em `docs/` — ver `docs/design-system.md` e `docs/business-requirements.md`.
+Sistema de design, requisitos de negócio, análise de estrutura/SEO e material
+de marca estão organizados em `docs/` — ver `docs/design-system.md`,
+`docs/business-requirements.md` e `docs/content-strategy.md`.
 
 **Secções removidas a pedido do cliente:** o site já não tem uma secção de
 Método (o processo em 3 passos: "Falamos sobre ti" / "Avaliamos o ponto de
