@@ -2,62 +2,65 @@
 
 Site de página única em português (pt-PT), estático (HTML/CSS/JS puros — sem build step).
 
+Rebuild feito com a skill `website-studio`, fase 4 (build) — ver
+`.claude/skills/website-studio/`. Direção aprovada na fase 2: sistema
+`clinic-white` adaptado a quente, tipografia Familjen Grotesk + Instrument
+Sans, sem testemunhos fictícios — a prova vem do método, da avaliação por
+bioimpedância e das certificações.
+
 ## Estrutura
 
 ```
-index.html            todo o conteúdo/marcação, organizado por <section id="...">
-assets/css/style.css   sistema de design (cores, tipografia, layout, animações)
-assets/js/main.js      menu mobile, scroll reveal, botão flutuante, links de WhatsApp
+index.html             todo o conteúdo/marcação, organizado por <section id="...">
+assets/css/style.css   sistema de design (tokens em :root, layout, motion)
+assets/js/main.js      número de WhatsApp, menu mobile, scroll reveal, tabs de preços, FAQ
+assets/img/            imagens
 ```
 
 ## Fonte de verdade do conteúdo
 
-Todo o texto (bio, certificações, método, preços, localização) vem do documento
-"Isaías Rocha — Briefing". Qualquer novo facto, preço ou afirmação deve ser
-confirmado com o Isaías antes de entrar no site.
+Todo o texto (bio, certificações, método, preços, localização) vem do
+documento "Isaías Rocha — Briefing" no Drive. Qualquer novo facto, preço ou
+afirmação deve ser confirmado com o Isaías antes de entrar no site.
 
-**Exceção conhecida — `#resultados`:** o briefing não tem testemunhos de
-clientes reais (sem nomes, fotos ou classificações). Os 3 cartões de
-testemunho nessa secção usam nomes, avatares (iniciais sobre gradiente,
-não fotos reais de ninguém) e classificações de 5 estrelas **fictícios**,
-a pedido explícito, só para pré-visualizar o layout. Isto está marcado com
-um comentário HTML antes da secção em `index.html`. **Substituir por
-testemunhos reais (idealmente com consentimento explícito para usar nome
-e foto) antes de publicar** — os textos completos podem ficar como ponto
-de partida se um cliente real disser algo semelhante.
+**Sem testemunhos.** O briefing não tem testemunhos de clientes reais. Ao
+contrário da versão anterior deste site, esta versão **não** usa testemunhos
+fictícios — decisão explícita, ver fase 1 da conversa com a skill. A prova de
+credibilidade vem da secção `#medicao` (bioimpedância), das certificações em
+`#sobre` e do método em `#metodo`.
 
 ## Antes de publicar
 
-1. **Número de WhatsApp** — editar `WHATSAPP_NUMBER` em `assets/js/main.js` (linha ~10).
-   Todos os botões "WhatsApp" / "Falar comigo no WhatsApp" leem deste único sítio.
-   O briefing não indica um número — está por confirmar.
-2. **Testemunhos (`#resultados`)** — nomes, avatares e classificações são fictícios
-   (ver acima). Substituir pelos 3 testemunhos reais antes de publicar.
-3. **Fotografia (Sobre)** — `.sobre__media .ph-photo` em `assets/css/style.css` é um gradiente
-   dourado/castanho placeholder (a foto do hero já é real — `assets/img/isaias-hero.webp`).
-   Substituir também esta por uma foto real do Isaías (`background-image` ou trocar por
-   `<img>`), mantendo o cartão `.sobre__caption` sobreposto no canto inferior.
-4. **Mapa (Localização)** — `.loc-map` é uma grelha CSS com um pin decorativo. O botão "Ver
-   localização no Google Maps" já aponta para uma pesquisa real da VivaGym Almirante Reis;
-   pode ser substituído por um embed (iframe) se preferires um mapa incorporado.
-5. **Contacto** — o briefing só menciona WhatsApp como canal de marcação; não há e-mail nem
-   Instagram confirmados, por isso não aparecem no site. Adicionar em `#contacto` (e no
-   JSON-LD no `<head>`) se o Isaías quiser divulgá-los.
-6. **Preços e serviços** — confirmar que os valores em `#servicos` (Avaliação 50€, Personal
-   Training 1:1 e a Dois) continuam atualizados antes de publicar; são os do briefing mas
-   podem mudar com o tempo.
+1. **Número de WhatsApp** — `WHATSAPP_NUMBER` em `assets/js/main.js` (linha
+   ~7) está com um placeholder (`351900000000`). O briefing não indica um
+   número real — todos os botões de WhatsApp leem deste único sítio, por isso
+   basta corrigir aqui.
+2. **Fotografia** — só existe uma foto real, `assets/img/isaias-hero.webp`,
+   usada em `#sobre`. É um retrato forte mas não um hero: enquadramento
+   vertical, passadeiras e dois ecrãs de TV ao fundo, luz de tecto fria. Em
+   produção, recortar mais apertado (a `object-position` já força o foco para
+   cima) ou substituir por uma foto nova. Ver
+   `.claude/skills/website-studio/templates/shot-list.md` para o plano de 5
+   fotos que faltam — a mais importante é a da balança de bioimpedância em
+   uso, é a única imagem que ainda ninguém tem.
+3. **Morada do ginásio** — Av. Almirante Reis 65, 1150-011 Lisboa, em
+   `#localizacao`. Veio de pesquisa pública sobre o VivaGym, não do briefing
+   do Isaías — confirmar antes de publicar.
+4. **Preços e serviços** — confirmar que os valores em `#servicos` continuam
+   atualizados; vêm do briefing mas podem mudar com o tempo.
+5. **Instagram / Google Maps** — não encontrei perfis públicos do Isaías
+   (sem Instagram, sem ficha do Google Maps). O site é, por agora, toda a
+   presença online dele — se e quando existirem, adicionar os links em
+   `#localizacao` e no rodapé.
 
 ## Adicionar versão em inglês
 
-O conteúdo está isolado do layout (nenhum texto está "cozido" em CSS/imagens), pelo que basta:
-
-1. Duplicar `index.html` como `en.html`.
-2. Traduzir apenas os nós de texto — manter classes, ids e estrutura intactos.
-3. Adicionar um seletor de idioma na nav (`.nav__links`) a apontar `index.html` ⇄ `en.html`.
+Decisão da fase 1: **pt-PT apenas**, por agora. Se mudar, seguir a regra da
+skill — dois ficheiros HTML (`index.html` + `en/index.html`), nunca um
+seletor por JavaScript, por SEO e para não haver flash da língua errada.
+Ver `.claude/skills/website-studio/guidelines.md`, secção "Bilingual sites".
 
 ## Correr localmente
-
-Qualquer servidor estático funciona, por exemplo:
 
 ```
 python3 -m http.server 8000

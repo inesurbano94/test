@@ -1,64 +1,78 @@
 (() => {
   "use strict";
 
-  /* ----------------------------------------------------------
-     Single source of truth for the WhatsApp number.
-     Format: country code + number, no spaces, no "+".
-     e.g. Portugal mobile -> "351912345678"
-     TODO: replace with the real number before launch.
-  ---------------------------------------------------------- */
+  // Single source of truth for the WhatsApp number.
+  // NOT PROVIDED IN THE BRIEFING — placeholder. Replace before publishing.
   const WHATSAPP_NUMBER = "351900000000";
-  const DEFAULT_MESSAGE = "Olá Isaías, gostava de saber mais sobre o treino personalizado.";
-
-  document.querySelectorAll("[data-whatsapp]").forEach((el) => {
-    const msg = el.getAttribute("data-whatsapp") || DEFAULT_MESSAGE;
-    el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  const WHATSAPP_MESSAGE = "Olá Isaías! Vi o site e gostava de saber mais sobre o Personal Training.";
+  const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  document.querySelectorAll(".wa-link").forEach((el) => {
+    el.setAttribute("href", waHref);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
   });
 
-  /* ---------------- Nav scroll state ---------------- */
-  const nav = document.getElementById("nav");
-  const onScroll = () => {
-    nav.classList.toggle("is-scrolled", window.scrollY > 40);
-    fab.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
-  };
-
-  /* ---------------- Mobile menu ---------------- */
-  const burger = document.getElementById("burger");
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    burger.setAttribute("aria-expanded", "false");
-  };
-  burger.addEventListener("click", () => {
-    const open = document.body.classList.toggle("menu-open");
-    burger.setAttribute("aria-expanded", String(open));
-  });
-  document.querySelectorAll(".mobile-menu a").forEach((a) => a.addEventListener("click", closeMenu));
-
-  /* ---------------- Floating WhatsApp button ---------------- */
-  const fab = document.getElementById("fab");
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // Header background on scroll
+  const header = document.getElementById("siteHeader");
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 12);
   onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* ---------------- Reveal on scroll ---------------- */
+  // Mobile menu
+  const menuToggle = document.getElementById("menuToggle");
+  const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const openMenuFn = () => {
+    mobileMenu.classList.add("open");
+    document.body.classList.add("menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+  const closeMenuFn = () => {
+    mobileMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+  menuToggle.addEventListener("click", openMenuFn);
+  closeMenu.addEventListener("click", closeMenuFn);
+  mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenuFn));
+
+  // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry, i) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            setTimeout(() => entry.target.classList.add("is-visible"), i % 4 * 70);
             io.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------------- Footer year ---------------- */
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // Pricing tabs
+  const tabs = document.querySelectorAll(".price-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => { t.classList.remove("active"); t.setAttribute("aria-selected", "false"); });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      document.querySelectorAll(".price-panel").forEach((p) => p.classList.remove("active"));
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.querySelector(".faq-q").addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach((i) => i.classList.remove("open"));
+      if (!isOpen) item.classList.add("open");
+    });
+  });
 })();
