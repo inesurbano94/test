@@ -32,6 +32,10 @@ Work Sans · Newsreader / Public Sans.
   --display: "Fraunces", Georgia, serif;
   --body:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
+  /* pattern contract aliases - see PATTERN-LIBRARY.md */
+  --ground:  var(--paper);
+  --raised:  var(--cream);
+
   --container: 1180px;
   --radius:    14px;
   --radius-sm: 8px;

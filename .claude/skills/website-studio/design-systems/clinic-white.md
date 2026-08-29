@@ -32,6 +32,10 @@ Untitled Sans · Sora / Inter.
   --display: "General Sans", -apple-system, sans-serif;
   --body:    "Inter", -apple-system, sans-serif;
 
+  /* pattern contract aliases - see PATTERN-LIBRARY.md */
+  --ground:  var(--off);
+  --raised:  var(--white);
+
   --container: 1200px;
   --radius:    16px;
   --radius-sm: 10px;

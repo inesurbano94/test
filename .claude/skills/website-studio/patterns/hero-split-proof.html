@@ -1,0 +1,58 @@
+<!--
+PATTERN H01 — Split Hero with Proof Panel
+Layout: heading/lede/actions on one side, a stat/proof card on the other.
+Adapt: swap the 3 proof rows for whatever numbers this business actually
+has — certifications, years, response time, review count. Never invent one.
+Source: shipped on the Isaías rebuild.
+-->
+<section class="p-hero">
+  <div class="p-hero__main">
+    <div class="p-hero__kicker"><span class="p-hero__dot"></span> {{Kicker — what/where}}</div>
+    <h1 class="p-hero__title">{{Headline, second person, max ~14ch}}</h1>
+    <p class="p-hero__lede">{{One or two sentences on what happens and what the visitor gets.}}</p>
+    <div class="p-hero__actions">
+      <a href="#" class="p-btn p-btn--primary">{{Primary action}}</a>
+      <a href="#" class="p-btn p-btn--ghost">{{Secondary action}}</a>
+    </div>
+  </div>
+  <div class="p-hero__proof">
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{6}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{2/2m}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{06–21h}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.p-hero { padding: clamp(6rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 5rem); display: grid; gap: 2.5rem; align-items: end; }
+@media (min-width: 900px) { .p-hero { grid-template-columns: 1.3fr 1fr; } }
+.p-hero__kicker { display: flex; align-items: center; gap: .6rem; font-family: var(--body); font-size: .85rem; font-weight: 600; color: var(--accent); margin-bottom: 1.1rem; }
+.p-hero__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-lt); }
+.p-hero__title { font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 .6em; max-width: 15ch; }
+.p-hero__lede { font-family: var(--body); font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 42ch; margin: 0; }
+.p-hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
+.p-hero__proof { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+.p-hero__proof-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.p-hero__proof-row:last-child { border-bottom: none; padding-bottom: 0; }
+.p-hero__proof-num { font-family: var(--display); font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+.p-hero__proof-label { font-family: var(--body); font-size: .82rem; color: var(--ink-soft); text-align: right; max-width: 16ch; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.4rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .92rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.p-btn--ghost:hover { border-color: var(--ink); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>

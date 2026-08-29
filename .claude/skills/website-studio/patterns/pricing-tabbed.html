@@ -1,0 +1,74 @@
+<!--
+PATTERN P01 — Tabbed Plan Grid
+Layout: pill tabs switch between location/context groups, each showing a
+grid of plan cards. Use when a business has genuinely different pricing per
+context (venue vs. home visit vs. pair) — for one flat price list, use a
+plain grid instead, tabs would be decoration.
+Source: shipped on the Isaías rebuild.
+-->
+<div class="p-pricing">
+  <div class="p-pricing__tabs" role="tablist">
+    <button class="p-tab p-tab--active" data-target="p-panel-a" role="tab" aria-selected="true">{{Context A}}</button>
+    <button class="p-tab" data-target="p-panel-b" role="tab" aria-selected="false">{{Context B}}</button>
+  </div>
+
+  <div class="p-pricing__panels">
+    <div class="p-panel p-panel--active" id="p-panel-a">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What's included}}</li></ul>
+        </div>
+        <!-- repeat .p-card per plan -->
+      </div>
+    </div>
+    <div class="p-panel" id="p-panel-b">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What's included}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.p-pricing__tabs { display: flex; gap: .6rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+.p-tab { padding: .6rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--raised); font-family: var(--body); font-size: .88rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: all .25s ease; }
+.p-tab--active, .p-tab:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.p-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-panel { display: none; }
+.p-panel--active { display: block; animation: p-panel-in .35s var(--ease); }
+@keyframes p-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.p-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 700px) { .p-grid { grid-template-columns: repeat(2, 1fr); } }
+.p-card { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.p-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.07); }
+.p-card__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; gap: 1rem; }
+.p-card__head h3 { font-family: var(--display); font-size: 1.05rem; margin: 0; color: var(--ink); }
+.p-card__price { font-family: var(--display); font-weight: 600; font-size: 1.6rem; color: var(--accent); white-space: nowrap; }
+.p-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.p-card li { font-family: var(--body); font-size: .88rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tab, .p-card { transition: none; }
+  .p-panel--active { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  const tabs = document.querySelectorAll(".p-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => { t.classList.remove("p-tab--active"); t.setAttribute("aria-selected", "false"); });
+      tab.classList.add("p-tab--active");
+      tab.setAttribute("aria-selected", "true");
+      document.querySelectorAll(".p-panel").forEach((p) => p.classList.remove("p-panel--active"));
+      document.getElementById(tab.dataset.target).classList.add("p-panel--active");
+    });
+  });
+})();
+</script>

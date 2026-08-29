@@ -29,6 +29,10 @@ Display / Karla.
   --display: "Editorial New", Georgia, serif;
   --body:    "Söhne", -apple-system, sans-serif;
 
+  /* pattern contract aliases - see PATTERN-LIBRARY.md */
+  --ink:      var(--text);
+  --ink-soft: var(--text-soft);
+
   --container: 1140px;
   --radius:    4px;
   --radius-sm: 2px;

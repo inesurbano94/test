@@ -1,0 +1,32 @@
+<!--
+PATTERN C01 — Centered Final CTA
+Layout: centered eyebrow + heading + one line + a single primary action,
+on a tinted section. Deliberately one action, not two — this is the last
+thing before the footer, don't split attention.
+Source: shipped on the Isaías rebuild.
+-->
+<section class="p-cta">
+  <div class="p-cta__inner">
+    <div class="p-cta__eyebrow">{{Eyebrow}}</div>
+    <h2 class="p-cta__title">{{Headline}}</h2>
+    <p class="p-cta__body">{{One line on what happens next.}}</p>
+    <a href="#" class="p-btn p-btn--primary">{{Single action}}</a>
+  </div>
+</section>
+
+<style>
+.p-cta { padding: var(--section-y) 0; background: var(--ground-2, var(--ground)); text-align: center; }
+.p-cta__inner { max-width: 46ch; margin: 0 auto; }
+.p-cta__eyebrow { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.p-cta__title { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; color: var(--ink); margin: 0 0 .6em; }
+.p-cta__body { font-family: var(--body); color: var(--ink-soft); margin: 0 0 2rem; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.6rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .95rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>

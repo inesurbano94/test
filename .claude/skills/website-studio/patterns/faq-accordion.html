@@ -1,0 +1,47 @@
+<!--
+PATTERN F01 — Accordion FAQ (single-open)
+Layout: one question open at a time; opening a new one closes the last.
+Icon rotates 45° to become a close mark; height animates via max-height.
+Source: shipped on the Isaías rebuild.
+-->
+<div class="p-faq">
+  <div class="p-faq__item p-faq__item--open">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <div class="p-faq__item">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <!-- repeat .p-faq__item for each question. Open the one visitors ask most. -->
+</div>
+
+<style>
+.p-faq { max-width: 760px; }
+.p-faq__item { border-bottom: 1px solid var(--line); }
+.p-faq__q {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-family: var(--display); font-size: 1.05rem; font-weight: 500; color: var(--ink);
+}
+.p-faq__q:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.p-faq__icon { font-size: 1.3rem; color: var(--accent); transition: transform .3s var(--ease); flex-shrink: 0; }
+.p-faq__item--open .p-faq__icon { transform: rotate(45deg); }
+.p-faq__a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+.p-faq__item--open .p-faq__a { max-height: 260px; }
+.p-faq__a p { padding-bottom: 1.4rem; margin: 0; font-family: var(--body); font-size: .94rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-faq__icon, .p-faq__a { transition: none; }
+}
+</style>
+
+<script>
+document.querySelectorAll(".p-faq__item").forEach((item) => {
+  item.querySelector(".p-faq__q").addEventListener("click", () => {
+    const isOpen = item.classList.contains("p-faq__item--open");
+    item.closest(".p-faq").querySelectorAll(".p-faq__item").forEach((i) => i.classList.remove("p-faq__item--open"));
+    if (!isOpen) item.classList.add("p-faq__item--open");
+  });
+});
+</script>

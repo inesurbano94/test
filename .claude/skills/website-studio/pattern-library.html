@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #14120f; --bg-2: #1c1a16; --card: #1f1d19;
+  --line: rgba(237,233,226,0.10); --line-strong: rgba(237,233,226,0.18);
+  --text: #ede9e2; --text-soft: #a39d90; --text-mute: #6f6a60;
+  --brass: #c98a3e; --brass-soft: rgba(201,138,62,0.15);
+  --display: "Archivo", -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --body: "IBM Plex Sans", -apple-system, sans-serif;
+  --radius: 6px; --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+::selection { background: var(--brass-soft); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.25rem, 3vw, 2.5rem); }
+
+header.site { position: sticky; top: 0; z-index: 20; background: rgba(20,18,15,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: baseline; gap: 0.6rem; }
+.brand h1 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin: 0; letter-spacing: -0.01em; }
+.brand span { font-family: var(--mono); font-size: 0.68rem; color: var(--text-mute); }
+nav.jump { display: flex; gap: 1.1rem; flex-wrap: wrap; overflow-x: auto; }
+nav.jump a { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-soft); text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: color 0.2s ease, border-color 0.2s ease; }
+nav.jump a:hover { color: var(--brass); border-color: var(--brass); }
+
+.intro { padding: clamp(2rem, 5vw, 3.2rem) 0 clamp(1.5rem, 4vw, 2rem); }
+.intro p { max-width: 66ch; color: var(--text-soft); font-size: 0.96rem; margin: 0; }
+.intro p strong { color: var(--text); font-weight: 500; }
+.intro code { font-family: var(--mono); color: var(--text); }
+
+section.lib { padding: 1.6rem 0 clamp(2.5rem, 6vw, 4rem); scroll-margin-top: 4.5rem; }
+.section-head { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--line); }
+.section-head .num { font-family: var(--mono); font-size: 0.75rem; color: var(--brass); }
+.section-head h2 { font-family: var(--display); font-weight: 700; font-size: 1.25rem; margin: 0; letter-spacing: -0.01em; }
+.section-head .count { font-family: var(--mono); font-size: 0.72rem; color: var(--text-mute); margin-left: auto; }
+
+.pat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.1rem; }
+.pat-empty { font-family: var(--mono); font-size: 0.78rem; color: var(--text-mute); grid-column: 1 / -1; padding: 0.5rem 0; }
+
+.pat-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: border-color 0.25s ease; }
+.pat-card:hover { border-color: var(--line-strong); }
+.pat-card__preview { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.pat-card__preview iframe { display: block; width: 100%; height: 230px; border: 0; background: #fff; }
+.pat-card--tall .pat-card__preview iframe { height: 460px; }
+.pat-card__skinlabels { display: grid; grid-template-columns: 1fr 1fr; font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-mute); padding: 0.4rem 0; border-bottom: 1px dashed var(--line); }
+.pat-card__skinlabels span { text-align: center; }
+.pat-card__body { padding: 1.05rem 1.15rem 1.2rem; }
+.pat-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.5rem; }
+.pat-card__name { font-family: var(--display); font-weight: 700; font-size: 0.95rem; margin: 0; letter-spacing: -0.005em; }
+.pat-card__id { font-family: var(--mono); font-weight: 400; font-size: 0.68rem; color: var(--brass); margin-right: 0.5rem; }
+.badge { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.18rem 0.48rem; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--text-soft); white-space: nowrap; flex-shrink: 0; }
+.badge--used { color: #bfe6d2; border-color: rgba(191,230,210,0.3); background: rgba(191,230,210,0.06); }
+.pat-card__desc { font-size: 0.83rem; color: var(--text-soft); margin: 0 0 0.75rem; }
+.pat-card__meta { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; font-family: var(--mono); font-size: 0.66rem; color: var(--text-mute); padding-top: 0.65rem; border-top: 1px dashed var(--line); }
+.pat-card__meta code { color: var(--text-soft); }
+
+footer.site { border-top: 1px solid var(--line); padding: 2rem 0 3rem; }
+footer.site p { font-family: var(--mono); font-size: 0.72rem; color: var(--text-mute); max-width: 66ch; margin: 0; }
+footer.site code { color: var(--text-soft); }
+
+@media (max-width: 620px) {
+  .pat-card__preview { grid-template-columns: 1fr; }
+  .pat-card__skinlabels { grid-template-columns: 1fr; }
+  .pat-card__preview iframe { height: 210px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand"><h1>Pattern Library</h1><span>website-studio · layout, not style</span></div>
+    <nav class="jump">
+      <a href="#heroes">Heroes</a>
+      <a href="#testimonials">Testimonials / Comments</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#ctas">CTAs</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#galleries">Galleries</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap intro">
+  <p>Reusable <strong>section layouts</strong> — hierarchy and interaction, never colour or type.
+  Every card below renders the exact same markup and code twice, skinned with two different
+  saved design systems, to prove it. Source of truth: <code>PATTERN-LIBRARY.md</code>.
+  Code for each pattern lives in <code>patterns/</code>.</p>
+</div>
+
+
+<section class="lib" id="heroes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>Heroes</h2>
+      <span class="count">1 saved</span>
+    </div>
+    <div class="pat-grid">
+      <div class="pat-card pat-card--tall">
+        <div class="pat-card__preview">
+          <iframe title="Split Hero with Proof Panel — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<section class="p-hero">
+  <div class="p-hero__main">
+    <div class="p-hero__kicker"><span class="p-hero__dot"></span> {{Kicker — what/where}}</div>
+    <h1 class="p-hero__title">{{Headline, second person, max ~14ch}}</h1>
+    <p class="p-hero__lede">{{One or two sentences on what happens and what the visitor gets.}}</p>
+    <div class="p-hero__actions">
+      <a href="#" class="p-btn p-btn--primary">{{Primary action}}</a>
+      <a href="#" class="p-btn p-btn--ghost">{{Secondary action}}</a>
+    </div>
+  </div>
+  <div class="p-hero__proof">
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{6}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{2/2m}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{06–21h}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.p-hero { padding: clamp(6rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 5rem); display: grid; gap: 2.5rem; align-items: end; }
+@media (min-width: 900px) { .p-hero { grid-template-columns: 1.3fr 1fr; } }
+.p-hero__kicker { display: flex; align-items: center; gap: .6rem; font-family: var(--body); font-size: .85rem; font-weight: 600; color: var(--accent); margin-bottom: 1.1rem; }
+.p-hero__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-lt); }
+.p-hero__title { font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 .6em; max-width: 15ch; }
+.p-hero__lede { font-family: var(--body); font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 42ch; margin: 0; }
+.p-hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
+.p-hero__proof { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+.p-hero__proof-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.p-hero__proof-row:last-child { border-bottom: none; padding-bottom: 0; }
+.p-hero__proof-num { font-family: var(--display); font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+.p-hero__proof-label { font-family: var(--body); font-size: .82rem; color: var(--ink-soft); text-align: right; max-width: 16ch; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.4rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .92rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.p-btn--ghost:hover { border-color: var(--ink); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>
+'></iframe>
+          <iframe title="Split Hero with Proof Panel — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<section class="p-hero">
+  <div class="p-hero__main">
+    <div class="p-hero__kicker"><span class="p-hero__dot"></span> {{Kicker — what/where}}</div>
+    <h1 class="p-hero__title">{{Headline, second person, max ~14ch}}</h1>
+    <p class="p-hero__lede">{{One or two sentences on what happens and what the visitor gets.}}</p>
+    <div class="p-hero__actions">
+      <a href="#" class="p-btn p-btn--primary">{{Primary action}}</a>
+      <a href="#" class="p-btn p-btn--ghost">{{Secondary action}}</a>
+    </div>
+  </div>
+  <div class="p-hero__proof">
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{6}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{2/2m}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+    <div class="p-hero__proof-row">
+      <span class="p-hero__proof-num">{{06–21h}}</span>
+      <span class="p-hero__proof-label">{{what this number means}}</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.p-hero { padding: clamp(6rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 5rem); display: grid; gap: 2.5rem; align-items: end; }
+@media (min-width: 900px) { .p-hero { grid-template-columns: 1.3fr 1fr; } }
+.p-hero__kicker { display: flex; align-items: center; gap: .6rem; font-family: var(--body); font-size: .85rem; font-weight: 600; color: var(--accent); margin-bottom: 1.1rem; }
+.p-hero__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-lt); }
+.p-hero__title { font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 .6em; max-width: 15ch; }
+.p-hero__lede { font-family: var(--body); font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 42ch; margin: 0; }
+.p-hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
+.p-hero__proof { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+.p-hero__proof-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.p-hero__proof-row:last-child { border-bottom: none; padding-bottom: 0; }
+.p-hero__proof-num { font-family: var(--display); font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+.p-hero__proof-label { font-family: var(--body); font-size: .82rem; color: var(--ink-soft); text-align: right; max-width: 16ch; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.4rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .92rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.p-btn--ghost:hover { border-color: var(--ink); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">H01</span>Split Hero with Proof Panel</p>
+            <span class="badge badge--used">Used</span>
+          </div>
+          <p class="pat-card__desc">Heading/lede/actions on one side, a stat/proof card on the other. The proof panel puts credibility beside the pitch.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/hero-split-proof.html</code></span>
+            <span>Shipped — Isaías rebuild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>Testimonials / Comments</h2>
+      <span class="count">2 saved</span>
+    </div>
+    <div class="pat-grid">
+      <div class="pat-card">
+        <div class="pat-card__preview">
+          <iframe title="Infinite Marquee — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-tmarquee">
+  <div class="p-tmarquee__mask">
+    <div class="p-tmarquee__track">
+      <!-- render the full quote list twice back to back, so -50% loops seamlessly -->
+      <div class="p-tmarquee__card">
+        <p class="p-tmarquee__quote">"{{Quote}}"</p>
+        <div class="p-tmarquee__by">
+          <span class="p-tmarquee__avatar">{{Initial}}</span>
+          <div><strong>{{Name}}</strong><span>{{Context — e.g. client since 2024}}</span></div>
+        </div>
+      </div>
+      <!-- repeat .p-tmarquee__card, then repeat the whole set once more -->
+    </div>
+  </div>
+</div>
+
+<style>
+.p-tmarquee__mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.p-tmarquee__track { display: flex; gap: 1.25rem; width: max-content; animation: p-tmarquee 32s linear infinite; }
+.p-tmarquee__mask:hover .p-tmarquee__track { animation-play-state: paused; }
+@keyframes p-tmarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.p-tmarquee__card {
+  width: min(340px, 80vw); flex-shrink: 0; background: var(--raised); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.5rem;
+}
+.p-tmarquee__quote { font-family: var(--body); font-size: .95rem; line-height: 1.6; color: var(--ink); margin: 0 0 1.2rem; }
+.p-tmarquee__by { display: flex; align-items: center; gap: .7rem; }
+.p-tmarquee__avatar {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--accent-lt); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600; font-size: .85rem; flex-shrink: 0;
+}
+.p-tmarquee__by strong { display: block; font-family: var(--display); font-size: .88rem; color: var(--ink); }
+.p-tmarquee__by span { font-family: var(--body); font-size: .78rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tmarquee__track { animation: none; overflow-x: auto; }
+}
+</style>
+'></iframe>
+          <iframe title="Infinite Marquee — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-tmarquee">
+  <div class="p-tmarquee__mask">
+    <div class="p-tmarquee__track">
+      <!-- render the full quote list twice back to back, so -50% loops seamlessly -->
+      <div class="p-tmarquee__card">
+        <p class="p-tmarquee__quote">"{{Quote}}"</p>
+        <div class="p-tmarquee__by">
+          <span class="p-tmarquee__avatar">{{Initial}}</span>
+          <div><strong>{{Name}}</strong><span>{{Context — e.g. client since 2024}}</span></div>
+        </div>
+      </div>
+      <!-- repeat .p-tmarquee__card, then repeat the whole set once more -->
+    </div>
+  </div>
+</div>
+
+<style>
+.p-tmarquee__mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.p-tmarquee__track { display: flex; gap: 1.25rem; width: max-content; animation: p-tmarquee 32s linear infinite; }
+.p-tmarquee__mask:hover .p-tmarquee__track { animation-play-state: paused; }
+@keyframes p-tmarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.p-tmarquee__card {
+  width: min(340px, 80vw); flex-shrink: 0; background: var(--raised); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.5rem;
+}
+.p-tmarquee__quote { font-family: var(--body); font-size: .95rem; line-height: 1.6; color: var(--ink); margin: 0 0 1.2rem; }
+.p-tmarquee__by { display: flex; align-items: center; gap: .7rem; }
+.p-tmarquee__avatar {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--accent-lt); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600; font-size: .85rem; flex-shrink: 0;
+}
+.p-tmarquee__by strong { display: block; font-family: var(--display); font-size: .88rem; color: var(--ink); }
+.p-tmarquee__by span { font-family: var(--body); font-size: .78rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tmarquee__track { animation: none; overflow-x: auto; }
+}
+</style>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">T01</span>Infinite Marquee</p>
+            <span class="badge">Seed</span>
+          </div>
+          <p class="pat-card__desc">Quote cards drift continuously, no pagination, pause on hover. Ambient — good for 4+ short quotes.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/testimonials-marquee.html</code></span>
+            <span>SaaSFrame + snippets/motion.md §4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pat-card">
+        <div class="pat-card__preview">
+          <iframe title="Single Rotating Quote — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-tquote" data-index="0">
+  <div class="p-tquote__slide p-tquote__slide--active" data-slide="0">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <div class="p-tquote__slide" data-slide="1">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <!-- repeat .p-tquote__slide with an incrementing data-slide -->
+
+  <div class="p-tquote__controls">
+    <button class="p-tquote__arrow" data-dir="-1" aria-label="Previous">←</button>
+    <div class="p-tquote__dots"></div>
+    <button class="p-tquote__arrow" data-dir="1" aria-label="Next">→</button>
+  </div>
+</div>
+
+<style>
+.p-tquote { max-width: 640px; margin: 0 auto; text-align: center; position: relative; min-height: 220px; }
+.p-tquote__slide { display: none; animation: p-tquote-in .4s var(--ease); }
+.p-tquote__slide--active { display: block; }
+@keyframes p-tquote-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.p-tquote__text { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.4; color: var(--ink); margin: 0 0 1.4rem; }
+.p-tquote__by { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.p-tquote__avatar {
+  width: 42px; height: 42px; border-radius: 50%; background: var(--accent-lt); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600;
+}
+.p-tquote__by strong { display: block; font-family: var(--display); font-size: .9rem; color: var(--ink); }
+.p-tquote__by span { font-family: var(--body); font-size: .78rem; color: var(--ink-soft); }
+
+.p-tquote__controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1.8rem; }
+.p-tquote__arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--raised); color: var(--ink); cursor: pointer; transition: border-color .2s ease; }
+.p-tquote__arrow:hover { border-color: var(--accent); }
+.p-tquote__arrow:focus-visible, .p-tquote__dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-tquote__dots { display: flex; gap: .45rem; }
+.p-tquote__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); border: none; cursor: pointer; padding: 0; transition: background .2s ease, transform .2s ease; }
+.p-tquote__dot--active { background: var(--accent); transform: scale(1.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tquote__slide { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  document.querySelectorAll(".p-tquote").forEach((root) => {
+    const slides = [...root.querySelectorAll(".p-tquote__slide")];
+    const dotsWrap = root.querySelector(".p-tquote__dots");
+    let i = 0;
+
+    slides.forEach((_, n) => {
+      const dot = document.createElement("button");
+      dot.className = "p-tquote__dot" + (n === 0 ? " p-tquote__dot--active" : "");
+      dot.setAttribute("aria-label", `Go to quote ${n + 1}`);
+      dot.addEventListener("click", () => go(n));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = [...dotsWrap.querySelectorAll(".p-tquote__dot")];
+
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("p-tquote__slide--active", idx === i));
+      dots.forEach((d, idx) => d.classList.toggle("p-tquote__dot--active", idx === i));
+    }
+
+    root.querySelectorAll(".p-tquote__arrow").forEach((btn) => {
+      btn.addEventListener("click", () => go(i + Number(btn.dataset.dir)));
+    });
+  });
+})();
+</script>
+'></iframe>
+          <iframe title="Single Rotating Quote — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-tquote" data-index="0">
+  <div class="p-tquote__slide p-tquote__slide--active" data-slide="0">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <div class="p-tquote__slide" data-slide="1">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <!-- repeat .p-tquote__slide with an incrementing data-slide -->
+
+  <div class="p-tquote__controls">
+    <button class="p-tquote__arrow" data-dir="-1" aria-label="Previous">←</button>
+    <div class="p-tquote__dots"></div>
+    <button class="p-tquote__arrow" data-dir="1" aria-label="Next">→</button>
+  </div>
+</div>
+
+<style>
+.p-tquote { max-width: 640px; margin: 0 auto; text-align: center; position: relative; min-height: 220px; }
+.p-tquote__slide { display: none; animation: p-tquote-in .4s var(--ease); }
+.p-tquote__slide--active { display: block; }
+@keyframes p-tquote-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.p-tquote__text { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.4; color: var(--ink); margin: 0 0 1.4rem; }
+.p-tquote__by { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.p-tquote__avatar {
+  width: 42px; height: 42px; border-radius: 50%; background: var(--accent-lt); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600;
+}
+.p-tquote__by strong { display: block; font-family: var(--display); font-size: .9rem; color: var(--ink); }
+.p-tquote__by span { font-family: var(--body); font-size: .78rem; color: var(--ink-soft); }
+
+.p-tquote__controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1.8rem; }
+.p-tquote__arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--raised); color: var(--ink); cursor: pointer; transition: border-color .2s ease; }
+.p-tquote__arrow:hover { border-color: var(--accent); }
+.p-tquote__arrow:focus-visible, .p-tquote__dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-tquote__dots { display: flex; gap: .45rem; }
+.p-tquote__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); border: none; cursor: pointer; padding: 0; transition: background .2s ease, transform .2s ease; }
+.p-tquote__dot--active { background: var(--accent); transform: scale(1.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tquote__slide { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  document.querySelectorAll(".p-tquote").forEach((root) => {
+    const slides = [...root.querySelectorAll(".p-tquote__slide")];
+    const dotsWrap = root.querySelector(".p-tquote__dots");
+    let i = 0;
+
+    slides.forEach((_, n) => {
+      const dot = document.createElement("button");
+      dot.className = "p-tquote__dot" + (n === 0 ? " p-tquote__dot--active" : "");
+      dot.setAttribute("aria-label", `Go to quote ${n + 1}`);
+      dot.addEventListener("click", () => go(n));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = [...dotsWrap.querySelectorAll(".p-tquote__dot")];
+
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("p-tquote__slide--active", idx === i));
+      dots.forEach((d, idx) => d.classList.toggle("p-tquote__dot--active", idx === i));
+    }
+
+    root.querySelectorAll(".p-tquote__arrow").forEach((btn) => {
+      btn.addEventListener("click", () => go(i + Number(btn.dataset.dir)));
+    });
+  });
+})();
+</script>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">T02</span>Single Rotating Quote</p>
+            <span class="badge">Seed</span>
+          </div>
+          <p class="pat-card__desc">One quote at a time, prev/next arrows, dot pagination. Good for a handful of longer, stronger quotes.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/testimonials-rotating-quote.html</code></span>
+            <span>One Page Love — CROJungle, simplified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>Services</h2>
+      <span class="count">0 saved</span>
+    </div>
+    <div class="pat-grid"><p class="pat-empty">No patterns saved yet — build one for a project, then <code>save as a pattern</code>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>Pricing</h2>
+      <span class="count">1 saved</span>
+    </div>
+    <div class="pat-grid">
+      <div class="pat-card pat-card--tall">
+        <div class="pat-card__preview">
+          <iframe title="Tabbed Plan Grid — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-pricing">
+  <div class="p-pricing__tabs" role="tablist">
+    <button class="p-tab p-tab--active" data-target="p-panel-a" role="tab" aria-selected="true">{{Context A}}</button>
+    <button class="p-tab" data-target="p-panel-b" role="tab" aria-selected="false">{{Context B}}</button>
+  </div>
+
+  <div class="p-pricing__panels">
+    <div class="p-panel p-panel--active" id="p-panel-a">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What&#39;s included}}</li></ul>
+        </div>
+        <!-- repeat .p-card per plan -->
+      </div>
+    </div>
+    <div class="p-panel" id="p-panel-b">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What&#39;s included}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.p-pricing__tabs { display: flex; gap: .6rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+.p-tab { padding: .6rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--raised); font-family: var(--body); font-size: .88rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: all .25s ease; }
+.p-tab--active, .p-tab:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.p-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-panel { display: none; }
+.p-panel--active { display: block; animation: p-panel-in .35s var(--ease); }
+@keyframes p-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.p-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 700px) { .p-grid { grid-template-columns: repeat(2, 1fr); } }
+.p-card { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.p-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.07); }
+.p-card__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; gap: 1rem; }
+.p-card__head h3 { font-family: var(--display); font-size: 1.05rem; margin: 0; color: var(--ink); }
+.p-card__price { font-family: var(--display); font-weight: 600; font-size: 1.6rem; color: var(--accent); white-space: nowrap; }
+.p-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.p-card li { font-family: var(--body); font-size: .88rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tab, .p-card { transition: none; }
+  .p-panel--active { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  const tabs = document.querySelectorAll(".p-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => { t.classList.remove("p-tab--active"); t.setAttribute("aria-selected", "false"); });
+      tab.classList.add("p-tab--active");
+      tab.setAttribute("aria-selected", "true");
+      document.querySelectorAll(".p-panel").forEach((p) => p.classList.remove("p-panel--active"));
+      document.getElementById(tab.dataset.target).classList.add("p-panel--active");
+    });
+  });
+})();
+</script>
+'></iframe>
+          <iframe title="Tabbed Plan Grid — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-pricing">
+  <div class="p-pricing__tabs" role="tablist">
+    <button class="p-tab p-tab--active" data-target="p-panel-a" role="tab" aria-selected="true">{{Context A}}</button>
+    <button class="p-tab" data-target="p-panel-b" role="tab" aria-selected="false">{{Context B}}</button>
+  </div>
+
+  <div class="p-pricing__panels">
+    <div class="p-panel p-panel--active" id="p-panel-a">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What&#39;s included}}</li></ul>
+        </div>
+        <!-- repeat .p-card per plan -->
+      </div>
+    </div>
+    <div class="p-panel" id="p-panel-b">
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-card__head"><h3>{{Plan name}}</h3><span class="p-card__price">{{€XX}}</span></div>
+          <ul><li>{{What&#39;s included}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.p-pricing__tabs { display: flex; gap: .6rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+.p-tab { padding: .6rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--raised); font-family: var(--body); font-size: .88rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: all .25s ease; }
+.p-tab--active, .p-tab:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.p-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-panel { display: none; }
+.p-panel--active { display: block; animation: p-panel-in .35s var(--ease); }
+@keyframes p-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.p-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 700px) { .p-grid { grid-template-columns: repeat(2, 1fr); } }
+.p-card { background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.p-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.07); }
+.p-card__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; gap: 1rem; }
+.p-card__head h3 { font-family: var(--display); font-size: 1.05rem; margin: 0; color: var(--ink); }
+.p-card__price { font-family: var(--display); font-weight: 600; font-size: 1.6rem; color: var(--accent); white-space: nowrap; }
+.p-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.p-card li { font-family: var(--body); font-size: .88rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tab, .p-card { transition: none; }
+  .p-panel--active { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  const tabs = document.querySelectorAll(".p-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => { t.classList.remove("p-tab--active"); t.setAttribute("aria-selected", "false"); });
+      tab.classList.add("p-tab--active");
+      tab.setAttribute("aria-selected", "true");
+      document.querySelectorAll(".p-panel").forEach((p) => p.classList.remove("p-panel--active"));
+      document.getElementById(tab.dataset.target).classList.add("p-panel--active");
+    });
+  });
+})();
+</script>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">P01</span>Tabbed Plan Grid</p>
+            <span class="badge badge--used">Used</span>
+          </div>
+          <p class="pat-card__desc">Pill tabs switch between context groups, each showing a plan card grid. For genuinely different pricing per context.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/pricing-tabbed.html</code></span>
+            <span>Shipped — Isaías rebuild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">05</span>
+      <h2>About</h2>
+      <span class="count">0 saved</span>
+    </div>
+    <div class="pat-grid"><p class="pat-empty">No patterns saved yet — build one for a project, then <code>save as a pattern</code>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="ctas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h2>CTAs</h2>
+      <span class="count">1 saved</span>
+    </div>
+    <div class="pat-grid">
+      <div class="pat-card">
+        <div class="pat-card__preview">
+          <iframe title="Centered Final CTA — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<section class="p-cta">
+  <div class="p-cta__inner">
+    <div class="p-cta__eyebrow">{{Eyebrow}}</div>
+    <h2 class="p-cta__title">{{Headline}}</h2>
+    <p class="p-cta__body">{{One line on what happens next.}}</p>
+    <a href="#" class="p-btn p-btn--primary">{{Single action}}</a>
+  </div>
+</section>
+
+<style>
+.p-cta { padding: var(--section-y) 0; background: var(--ground-2, var(--ground)); text-align: center; }
+.p-cta__inner { max-width: 46ch; margin: 0 auto; }
+.p-cta__eyebrow { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.p-cta__title { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; color: var(--ink); margin: 0 0 .6em; }
+.p-cta__body { font-family: var(--body); color: var(--ink-soft); margin: 0 0 2rem; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.6rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .95rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>
+'></iframe>
+          <iframe title="Centered Final CTA — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<section class="p-cta">
+  <div class="p-cta__inner">
+    <div class="p-cta__eyebrow">{{Eyebrow}}</div>
+    <h2 class="p-cta__title">{{Headline}}</h2>
+    <p class="p-cta__body">{{One line on what happens next.}}</p>
+    <a href="#" class="p-btn p-btn--primary">{{Single action}}</a>
+  </div>
+</section>
+
+<style>
+.p-cta { padding: var(--section-y) 0; background: var(--ground-2, var(--ground)); text-align: center; }
+.p-cta__inner { max-width: 46ch; margin: 0 auto; }
+.p-cta__eyebrow { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.p-cta__title { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; color: var(--ink); margin: 0 0 .6em; }
+.p-cta__body { font-family: var(--body); color: var(--ink-soft); margin: 0 0 2rem; }
+
+.p-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.6rem; border-radius: var(--radius-sm); font-family: var(--body); font-weight: 600; font-size: .95rem; border: 1px solid transparent; transition: transform .25s var(--ease); }
+.p-btn--primary { background: var(--accent); color: #fff; }
+.p-btn--primary:hover { transform: translateY(-1px); }
+.p-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn { transition: none; }
+}
+</style>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">C01</span>Centered Final CTA</p>
+            <span class="badge badge--used">Used</span>
+          </div>
+          <p class="pat-card__desc">Centered eyebrow, heading, one line, one action, on a tinted section. The last thing before the footer.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/cta-centered.html</code></span>
+            <span>Shipped — Isaías rebuild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="faqs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">07</span>
+      <h2>FAQs</h2>
+      <span class="count">1 saved</span>
+    </div>
+    <div class="pat-grid">
+      <div class="pat-card">
+        <div class="pat-card__preview">
+          <iframe title="Accordion (single-open) — Espresso &amp; Gold" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1c1712; --ink-soft:#5c5347; --ground:#fbf8f2; --raised:#f6f1e6;
+  --line:rgba(28,23,18,.12); --accent:#b6874a; --accent-lt:#e6d3ae; --accent-ink:#3b2a14;
+  --display:"Fraunces",Georgia,serif; --body:"Inter",sans-serif;
+  --radius:14px; --radius-sm:8px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-faq">
+  <div class="p-faq__item p-faq__item--open">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <div class="p-faq__item">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <!-- repeat .p-faq__item for each question. Open the one visitors ask most. -->
+</div>
+
+<style>
+.p-faq { max-width: 760px; }
+.p-faq__item { border-bottom: 1px solid var(--line); }
+.p-faq__q {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-family: var(--display); font-size: 1.05rem; font-weight: 500; color: var(--ink);
+}
+.p-faq__q:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.p-faq__icon { font-size: 1.3rem; color: var(--accent); transition: transform .3s var(--ease); flex-shrink: 0; }
+.p-faq__item--open .p-faq__icon { transform: rotate(45deg); }
+.p-faq__a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+.p-faq__item--open .p-faq__a { max-height: 260px; }
+.p-faq__a p { padding-bottom: 1.4rem; margin: 0; font-family: var(--body); font-size: .94rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-faq__icon, .p-faq__a { transition: none; }
+}
+</style>
+
+<script>
+document.querySelectorAll(".p-faq__item").forEach((item) => {
+  item.querySelector(".p-faq__q").addEventListener("click", () => {
+    const isOpen = item.classList.contains("p-faq__item--open");
+    item.closest(".p-faq").querySelectorAll(".p-faq__item").forEach((i) => i.classList.remove("p-faq__item--open"));
+    if (!isOpen) item.classList.add("p-faq__item--open");
+  });
+});
+</script>
+'></iframe>
+          <iframe title="Accordion (single-open) — Clinic White" srcdoc='<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#191a17; --ink-soft:#5e6058; --ground:#fbfaf8; --raised:#ffffff;
+  --line:rgba(25,26,23,.10); --accent:#17624a; --accent-lt:#d9ece3; --accent-ink:#0b2f23;
+  --display:"Familjen Grotesk",sans-serif; --body:"Instrument Sans",sans-serif;
+  --radius:12px; --radius-sm:7px; --ease:cubic-bezier(.22,1,.36,1); --section-y:3rem;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);padding:1.1rem;}
+</style>
+<div class="p-faq">
+  <div class="p-faq__item p-faq__item--open">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <div class="p-faq__item">
+    <button class="p-faq__q"><span>{{Question}}</span><span class="p-faq__icon">+</span></button>
+    <div class="p-faq__a"><p>{{Answer.}}</p></div>
+  </div>
+  <!-- repeat .p-faq__item for each question. Open the one visitors ask most. -->
+</div>
+
+<style>
+.p-faq { max-width: 760px; }
+.p-faq__item { border-bottom: 1px solid var(--line); }
+.p-faq__q {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-family: var(--display); font-size: 1.05rem; font-weight: 500; color: var(--ink);
+}
+.p-faq__q:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.p-faq__icon { font-size: 1.3rem; color: var(--accent); transition: transform .3s var(--ease); flex-shrink: 0; }
+.p-faq__item--open .p-faq__icon { transform: rotate(45deg); }
+.p-faq__a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+.p-faq__item--open .p-faq__a { max-height: 260px; }
+.p-faq__a p { padding-bottom: 1.4rem; margin: 0; font-family: var(--body); font-size: .94rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-faq__icon, .p-faq__a { transition: none; }
+}
+</style>
+
+<script>
+document.querySelectorAll(".p-faq__item").forEach((item) => {
+  item.querySelector(".p-faq__q").addEventListener("click", () => {
+    const isOpen = item.classList.contains("p-faq__item--open");
+    item.closest(".p-faq").querySelectorAll(".p-faq__item").forEach((i) => i.classList.remove("p-faq__item--open"));
+    if (!isOpen) item.classList.add("p-faq__item--open");
+  });
+});
+</script>
+'></iframe>
+        </div>
+        <div class="pat-card__skinlabels"><span>Espresso &amp; Gold</span><span>Clinic White — tuned</span></div>
+        <div class="pat-card__body">
+          <div class="pat-card__top">
+            <p class="pat-card__name"><span class="pat-card__id">F01</span>Accordion (single-open)</p>
+            <span class="badge badge--used">Used</span>
+          </div>
+          <p class="pat-card__desc">One question open at a time; opening a new one closes the last. Icon rotates to become a close mark.</p>
+          <div class="pat-card__meta">
+            <span><code>patterns/faq-accordion.html</code></span>
+            <span>Shipped — Isaías rebuild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lib" id="galleries">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">08</span>
+      <h2>Galleries</h2>
+      <span class="count">0 saved</span>
+    </div>
+    <div class="pat-grid"><p class="pat-empty">No patterns saved yet — build one for a project, then <code>save as a pattern</code>.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Nothing here is invented — each pattern traces to shipped work or a named inspiration
+    source, restyled rather than copied. Empty categories are real gaps, not oversights —
+    they fill in as projects need them.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!--
+PATTERN T02 — Single Rotating Quote
+Layout: one quote visible at a time, prev/next controls plus dot pagination.
+Interactive, one focal point — better than the marquee when there are only
+a few, strong quotes each worth reading in full rather than skimmed in
+motion.
+Photos: same rule as T01 — never fabricate a real customer's face.
+Source: adapted from One Page Love's CROJungle feature
+(onepagelove.com/crojungle), simplified — dropped the cursor-follow image
+panel, kept the one-at-a-time rotation. Restyled to tokens, not copied.
+-->
+<div class="p-tquote" data-index="0">
+  <div class="p-tquote__slide p-tquote__slide--active" data-slide="0">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <div class="p-tquote__slide" data-slide="1">
+    <p class="p-tquote__text">"{{Quote}}"</p>
+    <div class="p-tquote__by">
+      <span class="p-tquote__avatar">{{Initial}}</span>
+      <div><strong>{{Name}}</strong><span>{{Context}}</span></div>
+    </div>
+  </div>
+  <!-- repeat .p-tquote__slide with an incrementing data-slide -->
+
+  <div class="p-tquote__controls">
+    <button class="p-tquote__arrow" data-dir="-1" aria-label="Previous">←</button>
+    <div class="p-tquote__dots"></div>
+    <button class="p-tquote__arrow" data-dir="1" aria-label="Next">→</button>
+  </div>
+</div>
+
+<style>
+.p-tquote { max-width: 640px; margin: 0 auto; text-align: center; position: relative; min-height: 220px; }
+.p-tquote__slide { display: none; animation: p-tquote-in .4s var(--ease); }
+.p-tquote__slide--active { display: block; }
+@keyframes p-tquote-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.p-tquote__text { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.4; color: var(--ink); margin: 0 0 1.4rem; }
+.p-tquote__by { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.p-tquote__avatar {
+  width: 42px; height: 42px; border-radius: 50%; background: var(--accent-lt); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600;
+}
+.p-tquote__by strong { display: block; font-family: var(--display); font-size: .9rem; color: var(--ink); }
+.p-tquote__by span { font-family: var(--body); font-size: .78rem; color: var(--ink-soft); }
+
+.p-tquote__controls { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1.8rem; }
+.p-tquote__arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--raised); color: var(--ink); cursor: pointer; transition: border-color .2s ease; }
+.p-tquote__arrow:hover { border-color: var(--accent); }
+.p-tquote__arrow:focus-visible, .p-tquote__dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.p-tquote__dots { display: flex; gap: .45rem; }
+.p-tquote__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); border: none; cursor: pointer; padding: 0; transition: background .2s ease, transform .2s ease; }
+.p-tquote__dot--active { background: var(--accent); transform: scale(1.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .p-tquote__slide { animation: none; }
+}
+</style>
+
+<script>
+(() => {
+  document.querySelectorAll(".p-tquote").forEach((root) => {
+    const slides = [...root.querySelectorAll(".p-tquote__slide")];
+    const dotsWrap = root.querySelector(".p-tquote__dots");
+    let i = 0;
+
+    slides.forEach((_, n) => {
+      const dot = document.createElement("button");
+      dot.className = "p-tquote__dot" + (n === 0 ? " p-tquote__dot--active" : "");
+      dot.setAttribute("aria-label", `Go to quote ${n + 1}`);
+      dot.addEventListener("click", () => go(n));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = [...dotsWrap.querySelectorAll(".p-tquote__dot")];
+
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("p-tquote__slide--active", idx === i));
+      dots.forEach((d, idx) => d.classList.toggle("p-tquote__dot--active", idx === i));
+    }
+
+    root.querySelectorAll(".p-tquote__arrow").forEach((btn) => {
+      btn.addEventListener("click", () => go(i + Number(btn.dataset.dir)));
+    });
+  });
+})();
+</script>
