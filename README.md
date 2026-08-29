@@ -52,6 +52,14 @@ credibilidade vem da secção `#medicao` (bioimpedância), das certificações e
    (sem Instagram, sem ficha do Google Maps). O site é, por agora, toda a
    presença online dele — se e quando existirem, adicionar os links em
    `#localizacao` e no rodapé.
+6. **Secção "afirmação" (entre `#metodo` e `#medicao`)** — não existe vídeo
+   ainda. Usa a foto real do hero como frame provisório (marcado em
+   comentário HTML no `index.html`). Substituir o `<img>` por
+   `<video>`/`<source>` quando houver filmagem — o layout (moldura, margens,
+   cantos arredondados, texto sobreposto) não muda, só o `<video>` entra no
+   lugar do `<img>`. Padrão vem de
+   `.claude/skills/website-studio/patterns/video-contained-statement.html`
+   (VIDEO-01 na Pattern Library).
 
 ## Adicionar versão em inglês
 

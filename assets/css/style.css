@@ -235,6 +235,30 @@ section { padding: var(--section-y) 0; }
 .method-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
 .method-card p { font-size: 0.94rem; margin: 0; }
 
+/* ---------- statement (pattern VIDEO-01, contained) ---------- */
+.statement { padding: var(--section-y) clamp(1.25rem, 4vw, 3rem); }
+.statement__frame {
+  position: relative; max-width: var(--container); margin: 0 auto;
+  border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 8;
+}
+.statement__media { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.statement__overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: 2rem; text-align: center;
+  background: linear-gradient(180deg, rgba(11,47,35,0.35), rgba(11,47,35,0.55));
+}
+.statement__text {
+  font-family: var(--display); font-weight: 600; color: #fff;
+  font-size: clamp(1.4rem, 3.4vw, 2.4rem); line-height: 1.3; max-width: 20ch; margin: 0;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 640px) {
+  .statement__frame { aspect-ratio: 4 / 5; border-radius: var(--radius-sm); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .statement__frame { background: var(--raised); }
+}
+
 /* ---------- measurement (proof) ---------- */
 .measure { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
 @media (min-width: 900px) { .measure { grid-template-columns: 1fr 1fr; } }
