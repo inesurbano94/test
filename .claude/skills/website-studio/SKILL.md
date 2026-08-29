@@ -23,6 +23,12 @@ small-business website that looks designed, not generated.
    mode** below for the explicit fast path.
 4. **Capture taste silently.** See "Learning" below. Never interrupt the work
    to ask about the taste profile.
+5. **Always end a change with a preview.** Any time a project's actual site
+   files change - a new section, an edit, a copy tweak, a bug fix, whether
+   it came through the phase flow or as a one-off ad-hoc request outside
+   it - run `scripts/preview.py <site_dir> <out_file> --mode full` and send
+   the result. Never describe a change as done without one. This is
+   standing, not asked for per change.
 
 ## Read before working
 
