@@ -134,6 +134,39 @@ Decided at the brief gate because it changes the markup.
 - The language switcher links to the equivalent page, never to the homepage.
 - Translate the meta description, OG tags and image alt text too.
 
+## SEO
+
+Small-business SEO is almost entirely local intent - "personal trainer
+Alvalade", not a content strategy this studio doesn't run. Build for that.
+
+- **Title formula:** `{Business} — {what they do} em {location} | {one
+  differentiator}`. The words someone actually searches, not a slogan.
+- **Meta description:** one clause on what the business does, one on why
+  this one - the differentiator - always including the location. 150-160
+  characters.
+- **Heading hierarchy is structure, not decoration.** One `<h1>` matching
+  the title's intent, `<h2>` per major section, in a real hierarchy - a
+  crawler and a screen reader both read structure, not just words.
+- **Structured data (JSON-LD), every build:**
+  - `LocalBusiness` (or a specific subtype - `HealthClub`, `Restaurant`)
+    whenever there's a real address or service area - name, address,
+    phone/WhatsApp, hours, price range if public.
+  - `FAQPage` whenever the site has an FAQ section - free rich-snippet
+    space, the content already exists.
+  - Never fabricate a field a schema asks for. Omit what the briefing
+    doesn't have - same rule as everywhere else.
+- **Standard files, every build:** `sitemap.xml` and `robots.txt` (allow
+  all, point at the sitemap), in the project root beside `index.html` -
+  even a one-page site benefits, it's what tells Google the canonical URL
+  and last-modified date. `scripts/check.py` checks both exist.
+- **Canonical tag, always** - `<link rel="canonical" href="...">` pointing
+  at the real published URL once known; the client's domain, never a
+  staging or preview URL.
+- **Local SEO beyond the code:** the real address as visible text
+  somewhere on the page, not only inside an image or a map embed - crawlers
+  don't read pixels. A real link to the Google Maps listing if one exists.
+  Name/address/phone consistent everywhere they appear.
+
 ## Avoiding the generated look
 
 The banned list in `taste.md` is the hard floor. Beyond it:

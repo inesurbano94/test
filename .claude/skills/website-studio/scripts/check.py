@@ -4,11 +4,13 @@ Static pre-flight checks for a website-studio build. Run at phase 5,
 before the manual read of qa.md — this catches the mechanical things
 faster and more reliably than eyeballing the checklist does.
 
-This is a heuristic lint, not a browser: it cannot see layout, real
-computed contrast, or runtime console errors. It exists to shorten the
-manual QA pass, not replace section 6-11 of qa.md (responsive at real
-widths, motion in a real browser, the honest "does this look generated"
-read) — those still need eyes.
+This is a heuristic lint on source files, not a browser: it cannot see
+layout, real computed contrast in a rendered page, or runtime console
+errors on a published page. Pair it with scripts/screenshot.mjs, which
+renders the actual output headless — the two are complementary, not
+alternatives. This one would not have caught the artifact-mode CSS bug
+(the source file was fine; what got published wasn't) — screenshot.mjs
+would have and now does, that's why both exist.
 
 Usage:
     python3 check.py <site_dir> [--entry index.html]
@@ -140,6 +142,37 @@ def check_html(html: str, results: list) -> None:
         results.append((OK, "html", f"all {len(hrefs)} anchor links resolve"))
 
 
+def check_seo(html: str, site_dir: Path, results: list) -> None:
+    if not re.search(r'<link rel="canonical" href="[^"]+"', html):
+        results.append((WARN, "seo", "no canonical <link> — add once the real published URL is known"))
+    else:
+        results.append((OK, "seo", "canonical link present"))
+
+    if (site_dir / "sitemap.xml").exists():
+        results.append((OK, "seo", "sitemap.xml present"))
+    else:
+        results.append((WARN, "seo", "no sitemap.xml in project root"))
+
+    if (site_dir / "robots.txt").exists():
+        results.append((OK, "seo", "robots.txt present"))
+    else:
+        results.append((WARN, "seo", "no robots.txt in project root"))
+
+    ld_blocks = re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S)
+    types_found = set()
+    for block in ld_blocks:
+        for t in re.findall(r'"@type"\s*:\s*"([^"]+)"', block):
+            types_found.add(t)
+    if not ld_blocks:
+        results.append((WARN, "seo", "no JSON-LD structured data found — add LocalBusiness if this business has an address/service area"))
+    else:
+        results.append((OK, "seo", f"JSON-LD present ({', '.join(sorted(types_found)) or len(ld_blocks)} block(s))"))
+
+    has_faq_section = bool(re.search(r'id="faq"', html, re.I))
+    if has_faq_section and "FAQPage" not in types_found:
+        results.append((WARN, "seo", "site has an FAQ section but no FAQPage JSON-LD — free rich-snippet real estate going unused"))
+
+
 def check_css(css: str, results: list) -> None:
     if "prefers-reduced-motion" not in css:
         results.append((FAIL, "motion", "no prefers-reduced-motion rule in CSS"))
@@ -206,6 +239,7 @@ def main() -> None:
 
     results = []
     check_html(html, results)
+    check_seo(html, args.site_dir, results)
     check_css(css, results)
     check_contrast(css, results)
     check_copy(html, results)

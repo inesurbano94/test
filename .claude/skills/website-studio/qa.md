@@ -82,7 +82,12 @@ Check at 360, 390, 768, 1024, 1440.
 - [ ] Images `.webp`, sized to display width, lazy below the fold
 - [ ] Console clean - no errors, no 404s
 - [ ] One `<h1>` per page; landmarks (`header`, `main`, `footer`, `nav`) used
-- [ ] Local business schema (`LocalBusiness` JSON-LD) if it has premises
+- [ ] `LocalBusiness` JSON-LD present if it has premises or a service area
+- [ ] `FAQPage` JSON-LD present if the site has an FAQ section
+- [ ] Canonical `<link>` present, pointing at the real published URL
+- [ ] `sitemap.xml` and `robots.txt` present in the project root
+- [ ] `scripts/check.py` run and its `seo` findings addressed - see
+      `guidelines.md`'s SEO section
 
 ## 10. The generated-look sweep
 
