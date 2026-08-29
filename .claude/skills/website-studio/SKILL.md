@@ -407,8 +407,16 @@ write it to `patterns/`, add an entry to `PATTERN-LIBRARY.md` and a card to
 Invoked any time, mid-project or standalone:
 
 - **learn** - "remember that I..." / "never do X again" -> append to `taste.md`
-- **add-system** - a reference URL or screenshot -> new `design-systems/*.md`
-  per `_adding.md`, plus an entry in `STUDIO-LIBRARY.md`
+- **add this design system** / **add-system** - a website or Refero link (or
+  screenshot): save the full system to `design-systems/*.md` per
+  `_adding.md` - real tokens, not vibes, and never invented if a fetch is
+  blocked - with the source URL recorded as an actual link, not just named
+  in prose. Add the matching entry to `STUDIO-LIBRARY.md` and a card to
+  `studio-library.html` in the same turn (see **Show, don't tell**), the
+  card's source link pointing at the same URL. It's then choosable for any
+  future project like the systems that shipped with the library. Using it
+  on a project never edits the original file - see `_adding.md`'s "Using a
+  saved system on a project".
 - **add-resource** - a useful link -> `resources.md`, with one line on when to
   reach for it
 - **save to library** - a design system, font pairing or animation worth

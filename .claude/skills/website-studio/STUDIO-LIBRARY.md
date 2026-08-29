@@ -13,6 +13,11 @@ reordered or deleted, only added to. Also reachable via the `add-system` and
 `add-resource` side modes for the two most common cases.
 
 Format per entry: **Name/ID · Reference · What I like · Best use cases.**
+Design systems added from an external link also carry a **Source** line -
+the real, clickable URL, so it can be opened and viewed directly, not just
+named. Entries seeded before this existed (`Espresso & Gold`, `Clinic
+White`, `Late Hours`, `Atelier Soft`) have no external source to link -
+their `Origin` line says where they actually came from instead.
 
 ---
 
