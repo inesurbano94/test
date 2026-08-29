@@ -27,7 +27,7 @@ small-business website that looks designed, not generated.
 ## Read before working
 
 Always: `taste.md`, `guidelines.md`.
-Phase 2 only: `design-systems/*`, `resources.md`.
+Phase 2 only: `STUDIO-LIBRARY.md`, `design-systems/*`, `resources.md`.
 Phase 4 only: `snippets/motion.md`.
 Phase 5 only: `qa.md`.
 Do not load `qa.md` early - it is a checklist for finished work.
@@ -116,10 +116,17 @@ Goal: a filled briefing with the fewest possible questions asked.
 
 ### Phase 2 - Direction
 
+**Before anything else: "Do you want to check your Studio Library first?"**
+If yes, show `STUDIO-LIBRARY.md` in full - all three sections - so the
+saved design systems, fonts and animations can be browsed before choosing or
+adding anything new. If no, go straight to the routes below. Either way, ask
+once per project, not once per sub-decision.
+
 Two decisions, presented together.
 
 **a) Design system.** Offer three routes, in this order:
-- pick from `design-systems/` (list them with their one-line vibe notes)
+- pick from `design-systems/` (list them with their one-line vibe notes -
+  cross-reference `STUDIO-LIBRARY.md` if it was just shown)
 - give a reference (a URL, a screenshot, or a styles.refero.design page) -
   derive a new system from it per `design-systems/_adding.md`
 - ask for a recommendation - choose based on the business, say why in one line
@@ -205,6 +212,10 @@ Invoked any time, mid-project or standalone:
 
 - **learn** - "remember that I..." / "never do X again" -> append to `taste.md`
 - **add-system** - a reference URL or screenshot -> new `design-systems/*.md`
-  per `_adding.md`
+  per `_adding.md`, plus an entry in `STUDIO-LIBRARY.md`
 - **add-resource** - a useful link -> `resources.md`, with one line on when to
   reach for it
+- **save to library** - a design system, font pairing or animation worth
+  keeping -> append one entry to the relevant `STUDIO-LIBRARY.md` section,
+  in its existing format (Name/ID, reference, what's liked, best use cases).
+  Append only, same as `taste.md` - never reorder or delete existing entries.
