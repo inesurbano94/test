@@ -128,9 +128,13 @@ Two decisions, presented together.
 **a) Design system.** Offer three routes, in this order:
 - pick from `design-systems/` (list them with their one-line vibe notes -
   cross-reference `STUDIO-LIBRARY.md` if it was just shown)
-- give a reference (a URL, a screenshot, or a styles.refero.design page) -
-  derive a new system from it per `design-systems/_adding.md`
+- give a reference (a URL, a screenshot, or something browsed via
+  **Inspiration flow** below) - derive a new system from it per
+  `design-systems/_adding.md`
 - ask for a recommendation - choose based on the business, say why in one line
+
+None of these feel right? That's what **Inspiration flow** below is for -
+don't stall here waiting for a reference that doesn't exist yet.
 
 Then tune: fonts, palette, spacing, radii, motion. Fonts are chosen fresh per
 project - a system's suggested pairing is a starting point, never a default.
@@ -231,6 +235,35 @@ library`, `add-system` or `add-resource` adds an entry to
 turn, following the pattern of the existing cards for that section. Don't let
 them drift - if asked to show the library and the HTML is behind, update it
 first.
+
+## Inspiration flow
+
+For when the library doesn't have what's needed - a whole direction, or just
+one section pattern (a hero, a pricing layout, a nav interaction). Reachable
+any time, not only at phase 2 - "I need inspiration" or "give me options for
+X" both trigger it directly, without waiting for the phase 2 gate.
+
+1. **Check the Studio Library first.** Open `studio-library.html`, always -
+   see **The visual library** above. Never skip straight to external sources.
+2. **If more options are wanted,** browse `resources.md`'s "Inspiration
+   browsing" list - matched to what's needed: Refero for a whole direction,
+   Land-book or One Page Love for a section pattern or page flow, SaaSFrame
+   for a conversion/marketing section, Mobbin for an interaction, Fontesk for
+   a font. Fetch one or two specific references worth reacting to - don't
+   dump a whole site's catalogue into the conversation.
+3. **Let the choice happen.** Present what was found, wait for a pick. Don't
+   pre-select - this step exists because the library alone wasn't enough,
+   so the point is more real options, not a faster route back to one.
+4. **Adapt, never import wholesale.** Translate the chosen pattern into the
+   *project's own* design system - its tokens, its fonts, its accent - same
+   "translate, don't copy" rule as `design-systems/_adding.md`. The pattern's
+   structure and idea transfer; its literal colours and fonts don't. The
+   result should feel like the rest of the site, not a borrowed section
+   bolted on.
+5. **Save only when asked.** A pattern used once for one project stays in
+   that project. It enters `STUDIO-LIBRARY.md` only on an explicit
+   `save to library` - never automatically, even for something that worked
+   well and could clearly be reused.
 
 ## Side modes
 

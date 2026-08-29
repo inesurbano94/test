@@ -3,24 +3,47 @@
 What each one is for. Add new ones with `add-resource` - always with a line
 on *when to reach for it*, otherwise the list becomes noise.
 
-## Design systems and references
+## Inspiration browsing
 
-**styles.refero.design** - browsable real-world design systems: type scales,
-palettes, spacing. *Reach for it* at phase 2 when the direction is unclear, or
-to derive a new system from a look worth stealing. Read the tokens, not the
-screenshots.
+Step 2 of the **Inspiration flow** (see SKILL.md) - reached only after
+`STUDIO-LIBRARY.md` has been checked and more options are wanted. Fetch one
+or two specific references, don't dump a whole site's catalogue - these are
+places to browse, not libraries to import.
+
+**Refero** (styles.refero.design) - browsable real-world design systems: type
+scales, palettes, spacing. *Reach for it* for a whole visual direction, or to
+derive a new system per `design-systems/_adding.md`. Read the tokens, not
+the screenshots.
+
+**Land-book** (land-book.com) - curated website section patterns. *Reach for
+it* for a specific section - a hero, a footer, a nav - not a whole system.
+
+**One Page Love** (onepagelove.com) - curated one-page website inspiration.
+*Reach for it* for overall page flow and rhythm on a single-page site, which
+is most of what this studio ships.
+
+**SaaSFrame** (saasframe.io) - conversion and marketing section patterns.
+*Reach for it* for pricing tables, feature grids, CTA sections - anything
+that has to convert, not just look good.
+
+**Mobbin** (mobbin.com) - real product and app UX patterns. *Reach for it*
+for an interaction, not a look - a menu behaviour, a form flow, a tab
+pattern - when the question is "how should this work", not "what should
+this look like".
+
+**Fontesk** (fontesk.com) - free and free-for-commercial display and text
+faces, many with genuine character. *Reach for it* when the display face
+needs personality Google Fonts cannot give. Check the licence covers
+commercial use before shipping.
+
+## Grounding
 
 **Client's own world** - the strongest reference is usually the business
 itself: the paint in the studio, the packaging, the tiles, the light at the
-time of day people visit. *Reach for it* before any gallery site. This is what
-makes a site un-generatable.
+time of day people visit. *Reach for it* before any gallery site, inspiration
+browsing included. This is what makes a site un-generatable.
 
 ## Fonts
-
-**fontesk.com** - free and free-for-commercial display and text faces, many
-with genuine character. *Reach for it* when the display face needs personality
-Google Fonts cannot give. Check the licence covers commercial use before
-shipping.
 
 **Google Fonts** - reliable body faces and reliable self-hosting. *Reach for
 it* for the workhorse body face; be wary of the default ten, which are a tell.
