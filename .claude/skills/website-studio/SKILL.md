@@ -85,10 +85,26 @@ system alongside it.
 - Section patterns (heroes, testimonials, pricing, CTAs, FAQs, ...) ->
   `pattern-library.html`
 
-Open with SendUserFile, `display: render`. Both galleries already exist
-and are kept current between edits (see below) - a pure "show me" request
-needs zero file reads first, not even the source markdown - see **Read
-before working**.
+**A link, not a sent file - same rule as operating principle 5.** Publish
+with the Artifact tool (load `artifact-design` first if this session
+hasn't already) and give the URL. Never SendUserFile for these - a file
+card is not a link, and a link is what's wanted every time one is handed
+over, preview or gallery alike.
+
+- **Within a session:** republish to the same file path each time (see
+  `studio-library.html` / `pattern-library.html` directly in the skill
+  folder - no scratchpad copy needed, they need no per-project
+  substitution) so the URL stays stable across the whole session. First
+  publish needs a `favicon`; omit it on every redeploy after.
+- **In a new session,** these galleries have likely been published before.
+  Before creating a fresh artifact, ask if a previous link exists (or check
+  `action: "list"`) and republish to *that* URL with `url=` - a new
+  artifact each session is exactly the file-card problem again, just
+  wearing a link.
+
+Both galleries are kept current between edits (see below) - a pure "show
+me" request needs zero file reads first, not even the source markdown -
+see **Read before working**.
 
 **Keeping a gallery in sync.** Both `studio-library.html` and
 `pattern-library.html` are hand-built to match their markdown source, not
