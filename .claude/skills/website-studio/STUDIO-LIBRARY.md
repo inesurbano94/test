@@ -68,6 +68,19 @@ their `Origin` line says where they actually came from instead.
   florists, interior designers.
 - Not yet used on a real project — seeded from taste principles, unconfirmed.
 
+**Stykka**
+- Reference: `design-systems/stykka.md`
+- Source: https://styles.refero.design/style/b43fdb3c-85e9-4282-9262-1d3deb4b679d
+- What I like: Deliberately achromatic — no accent color at all, black
+  hairlines and full-bleed photography doing all the work. Display
+  headlines whisper at weight 400 instead of shouting at bold. Confident
+  enough to need zero decoration.
+- Best for: furniture, kitchens, interiors, craft goods, photographers —
+  anything with strong enough photography to be the whole argument.
+- Not yet used on a real project — added from a full token export the user
+  provided directly (Refero was blocked by this session's network egress,
+  so this wasn't independently fetched).
+
 ---
 
 ## Fonts
