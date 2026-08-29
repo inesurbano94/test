@@ -1,6 +1,6 @@
 ---
 name: website-studio
-description: Design and build small-business websites end to end - from a Google Drive project folder to a finished static site. Runs a five-phase flow (brief, design direction, blueprint, build, QA) using a personal design-system library, a taste profile and global design guidelines. Use when starting a new client website, continuing an existing one, adding a design system to the library, or capturing a design preference. Triggers on "new site for", "client website", "build a website", "website studio", "add a design system", plus any request to design, restructure or polish a small-business site.
+description: Design and build small-business websites end to end - from a Google Drive project folder to a finished static site, with a fast draft mode and scripted preview/QA checks. Runs a five-phase flow (brief, design direction, blueprint, build, QA) using a personal design-system library, a taste profile and global design guidelines. Use when starting a new client website, continuing an existing one, adding a design system to the library, or capturing a design preference. Triggers on "new site for", "client website", "build a website", "website studio", "add a design system", plus any request to design, restructure or polish a small-business site.
 ---
 
 # Website Studio
@@ -19,7 +19,8 @@ small-business website that looks designed, not generated.
    reasoning, let it be vetoed. Do not hand over menus of options for
    decisions you can make well.
 3. **Every gate is skippable.** "skip" moves to the next phase on defaults.
-   "just build it" runs everything to phase 4 with no stops.
+   "just build it" runs everything to phase 4 with no stops. See **Draft
+   mode** below for the explicit fast path.
 4. **Capture taste silently.** See "Learning" below. Never interrupt the work
    to ask about the taste profile.
 
@@ -27,8 +28,12 @@ small-business website that looks designed, not generated.
 
 Always: `taste.md`, `guidelines.md`.
 Phase 2 only: `design-systems/*`, `resources.md`.
+Phase 4 only: `snippets/motion.md`.
 Phase 5 only: `qa.md`.
 Do not load `qa.md` early - it is a checklist for finished work.
+
+`scripts/preview.py` and `scripts/check.py` are tools, not reading - run
+them, don't read them into context. See Phase 4/5 for when.
 
 ## Output format
 
@@ -48,13 +53,44 @@ the same. Custom CSS with tokens is the whole point.
 and say so - that is a Framer/Webflow job. Deliver a design spec (tokens,
 structure, copy, shot list) instead of code.
 
+## Draft mode
+
+Triggered by "quickly", "just build it", "give me something to react to", or
+similar. An explicit, repeatable path - not an improvised skip.
+
+1. Run phase 0 and enough of phase 1 to have real facts - no invented
+   content, that rule never lifts.
+2. Make the phase 2 direction call yourself (system, fonts, photo plan) and
+   state it in one line each as you build, instead of gating on approval.
+3. Fold phase 3 into phase 4 - write real section copy directly into the
+   markup as you build it, skipping the separate copy-approval gate.
+4. Build. Run `scripts/preview.py <site_dir> <out_file>` and send the result
+   - do not hand-roll an inline preview file again.
+5. Present the whole thing as a draft to react to. Corrections here are
+   taste signals like any other - log them per **Learning**.
+
+Phase 5 (QA) is never skipped by draft mode - it happens once the direction
+is confirmed, not before.
+
 ## The flow
 
 ### Phase 0 - Locate
 
-Ask for the Google Drive project folder, or find it by business name with
-`search_files`. Read everything in it: briefing doc, notes, logos, photos,
-brand guidelines. List what is there and what is missing before continuing.
+**First, close the loop on the last project.** Check the working directory
+(and its parent, if this is a fresh checkout) for a `.website-studio-learnings.md`
+that was never consolidated into `taste.md`, and check whether `taste.md`
+has a non-empty `## Pending` section. If either is non-empty, show it and ask
+what to keep before starting anything new - taste signals that never get
+reviewed are wasted work.
+
+Then ask for the Google Drive project folder, or find it by business name
+with `search_files`. Read everything in it: briefing doc, notes, logos,
+photos, brand guidelines. List what is there and what is missing before
+continuing.
+
+**The briefing may not match `templates/briefing.md`.** Real client
+documents are often a free-form doc, not the reusable template - extract the
+same facts regardless of structure, don't require the template's shape.
 
 ### Phase 1 - Brief
 
@@ -117,15 +153,29 @@ edits and take them literally - a rewritten headline is a taste signal.
 
 Write the site. Order: tokens, base, layout, sections top to bottom, then JS.
 
+For motion, start from `snippets/motion.md` rather than writing animation
+from scratch - working code already tuned to the timing rules in
+`guidelines.md`, not prose to reimplement each time.
+
 Non-negotiables, enforced while writing, not after:
 `prefers-reduced-motion`, `:focus-visible` on every interactive element,
 semantic landmarks, real `alt` text, `clamp()` for fluid type and spacing,
 `<title>` and `<meta name="description">`, Open Graph tags, favicon.
 
+To hand over a preview, run:
+`python3 scripts/preview.py <site_dir> <out_file> --mode full` for
+SendUserFile, or `--mode artifact --title "..."` for the Artifact tool. Don't
+hand-write the inlining again.
+
 ### Phase 5 - QA
 
-Load `qa.md` and work it. Then present the taste captured this project
-(see below) and ask whether to keep it.
+Run `python3 scripts/check.py <site_dir>` first - it catches contrast
+failures, missing alt text, broken anchors, missing meta tags, banned vague
+copy phrases and leftover placeholders faster than reading for them. Fix
+what it flags, then load `qa.md` for the parts a script can't see: real
+responsive widths, motion in an actual browser, and the honest "does this
+look generated" read in section 10. Then present the taste captured this
+project (see below) and ask whether to keep it.
 
 ## Learning
 
