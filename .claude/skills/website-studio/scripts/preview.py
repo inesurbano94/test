@@ -80,7 +80,17 @@ def inline_asset_refs(html: str, site_dir: Path) -> str:
 
 def to_artifact_body(html: str, title_override: str | None) -> str:
     """Strip outer document tags per the Artifact tool's content rules:
-    no <!DOCTYPE>, <html>, <head>, or <body> — title and style at the top."""
+    no <!DOCTYPE>, <html>, <head>, or <body> — title and style at the top.
+
+    Critical: inline_asset_refs() puts the site's CSS into a <style> block
+    that lives in <head>, not <body>. A naive body-only extraction here
+    silently drops all of it — every rule, every colour, every font — and
+    what's published is unstyled HTML wearing the browser's defaults. That
+    exact bug shipped once; this function now explicitly carries every
+    <style> block and font <link> forward, not just the body."""
+    style_blocks = re.findall(r"<style\b[^>]*>.*?</style>", html, re.S)
+    font_links = re.findall(r'<link[^>]+rel="stylesheet"[^>]+fonts\.googleapis[^>]*>', html)
+
     body_match = re.search(r"<body[^>]*>(.*)</body>", html, re.S)
     body = body_match.group(1) if body_match else html
 
@@ -90,7 +100,16 @@ def to_artifact_body(html: str, title_override: str | None) -> str:
         t = re.search(r"<title>(.*?)</title>", html, re.S)
         title = t.group(1).strip() if t else "Preview"
 
-    return f"<title>{title}</title>\n{body.strip()}\n"
+    head_extras = "\n".join(font_links + style_blocks)
+    out = f"<title>{title}</title>\n{head_extras}\n{body.strip()}\n"
+
+    # Fail loudly rather than silently publishing an unstyled page again.
+    if not style_blocks:
+        print("WARNING: no <style> block found to carry into artifact mode — "
+              "the published page will be unstyled. Check the source file.",
+              file=sys.stderr)
+
+    return out
 
 
 def main() -> None:
