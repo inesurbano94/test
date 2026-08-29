@@ -193,7 +193,10 @@ def main() -> None:
     if not entry.exists():
         sys.exit(f"error: {entry} not found")
 
-    html = entry.read_text(encoding="utf-8")
+    # Strip HTML comments first - a comment that mentions example markup
+    # (e.g. explaining what an <img> tag should look like) would otherwise
+    # be scanned as if it were real, live markup.
+    html = re.sub(r"<!--.*?-->", "", entry.read_text(encoding="utf-8"), flags=re.S)
     css = ""
     js = ""
     for css_file in (args.site_dir / "assets" / "css").glob("*.css") if (args.site_dir / "assets" / "css").exists() else []:

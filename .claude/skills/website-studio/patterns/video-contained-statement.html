@@ -1,0 +1,50 @@
+<!--
+PATTERN VIDEO-01 — Contained Video Statement
+Layout: a video, contained within the page with margins and rounded
+corners (never full-bleed), with a strong text statement overlaid, centered.
+Reads as a framed, deliberate moment rather than a hero takeover.
+Adapt: swap the statement for something in this project's own voice — a
+value, a promise, a way of working. Never a fabricated customer quote; if
+there's no real video yet, use a real photo as a temporary poster frame and
+say so in a comment and the README, never a fake play button implying a
+video that isn't there.
+Source: derived from programa.design (patterns/references/video-01-*.webp),
+restyled to tokens.
+-->
+<section class="p-vstatement">
+  <div class="p-vstatement__frame">
+    <video class="p-vstatement__media" poster="{{poster image path}}" muted loop playsinline autoplay>
+      <source src="{{video file path}}" type="video/mp4">
+    </video>
+    <div class="p-vstatement__overlay">
+      <p class="p-vstatement__text">{{Short, strong statement — this project's own voice, not a testimonial.}}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.p-vstatement { padding: var(--section-y) clamp(1.25rem, 4vw, 3rem); }
+.p-vstatement__frame {
+  position: relative; max-width: var(--container); margin: 0 auto;
+  border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/8;
+}
+.p-vstatement__media { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-vstatement__overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: 2rem; text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35));
+}
+.p-vstatement__text {
+  font-family: var(--display); font-weight: 500; color: #fff;
+  font-size: clamp(1.4rem, 3.4vw, 2.4rem); line-height: 1.3; max-width: 26ch; margin: 0;
+  text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .p-vstatement__frame { aspect-ratio: 4/5; border-radius: var(--radius-sm); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p-vstatement__media { display: none; }
+  .p-vstatement__frame { background: var(--raised); }
+}
+</style>
