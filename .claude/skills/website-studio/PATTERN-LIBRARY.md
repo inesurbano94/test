@@ -99,6 +99,38 @@ best for.**
 
 *No patterns saved yet.*
 
+## Video Sections
+
+**VIDEO-01 — Contained Video Statement**
+- Code: *none yet — build on first real use, per the reference note below.*
+- Reference: `patterns/references/video-01-programa-desktop.webp`,
+  `patterns/references/video-01-programa-mobile.webp`
+- What it is: A short video, contained within the page with margins and
+  rounded corners (not full-bleed), with a strong text statement overlaid.
+  Reads as a considered, framed moment rather than a hero takeover.
+- Source: programa.design
+- Best for: a business that wants one video moment to feel deliberate and
+  contained — a quote, a proof statement, a single feature — without it
+  dominating the whole viewport.
+
+**VIDEO-02 — Full-Bleed Video Statement**
+- Code: *none yet — build on first real use, per the reference note below.*
+- Reference: `patterns/references/video-02-tonyrobbins-desktop.webp`,
+  `patterns/references/video-02-tonyrobbins-mobile.webp`
+- What it is: A short video filling the available width, edge to edge, with
+  large centered text and an optional CTA overlaid directly on it.
+- Source: tonyrobbins.com
+- Best for: a hero-level moment — the video *is* the section, not a frame
+  around it. Needs footage strong enough to carry that much visual weight.
+
+**Reference-only note.** Both of these are structural references, not built
+patterns yet - per the Pattern Library's own rule, code gets written the
+first time a project actually uses one, not speculatively now. When that
+happens: adapt typography, colour, spacing, radius, buttons and motion to
+the active project's tokens - same token contract as every other pattern,
+including VIDEO-01's rounded corners and margins, which are structural
+(radius/spacing decisions), not this reference's literal look.
+
 ---
 
 *Nothing above is invented — each entry either traces to shipped work or an
