@@ -6,7 +6,7 @@
 <title>Studio Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500&family=Bricolage+Grotesque:wght@600;700&family=Roboto+Mono:wght@400;500&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #14120f;
@@ -162,6 +162,12 @@ section.lib { padding: 2rem 0 clamp(3rem, 7vw, 5rem); scroll-margin-top: 5rem; }
   color: var(--brass); text-transform: uppercase; letter-spacing: 0.08em;
   margin-bottom: 0.4rem;
 }
+.font-sample-mono {
+  font-size: 0.95rem; color: var(--text); margin: 0; letter-spacing: 0.01em;
+  background: var(--bg-2); display: inline-block; padding: 0.5rem 0.9rem;
+  border-radius: 4px; border: 1px solid var(--line);
+}
+.font-pair--tri { border-left: 2px solid var(--brass); }
 
 /* ---------- animations ---------- */
 .anim-grid {
@@ -491,7 +497,7 @@ footer.site code { color: var(--text-soft); }
     <div class="section-head">
       <span class="num">02</span>
       <h2>Fonts</h2>
-      <span class="count">2 saved</span>
+      <span class="count">4 saved</span>
     </div>
 
     <div class="font-pair">
@@ -514,6 +520,31 @@ footer.site code { color: var(--text-soft); }
       <p class="font-sample-display" style="font-family:'Familjen Grotesk',sans-serif;font-weight:700;letter-spacing:-0.02em;">Um treino feito para ti, com resultados que consegues medir.</p>
       <span class="font-label" style="font-family:'IBM Plex Mono'">Body — Instrument Sans 400</span>
       <p class="font-sample-body" style="font-family:'Instrument Sans',sans-serif;">Avaliamos o teu ponto de partida, construímos um plano à tua medida e acompanhamos a tua evolução a cada 2 meses — peso, massa muscular, massa gorda e mais.</p>
+    </div>
+
+    <div class="font-pair font-pair--tri">
+      <div class="font-pair__meta">
+        <strong>Bricolage Grotesque + Inter + Roboto Mono</strong>
+        <span>referenced from Say Briefly — not yet used on a real project</span>
+      </div>
+      <span class="font-label" style="font-family:'IBM Plex Mono'">Headings — Bricolage Grotesque 700</span>
+      <p class="font-sample-display" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-0.01em;">Uma grotesca com carácter, para títulos que se notam.</p>
+      <span class="font-label" style="font-family:'IBM Plex Mono'">Body — Inter 400</span>
+      <p class="font-sample-body" style="font-family:'Inter',sans-serif;margin-bottom:1rem;">Inter faz o trabalho pesado do corpo de texto — legível, neutra, desaparece para deixar o título falar mais alto.</p>
+      <span class="font-label" style="font-family:'IBM Plex Mono'">Mono / accent — Roboto Mono 500</span>
+      <p class="font-sample-mono" style="font-family:'Roboto Mono',monospace;font-weight:500;">€30 · 06—21h · N.º 01</p>
+    </div>
+
+    <div class="font-pair">
+      <div class="font-pair__meta">
+        <strong>Inter + Azeret Mono</strong>
+        <span>referenced from Stykka — not yet used on a real project</span>
+      </div>
+      <span class="font-label" style="font-family:'IBM Plex Mono'">Headings &amp; body — Inter 600 / 400</span>
+      <p class="font-sample-display" style="font-family:'Inter',sans-serif;font-weight:600;letter-spacing:-0.01em;">Uma só família, duas vozes — pelo peso, não pela mistura.</p>
+      <p class="font-sample-body" style="font-family:'Inter',sans-serif;margin-bottom:1rem;">Quando o título e o corpo partilham a mesma grotesca, a página ganha uma calma que a mistura de famílias raramente tem.</p>
+      <span class="font-label" style="font-family:'IBM Plex Mono'">Mono / accent — Azeret Mono 500</span>
+      <p class="font-sample-mono" style="font-family:'Azeret Mono',monospace;font-weight:500;">STY-02 · 128px · #17624a</p>
     </div>
   </div>
 </section>

@@ -24,7 +24,7 @@
  * portable to environments that don't need one.
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
-import { basename } from "path";
+import { basename, resolve } from "path";
 
 // Try a bare import first (works if node_modules is actually in scope);
 // fall back to this environment's known global install. Bare import tried
@@ -57,6 +57,10 @@ if (!args.htmlFile || !args.outDir) {
   console.error("usage: node screenshot.mjs <html_file> <out_dir> [--label name] [--widths 1280,390] [--wait 1200]");
   process.exit(1);
 }
+// Resolve to absolute paths — a relative path produces an invalid file://
+// URL, not a "file not found" you'd notice before it's too late.
+args.htmlFile = resolve(args.htmlFile);
+args.outDir = resolve(args.outDir);
 
 const label = args.label || basename(args.htmlFile).replace(/\.html?$/, "");
 const widths = args.widths.split(",").map((w) => parseInt(w.trim(), 10));

@@ -415,6 +415,24 @@ Invoked any time, mid-project or standalone:
   keeping -> append one entry to the relevant `STUDIO-LIBRARY.md` section,
   in its existing format (Name/ID, reference, what's liked, best use cases).
   Append only, same as `taste.md` - never reorder or delete existing entries.
+- **add these fonts / add font(s)** - one or more fonts or font
+  combinations, by name:
+  1. **Confirm the licence first, always.** Free for commercial web use -
+     on Google Fonts is sufficient confirmation on its own (every font it
+     hosts is OFL or Apache 2.0). Anywhere else, check explicitly. If it's
+     unclear, say so and stop - do not add it "provisionally".
+  2. Add one entry per combination to `STUDIO-LIBRARY.md`'s Fonts section:
+     reference/source, the **role** of each face (headings, body, mono/
+     accent - not just "font 1, font 2"), the licence confirmation, what's
+     liked, best use cases. Same append-only rule as everything else here.
+  3. Add a matching card to `studio-library.html` in the same turn (see
+     **Show, don't tell**) - a real sample per role, not just the display
+     and body tiers if there's a third (mono/accent gets its own small
+     labelled sample, styled as a mono accent actually would be - a
+     stat/label, not a sentence).
+  4. It's now choosable like any other saved font - available the next
+     time a project reaches the fonts step, same as the two that came
+     with the library.
 - **save as a pattern** - a section built from scratch worth reusing -> next
   ID in its category, code to `patterns/`, entry in `PATTERN-LIBRARY.md`,
   card in `pattern-library.html`. Same append-only rule. Never automatic -

@@ -81,6 +81,31 @@ Format per entry: **Name/ID · Reference · What I like · Best use cases.**
 - Best for: proof- and data-led sites, health and wellness, anything that
   shouldn't feel handmade.
 
+**Bricolage Grotesque + Inter + Roboto Mono**
+- Reference: referenced from Say Briefly — not yet used on a real project.
+- Roles: Bricolage Grotesque — headings/display. Inter — body. Roboto Mono —
+  mono/accent (stats, labels, prices, anything numeric or code-like).
+- Licence: both on Google Fonts, OFL 1.1 (Bricolage Grotesque, Inter) /
+  Apache 2.0 (Roboto Mono) — free for commercial web use, confirmed.
+- What I like: a three-tier system where the mono face does real work as an
+  accent, not decoration — gives numbers and labels their own voice instead
+  of borrowing the body font's.
+- Best for: sites with real data to show off (prices, stats, specs) that
+  want a grotesque-led, slightly technical feel without going cold.
+
+**Inter + Azeret Mono**
+- Reference: referenced from Stykka — not yet used on a real project.
+- Roles: Inter — both headings and body, weight does the hierarchy work
+  (600 for headings, 400 for body). Azeret Mono — mono/accent for labels,
+  ids, small numeric details.
+- Licence: both on Google Fonts, OFL 1.1 — free for commercial web use,
+  confirmed.
+- What I like: the calm of a single grotesque doing both jobs, with one
+  quiet mono accent instead of a whole second display face. Minimal without
+  being empty.
+- Best for: quieter, precision-feeling sites — studios, tools, anything
+  that shouldn't feel like it's trying hard.
+
 ---
 
 ## Animations
