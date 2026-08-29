@@ -23,12 +23,20 @@ small-business website that looks designed, not generated.
    mode** below for the explicit fast path.
 4. **Capture taste silently.** See "Learning" below. Never interrupt the work
    to ask about the taste profile.
-5. **Always end a change with a preview.** Any time a project's actual site
-   files change - a new section, an edit, a copy tweak, a bug fix, whether
-   it came through the phase flow or as a one-off ad-hoc request outside
-   it - run `scripts/preview.py <site_dir> <out_file> --mode full` and send
-   the result. Never describe a change as done without one. This is
-   standing, not asked for per change.
+5. **Always end a change with a preview link.** Any time a project's actual
+   site files change - a new section, an edit, a copy tweak, a bug fix,
+   whether it came through the phase flow or as a one-off ad-hoc request
+   outside it - a link, not a sent file. Standing, not asked for per change.
+
+   Mechanism: `scripts/preview.py <site_dir> <out_file> --mode artifact
+   --title "<Business name>"`, then publish it with the Artifact tool (load
+   `artifact-design` first if this session hasn't already). **Republish to
+   the same file path every time** for a given project, so the link stays
+   stable across the whole project rather than a new URL each change - keep
+   that path (e.g. under the session scratchpad, named for the project) in
+   mind across turns. First publish of a project needs a `favicon` (one or
+   two emoji fitting the business); omit it on every redeploy after that so
+   the tab icon doesn't change.
 
 ## Read before working
 
@@ -70,8 +78,8 @@ similar. An explicit, repeatable path - not an improvised skip.
    state it in one line each as you build, instead of gating on approval.
 3. Fold phase 3 into phase 4 - write real section copy directly into the
    markup as you build it, skipping the separate copy-approval gate.
-4. Build. Run `scripts/preview.py <site_dir> <out_file>` and send the result
-   - do not hand-roll an inline preview file again.
+4. Build. Give a preview link - see operating principle 5. Do not hand-roll
+   an inline preview file again.
 5. Present the whole thing as a draft to react to. Corrections here are
    taste signals like any other - log them per **Learning**.
 
@@ -180,10 +188,9 @@ Non-negotiables, enforced while writing, not after:
 semantic landmarks, real `alt` text, `clamp()` for fluid type and spacing,
 `<title>` and `<meta name="description">`, Open Graph tags, favicon.
 
-To hand over a preview, run:
-`python3 scripts/preview.py <site_dir> <out_file> --mode full` for
-SendUserFile, or `--mode artifact --title "..."` for the Artifact tool. Don't
-hand-write the inlining again.
+To hand over a preview, see operating principle 5 - `--mode artifact`,
+published with the Artifact tool, republished to the same path across the
+project. Don't hand-write the inlining again.
 
 ### Phase 5 - QA
 
