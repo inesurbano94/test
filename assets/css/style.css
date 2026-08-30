@@ -255,8 +255,12 @@ section[id] { scroll-margin-top: 96px; }
 .about__body { display: flex; flex-direction: column; justify-content: center; }
 .about__body > p, .about__quote { max-width: 46ch; }
 @media (min-width: 860px) { .about__media { order: -1; } }
-.about__media { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4/5; }
-@media (min-width: 860px) { .about__media { aspect-ratio: 3/4; max-height: 560px; } }
+/* width:100% + no max-height so it actually fills its grid column - an
+   aspect-ratio combined with a definite max-height overrides the grid's
+   own stretch behaviour and shrinks the box to fit the ratio from that
+   height instead, well short of the column's real width. */
+.about__media { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4/5; width: 100%; }
+@media (min-width: 860px) { .about__media { aspect-ratio: 3/4; } }
 .about__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; filter: saturate(0.82) contrast(1.04); }
 .about__media::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
