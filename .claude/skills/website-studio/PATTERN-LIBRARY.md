@@ -123,26 +123,33 @@ best for.**
   dominating the whole viewport.
 - First real use: Isaías rebuild (2026-08-29) — no video footage existed
   yet, so it shipped with the real hero photo as a poster-frame placeholder,
-  clearly marked in the HTML and README. Swap for real footage per the
-  shot list; the section doesn't change otherwise.
+  clearly marked in the HTML and README.
+- **Superseded on that project (2026-08-30).** A taste correction toward
+  more immersive, less boxed-in imagery site-wide replaced this section
+  with VIDEO-02 below, on the same project. Still valid for a future
+  project that actually wants a framed, contained moment — this wasn't a
+  quality problem with VIDEO-01 itself, just a fit correction for this
+  client's taste. See taste.md's "Full-bleed imagery over contained frames"
+  principle.
 
 **VIDEO-02 — Full-Bleed Video Statement**
-- Code: *none yet — build on first real use, per the reference note below.*
+- Code: `patterns/video-fullbleed-statement.html`
 - Reference: `patterns/references/video-02-tonyrobbins-desktop.webp`,
   `patterns/references/video-02-tonyrobbins-mobile.webp`
 - What it is: A short video filling the available width, edge to edge, with
-  large centered text and an optional CTA overlaid directly on it.
+  large centered text overlaid directly on it. A soft radial scrim sits
+  centered behind the text only — not a flat wash across the whole frame —
+  so the rest of the image stays clear and the overlay reads as
+  photographic grading, not a UI layer.
 - Source: tonyrobbins.com
 - Best for: a hero-level moment — the video *is* the section, not a frame
-  around it. Needs footage strong enough to carry that much visual weight.
-
-**Reference-only note (VIDEO-02).** Still a structural reference, not built
-yet - per the Pattern Library's own rule, code gets written the first time a
-project actually uses it, not speculatively now. When that happens: adapt
-typography, colour, spacing, radius, buttons and motion to the active
-project's tokens - same token contract as every other pattern, including
-this reference's own margins and full-bleed choice, which are structural
-(radius/spacing decisions), not literal borrowed style.
+  around it. Needs footage/imagery strong enough to carry that much visual
+  weight.
+- First real use: Isaías rebuild (2026-08-30) — swapped in for VIDEO-01 on
+  the same project, still using the real hero photo as a poster-frame
+  placeholder (no video footage yet, per the shot list). The centered
+  radial-scrim overlay technique came out of this build — see the pattern
+  file's own header comment for why a flat gradient wash was rejected.
 
 ---
 

@@ -4,9 +4,20 @@ Site de página única em português (pt-PT), estático (HTML/CSS/JS puros — s
 
 Rebuild feito com a skill `website-studio`, fase 4 (build) — ver
 `.claude/skills/website-studio/`. Direção aprovada na fase 2: sistema
-`clinic-white` adaptado a quente, tipografia Familjen Grotesk + Instrument
-Sans, sem testemunhos fictícios — a prova vem do método, da avaliação por
-bioimpedância e das certificações.
+`clinic-white` adaptado a quente, sem testemunhos fictícios — a prova vem do
+método, da avaliação por bioimpedância e das certificações.
+
+**Revisão de 2026-08-30** (feedback direto sobre viewport, tipografia,
+hierarquia, copy e imagem): tipografia trocada para Bricolage Grotesque +
+Inter + Roboto Mono (mono usado em números/labels — preços, métricas,
+passos do método); container alargado e secções passaram a usar mais do
+viewport (hero e "sobre" com imagem edge-to-edge); hero reconstruído como
+split imagem/texto, completo acima da dobra, com uma faixa fina de provas
+em vez do cartão antigo; copy do hero e do "sobre" cortada a metade;
+secção de afirmação trocada do padrão VIDEO-01 (contido) para VIDEO-02
+(full-bleed, ver Pattern Library) com um overlay em scrim radial centrado
+em vez do gradiente plano anterior; hierarquia de títulos (h2/h3)
+uniformizada em todo o site.
 
 ## Estrutura
 
@@ -36,10 +47,11 @@ credibilidade vem da secção `#medicao` (bioimpedância), das certificações e
    número real — todos os botões de WhatsApp leem deste único sítio, por isso
    basta corrigir aqui.
 2. **Fotografia** — só existe uma foto real, `assets/img/isaias-hero.webp`,
-   usada em `#sobre`. É um retrato forte mas não um hero: enquadramento
-   vertical, passadeiras e dois ecrãs de TV ao fundo, luz de tecto fria. Em
-   produção, recortar mais apertado (a `object-position` já força o foco para
-   cima) ou substituir por uma foto nova. Ver
+   agora usada duas vezes (hero e `#sobre`, com enquadramentos diferentes
+   via `object-position`) porque só existe esta. Fundo do ginásio ainda
+   aparece (passadeiras, ecrãs de TV, luz de tecto fria) — aceitável a esta
+   escala, mas o site vai ganhar muito com fotografia nova, especialmente
+   para deixar de repetir a mesma imagem duas vezes. Ver
    `.claude/skills/website-studio/templates/shot-list.md` para o plano de 5
    fotos que faltam — a mais importante é a da balança de bioimpedância em
    uso, é a única imagem que ainda ninguém tem.

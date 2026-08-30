@@ -11,7 +11,7 @@
 <meta property="og:image" content="assets/img/isaias-hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
 </head>
@@ -55,59 +55,59 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="container">
-      <div>
+    <div class="hero__grid">
+      <div class="hero__text">
         <div class="hero__kicker"><span class="dot"></span> Personal Training em Lisboa</div>
         <h1>Um treino feito <em>para ti</em>, com resultados que consegues medir.</h1>
-        <p class="hero__lede">Avaliamos o teu ponto de partida, construímos um plano à tua medida e acompanhamos a tua evolução a cada 2 meses — peso, massa muscular, massa gorda e mais. Em Almirante Reis, ao domicílio ou outdoor.</p>
+        <p class="hero__lede">Plano à tua medida. Resultados que consegues medir, a cada 2 meses.</p>
         <div class="hero__actions">
           <a href="#" class="btn btn--primary wa-link">Marcar sessão no WhatsApp</a>
           <a href="#servicos" class="btn btn--ghost">Ver serviços e preços</a>
         </div>
+        <div class="hero__stats reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-num">6</span>
+            <span class="hero__stat-label">certificações</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">2/2m</span>
+            <span class="hero__stat-label">avaliação por bioimpedância</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">06–21h</span>
+            <span class="hero__stat-label">disponibilidade diária</span>
+          </div>
+        </div>
       </div>
-      <div class="hero__proof reveal">
-        <div class="hero__proof-row">
-          <span class="hero__proof-num">6</span>
-          <span class="hero__proof-label">certificações em exercício físico, Pilates e massagem</span>
-        </div>
-        <div class="hero__proof-row">
-          <span class="hero__proof-num">2/2m</span>
-          <span class="hero__proof-label">avaliação física e análise por bioimpedância</span>
-        </div>
-        <div class="hero__proof-row">
-          <span class="hero__proof-num">06–21h</span>
-          <span class="hero__proof-label">disponibilidade diária, marcações por WhatsApp</span>
-        </div>
+      <div class="hero__media">
+        <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, personal trainer, no ginásio VivaGym Almirante Reis" width="1119" height="1400" fetchpriority="high">
       </div>
     </div>
   </section>
 
   <!-- ============ SOBRE ============ -->
-  <section id="sobre">
-    <div class="container about">
-      <div class="about__media reveal">
-        <!-- Foto real (VivaGym). Enquadrar mais apertado em produção para
-             remover as passadeiras e os ecrãs ao fundo — ver README. -->
-        <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, personal trainer, no ginásio VivaGym Almirante Reis" loading="lazy" width="1119" height="1400">
-        <div class="about__caption">
-          <strong>Isaías Rocha</strong>
-          <span>Personal Trainer · Técnico de Exercício Físico</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="eyebrow">Sobre mim</div>
-        <h2>Conhecer-te primeiro. Treinar-te depois.</h2>
-        <p class="about__quote">O que me deixa mais feliz é ver um cliente perceber a sua evolução e saber que estamos, juntos, cada vez mais perto do objetivo.</p>
-        <p>Sou natural de Minas Gerais, Brasil, e tenho uma paixão por ensinar e ajudar pessoas desde cedo. Acredito que um bom treino começa por te conhecer — o teu objetivo, mas também como te movimentas, as tuas limitações e como chegas a cada sessão. Há dias para desafiar mais, outros em que é preciso adaptar.</p>
-        <p>Trabalho com rigor, mas gosto que os treinos sejam também um momento positivo do teu dia. Podemos treinar a sério, rir e desfrutar do processo ao mesmo tempo.</p>
-        <ul class="certs">
-          <li>Técnico de Exercício Físico</li>
-          <li>Professor de Pilates</li>
-          <li>Certificação Clínica das Conchas</li>
-          <li>Massagem Desportiva</li>
-          <li>Massagem Terapêutica</li>
-          <li>Massagem Relaxante</li>
-        </ul>
+  <section id="sobre" class="about">
+    <div class="about__body reveal">
+      <div class="eyebrow">Sobre mim</div>
+      <h2>Conhecer-te primeiro. Treinar-te depois.</h2>
+      <p class="about__quote">O que me deixa mais feliz é ver um cliente perceber a sua evolução e saber que estamos, juntos, cada vez mais perto do objetivo.</p>
+      <p>Natural de Minas Gerais, com uma paixão por ajudar pessoas desde cedo. Treino com rigor — mas também com espaço para rir e desfrutar do processo.</p>
+      <ul class="certs">
+        <li>Técnico de Exercício Físico</li>
+        <li>Professor de Pilates</li>
+        <li>Certificação Clínica das Conchas</li>
+        <li>Massagem Desportiva</li>
+        <li>Massagem Terapêutica</li>
+        <li>Massagem Relaxante</li>
+      </ul>
+    </div>
+    <div class="about__media reveal">
+      <!-- Mesma foto real do hero (VivaGym), enquadramento diferente — ver
+           README: só existe esta fotografia por agora. -->
+      <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, personal trainer, no ginásio VivaGym Almirante Reis" loading="lazy" width="1119" height="1400">
+      <div class="about__caption">
+        <strong>Isaías Rocha</strong>
+        <span>Personal Trainer · Técnico de Exercício Físico</span>
       </div>
     </div>
   </section>
@@ -139,16 +139,18 @@
     </div>
   </section>
 
-  <!-- ============ AFIRMAÇÃO (VIDEO-01 — Contained Video Statement) ============
+  <!-- ============ AFIRMAÇÃO (VIDEO-02 — Full-Bleed Video Statement) ============
        Sem vídeo real ainda — a foto real do hero (isaias-hero.webp) é usada como
        frame provisório. Substituir <img> por <video>/<source> quando houver
-       filmagem (ver shot-list). Frase vem do briefing ("Um treino feito para ti"). -->
+       filmagem (ver shot-list). Frase vem do briefing ("Um treino feito para ti").
+       Trocado do VIDEO-01 (contido) para o VIDEO-02 (full-bleed) a pedido —
+       ver .claude/skills/website-studio/patterns/video-fullbleed-statement.html. -->
   <section class="statement">
-    <div class="statement__frame">
+    <div class="statement__media-wrap">
       <img class="statement__media" src="assets/img/isaias-hero.webp" alt="" loading="lazy">
-      <div class="statement__overlay">
-        <p class="statement__text">Não acredito em treinos iguais para toda a gente.</p>
-      </div>
+    </div>
+    <div class="statement__overlay">
+      <p class="statement__text">Não acredito em treinos iguais para toda a gente.</p>
     </div>
   </section>
 
@@ -158,7 +160,7 @@
       <div class="reveal">
         <div class="eyebrow">Como acompanho a tua evolução</div>
         <h2>Não adivinho se estás a evoluir. Meço.</h2>
-        <p>A cada 2 meses, a avaliação física inclui uma análise por balança de bioimpedância — para veres, em números, o que está a mudar. Não só a balança: também a forma como te movimentas e como te sentes.</p>
+        <p>A cada 2 meses, uma análise por bioimpedância mostra, em números, o que está a mudar — no corpo e na forma como te sentes.</p>
       </div>
       <div class="measure__panel reveal">
         <div class="eyebrow">Indicadores acompanhados</div>
@@ -322,7 +324,7 @@
   <!-- ============ CTA FINAL ============ -->
   <section class="final-cta section--tint">
     <div class="container">
-      <div class="eyebrow" style="justify-content:center;">Vamos começar</div>
+      <div class="eyebrow eyebrow--center">Vamos começar</div>
       <h2>O primeiro passo é uma conversa, não um treino.</h2>
       <p>Escreve-me no WhatsApp, conta-me o teu objetivo e combinamos a tua primeira avaliação.</p>
       <div class="hero__actions">

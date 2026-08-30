@@ -1,0 +1,59 @@
+<!--
+PATTERN VIDEO-02 — Full-Bleed Video Statement
+Layout: a video (or photo, as a temporary poster frame) filling the full
+viewport width, edge to edge, no container, no radius on desktop. Large
+centered text sits on it directly. The video *is* the section, not a frame
+around it - needs footage/imagery strong enough to carry that much visual
+weight.
+Overlay: a soft radial scrim centered behind the text, not a flat colour
+wash across the whole frame - keeps the rest of the image clear and the
+premium look the reference has (contrast pools where the text needs it,
+the image stays visible everywhere else). Never a colour-tinted gradient
+(e.g. a brand-accent wash) - neutral dark only, so it reads as photographic
+grading, not a UI overlay.
+Adapt: swap the statement for something in this project's own voice - a
+value, a promise, a way of working. Never a fabricated customer quote; if
+there's no real video yet, use a real photo as a temporary poster frame and
+say so in a comment and the README, never a fake play button implying a
+video that isn't there.
+Source: derived from tonyrobbins.com (patterns/references/video-02-*.webp),
+restyled to tokens. First built 2026-08-30, on the Isaías Rocha project -
+swapped in for the contained variant (VIDEO-01) to answer a "more
+immersive, less boxed-in" taste correction.
+-->
+<section class="p-vfull">
+  <div class="p-vfull__media-wrap">
+    <video class="p-vfull__media" poster="{{poster image path}}" muted loop playsinline autoplay>
+      <source src="{{video file path}}" type="video/mp4">
+    </video>
+  </div>
+  <div class="p-vfull__overlay">
+    <p class="p-vfull__text">{{Short, strong statement — this project's own voice, not a testimonial.}}</p>
+  </div>
+</section>
+
+<style>
+.p-vfull { position: relative; min-height: min(620px, 78vh); overflow: hidden; }
+.p-vfull__media-wrap { position: absolute; inset: 0; }
+.p-vfull__media { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-vfull__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem; text-align: center;
+  /* Localised scrim behind the text, not a wash across the whole frame -
+     the rest of the image stays clear. */
+  background:
+    radial-gradient(60% 70% at 50% 45%, rgba(8,10,8,0.55) 0%, rgba(8,10,8,0) 70%),
+    linear-gradient(180deg, rgba(8,10,8,0.14) 0%, rgba(8,10,8,0.04) 30%, rgba(8,10,8,0.32) 100%);
+}
+.p-vfull__text {
+  font-family: var(--display); font-weight: 700; color: #fff;
+  font-size: clamp(1.6rem, 4.2vw, 3rem); line-height: 1.18; max-width: 22ch; margin: 0;
+  letter-spacing: -0.01em; text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-vfull__media { display: none; }
+  .p-vfull { background: var(--raised); }
+}
+</style>
