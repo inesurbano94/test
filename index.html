@@ -4,504 +4,336 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Isaías Rocha — Personal Trainer em Lisboa</title>
-<meta name="description" content="Personal Trainer em Lisboa. Treino individual ou a dois, avaliação física e acompanhamento por WhatsApp com Isaías Rocha — na VivaGym Almirante Reis, ao domicílio ou outdoor.">
+<meta name="description" content="Personal Training individual em Lisboa com Isaías Rocha: treino feito à tua medida, na VivaGym Almirante Reis, ao domicílio ou outdoor. Marcações por WhatsApp.">
+<link rel="canonical" href="https://isaiasrocha.pt/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Isaías Rocha — Personal Trainer em Lisboa">
-<meta property="og:description" content="Sente-te mais forte, mais confiante e melhor no teu corpo.">
+<meta property="og:description" content="Treino individual, feito à tua medida. Personal Training na VivaGym Almirante Reis, ao domicílio ou outdoor, em Lisboa.">
+<meta property="og:image" content="assets/img/isaias-hero.webp">
 <meta property="og:locale" content="pt_PT">
+<meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231b140d'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23d9b783' text-anchor='middle'%3EIR%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2333302b'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23a45c3c' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "ExerciseGym",
   "name": "Isaías Rocha — Personal Trainer",
-  "description": "Personal Training individual e a dois, avaliação física e acompanhamento por WhatsApp, em Lisboa.",
-  "areaServed": "Lisboa, Portugal",
-  "location": {
-    "@type": "Place",
-    "name": "VivaGym Almirante Reis",
-    "address": { "@type": "PostalAddress", "addressLocality": "Lisboa", "addressCountry": "PT" }
-  },
-  "priceRange": "€€"
+  "founder": { "@type": "Person", "name": "Isaías Rocha", "jobTitle": "Personal Trainer" },
+  "areaServed": "Lisboa",
+  "address": { "@type": "PostalAddress", "streetAddress": "VivaGym Almirante Reis", "addressLocality": "Lisboa", "addressCountry": "PT" },
+  "openingHours": "Mo-Su 06:00-21:00"
 }
 </script>
 </head>
 <body>
 
-<!--
-  ============================================================
-  CONTENT NOTE (for whoever edits this next):
-  - All copy is sourced from the "Isaías Rocha — Briefing" doc. No stats,
-    reviews, credentials or prices beyond that brief should be added
-    without checking with Isaías first.
-  - WhatsApp number lives in ONE place: assets/js/main.js -> WHATSAPP_NUMBER.
-    Every CTA reads from there via [data-whatsapp] + main.js. Still a
-    placeholder — needs the real number before launch.
-  - The Sobre photo and Localização map are CSS placeholders. Replace
-    .ph-photo with a real photo, and consider a real Google Maps embed
-    once an exact address/place ID is confirmed.
-  - No email or Instagram handle was in the brief, so Contacto only
-    offers WhatsApp. Add real ones here (and in the JSON-LD) if Isaías
-    wants them listed.
-  ============================================================
--->
-
-<a class="skip-link" href="#contacto">Ir para contacto</a>
-
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#top" class="nav__logo">
-      <span class="nav__logo-name">Isaías Rocha</span>
-      <span class="nav__logo-tag">Personal Trainer · Lisboa</span>
-    </a>
-    <nav class="nav__links" aria-label="Navegação principal">
-      <a href="#objetivos">Objetivos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#metodo">Método</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#localizacao">Localização</a>
-      <a href="#faq">FAQ</a>
+<header class="site-header" id="topo">
+  <div class="container">
+    <a href="#topo" class="logo">Isaías<span>.</span>Rocha</a>
+    <nav aria-label="Navegação principal">
+      <ul class="nav__links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#treino">Treino</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
     </nav>
-    <a href="#" class="nav__cta btn btn--sm btn--primary" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
-      WhatsApp
-    </a>
-    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__actions">
+      <a class="btn btn-primary" href="https://wa.me/351900000000" target="_blank" rel="noopener">Marcar sessão</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ============ MOBILE MENU ============ -->
-<div class="mobile-menu" id="mobile-menu">
-  <nav aria-label="Navegação móvel">
-    <a href="#objetivos">Objetivos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#metodo">Método</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#resultados">Resultados</a>
-    <a href="#localizacao">Localização</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <a href="#" class="btn btn--primary btn--block" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener">WhatsApp</a>
-</div>
+<main>
 
-<main id="top">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero__bg" aria-hidden="true">
-      <span class="hero__ring hero__ring--1"></span>
-      <span class="hero__ring hero__ring--2"></span>
-      <span class="hero__glow"></span>
-    </div>
-    <div class="container hero__layout">
-      <div class="hero__content">
-        <p class="eyebrow reveal">Personal Trainer · Lisboa</p>
-        <h1 class="hero__title reveal">Sente-te mais forte, mais confiante e<br><em>melhor no teu corpo.</em></h1>
-        <p class="hero__sub reveal">Seja para aliviar dores, ganhar força, perder peso ou simplesmente voltar a mexer-te com confiança — vamos construir, juntos, um treino feito à tua medida.</p>
-        <div class="hero__actions reveal">
-          <a href="#" class="btn btn--primary btn--lg" data-whatsapp="Olá Isaías, gostava de falar sobre os meus objetivos de treino." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
-            Falar comigo no WhatsApp
-          </a>
-          <a href="#objetivos" class="btn btn--ghost btn--lg">Ver como posso ajudar</a>
-        </div>
-        <div class="hero__stats reveal">
-          <div class="stat"><span class="stat__num">1:1</span><span class="stat__label">Treino sempre individual e adaptado a ti</span></div>
-          <div class="stat"><span class="stat__num">45 min</span><span class="stat__label">De foco total em cada sessão</span></div>
-          <div class="stat"><span class="stat__num">2 meses</span><span class="stat__label">Entre avaliações físicas, para veres a evolução</span></div>
-        </div>
-      </div>
-      <div class="hero__photo reveal">
-        <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, Personal Trainer, num ginásio em Lisboa" class="hero__photo-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ OBJETIVOS (Como posso ajudar) ============ -->
-  <section class="objetivos" id="objetivos">
-    <div class="container">
-      <p class="eyebrow center">Como posso ajudar</p>
-      <h2 class="section-title reveal center">O teu objetivo pode<br>começar aqui.</h2>
-      <p class="objetivos__sub reveal center">Cada corpo e cada rotina são diferentes — por isso o treino também tem de ser. Vê o que mais se aproxima de ti.</p>
-
-      <div class="goals__grid">
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-15 3 9h5"/></svg></span>
-          <h3>Alívio de dores e fortalecimento</h3>
-          <p>Sentes dores ou desconforto, sobretudo na zona lombar ou nos joelhos? Fortalecemos o teu corpo e melhoramos a forma como te moves no dia a dia.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, tenho sentido algumas dores (ex: lombar ou joelhos) e gostava de perceber como o treino pode ajudar." target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M7 7v10M17 7v10M20 9v6M7 12h10"/></svg></span>
-          <h3>Ganhar massa muscular e força</h3>
-          <p>Queres ficar mais forte, ganhar massa muscular e treinar com mais confiança? Construímos esse caminho de forma progressiva, sessão a sessão.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, o meu objetivo é ganhar força e massa muscular. Podemos falar sobre como começar?" target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16l6-6 4 4 8-9"/><path d="M15 5h6v6"/></svg></span>
-          <h3>Perder peso e melhorar a condição física</h3>
-          <p>Procuras perder peso e sentir-te melhor no dia a dia? Criamos um plano ajustado ao teu nível atual e à tua rotina, com consistência.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, gostava de perder peso e melhorar a minha condição física. Pode ajudar-me?" target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.5-5.8"/><path d="M20 4v5h-5"/></svg></span>
-          <h3>Postura, mobilidade e fortalecimento</h3>
-          <p>Notas o corpo mais rígido ou a postura a ressentir-se? Trabalhamos a força, a mobilidade e a consciência do teu corpo, ao teu ritmo.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, gostava de melhorar a minha postura e mobilidade. Pode ajudar-me?" target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5"/></svg></span>
-          <h3>Começar — ou voltar — a treinar</h3>
-          <p>Nunca treinaste, ou já treinaste e paraste, e não sabes bem por onde recomeçar? Vamos construir uma rotina sustentável, sem pressa e sem julgamentos.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, quero começar (ou voltar) a treinar mas não sei bem por onde começar. Pode ajudar-me?" target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-
-        <article class="goal-card reveal">
-          <span class="goal-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></span>
-          <h3>Tonificação</h3>
-          <p>Queres sentir o corpo mais firme e definido? Trabalhamos a tua composição corporal com um treino orientado e consistente.</p>
-          <a href="#" class="goal-card__link" data-whatsapp="Olá Isaías, gostava de tonificar o corpo. Pode ajudar-me?" target="_blank" rel="noopener">Falar sobre isto →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SOBRE ============ -->
-  <section class="sobre" id="sobre">
-    <div class="container sobre__grid">
-      <div class="sobre__media reveal">
-        <div class="ph-photo" role="img" aria-label="Isaías Rocha, Personal Trainer"></div>
-        <div class="sobre__caption">
-          <strong>Isaías Rocha</strong>
-          <span>Personal Trainer</span>
-        </div>
-      </div>
-      <div class="sobre__text reveal">
-        <p class="eyebrow">Sobre mim</p>
-        <h2>Não tens de fazer<br>isto sozinho.</h2>
-        <p class="lede">Antes de pensar em séries e repetições, quero conhecer-te: o teu objetivo, a forma como te moves, as tuas limitações e até como chegas a cada sessão. Há dias para desafiar mais e dias para adaptar — o treino acompanha-te, não o contrário.</p>
-        <p>Sou brasileiro, natural de Minas Gerais, e a paixão por ajudar pessoas a evoluir trouxe-me ao Personal Training. A minha formação em exercício físico, Pilates e diferentes áreas de massagem dá-me um conhecimento mais profundo do corpo e do movimento, que aplico em cada sessão para que o teu treino seja seguro, eficaz e feito à tua medida. Também dou aulas de Cycling, treino em circuito, GAP e Pilates, se um formato diferente fizer mais sentido para ti.</p>
-        <blockquote class="pullquote">"O que me deixa mais feliz é ver um cliente perceber a sua evolução e saber que estamos, juntos, cada vez mais perto do objetivo."</blockquote>
-        <ul class="cred-chips">
-          <li>Técnico de Exercício Físico (TEF)</li>
-          <li>Professor de Pilates</li>
-          <li>Certificação Clínica das Conchas</li>
-          <li>Massagem Desportiva (CEM)</li>
-          <li>Massagem Terapêutica (CEM)</li>
-          <li>Massagem Relaxante (CEM)</li>
-        </ul>
-        <a href="#" class="btn btn--outline-ink" data-whatsapp="Olá Isaías, gostava de falar consigo sobre treino personalizado." target="_blank" rel="noopener">Falar comigo →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MÉTODO ============ -->
-  <section class="metodo" id="metodo">
-    <div class="container">
-      <p class="eyebrow center">O processo</p>
-      <h2 class="section-title reveal center">Começamos onde estás.<br>E evoluímos a partir daí.</h2>
-      <div class="metodo__grid">
-        <div class="step reveal">
-          <span class="step__num">01</span>
-          <h3>Falamos sobre ti</h3>
-          <p>Contas-me os teus objetivos, a tua experiência de treino, a tua rotina — e também cirurgias, lesões ou limitações que eu deva conhecer.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step__num">02</span>
-          <h3>Avaliamos o ponto de partida</h3>
-          <p>Fazemos uma avaliação física e alguns exercícios para perceber a tua mobilidade e a forma como o teu corpo se move.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step__num">03</span>
-          <h3>Construímos e acompanhamos o teu treino</h3>
-          <p>Desenhamos um plano personalizado e ajustamo-lo sempre que for preciso, acompanhando a tua evolução de perto.</p>
-        </div>
-      </div>
-      <p class="metodo__note reveal">Entre sessões, tens sempre uma resposta a um <strong>WhatsApp</strong> de distância, para qualquer dúvida sobre exercícios ou execução.</p>
-    </div>
-  </section>
-
-  <!-- ============ SERVIÇOS ============ -->
-  <section class="servicos" id="servicos">
-    <div class="container">
-      <p class="eyebrow center">Serviços</p>
-      <h2 class="section-title reveal center">Há mais do que uma forma<br>de chegar ao teu objetivo.</h2>
-      <p class="servicos__sub reveal center">Escolhe o formato que se encaixa na tua rotina — sozinho, acompanhado, na VivaGym, ao domicílio ou outdoor.</p>
-
-      <div class="pricing__grid">
-        <article class="price-card reveal">
-          <span class="price-card__badge">Ponto de partida</span>
-          <h3>Avaliação Física + Plano de Treino</h3>
-          <p class="price-card__desc">Uma conversa sobre os teus objetivos, avaliação física completa e um plano de treino personalizado — o primeiro passo antes de começares.</p>
-          <p class="price-card__price">50€<span>/ renovação a cada 2 meses</span></p>
-          <ul class="price-card__features">
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Conversa sobre os teus objetivos</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Avaliação física completa</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Plano de treino personalizado</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Bioimpedância: peso, massa muscular, massa gorda, água corporal e IMC</li>
-          </ul>
-          <p class="price-card__note">Na VivaGym Almirante Reis, Lisboa.</p>
-          <a href="#" class="btn btn--outline-ink btn--block" data-whatsapp="Olá Isaías, gostava de marcar a Avaliação Física + Plano de Treino (50€)." target="_blank" rel="noopener">Marcar avaliação</a>
-        </article>
-
-        <article class="price-card price-card--featured reveal">
-          <h3>Personal Training 1:1</h3>
-          <p class="price-card__desc">Sessões individuais de 45 minutos, com treino personalizado, acompanhamento por WhatsApp e avaliação a cada 2 meses.</p>
-          <table class="price-table">
-            <thead><tr><th></th><th>VivaGym</th><th>Domicílio</th></tr></thead>
-            <tbody>
-              <tr><td>Sessão avulsa</td><td>30€</td><td>40€</td></tr>
-              <tr><td>1x / semana</td><td>120€/mês</td><td>160€/mês</td></tr>
-              <tr><td>2x / semana</td><td>200€/mês</td><td>280€/mês</td></tr>
-            </tbody>
-          </table>
-          <p class="price-card__note">+ mensalidade da VivaGym (30€/mês) para treinos no ginásio.</p>
-          <a href="#" class="btn btn--primary btn--block" data-whatsapp="Olá Isaías, tenho interesse no Personal Training 1:1. Pode enviar-me mais informação?" target="_blank" rel="noopener">Escolher este plano</a>
-        </article>
-
-        <article class="price-card reveal">
-          <h3>Personal Training a Dois</h3>
-          <p class="price-card__desc">O mesmo acompanhamento próximo, para treinares com alguém — sessões de 45 minutos, com plano personalizado para os dois.</p>
-          <table class="price-table price-table--single">
-            <tbody>
-              <tr><td>Sessão avulsa</td><td>45€</td></tr>
-              <tr><td>1x / semana</td><td>180€/mês</td></tr>
-              <tr><td>2x / semana</td><td>300€/mês</td></tr>
-            </tbody>
-          </table>
-          <p class="price-card__note">Disponível na VivaGym, ao domicílio ou outdoor, consoante disponibilidade.</p>
-          <a href="#" class="btn btn--outline-ink btn--block" data-whatsapp="Olá Isaías, tenho interesse no Personal Training a Dois. Pode enviar-me mais informação?" target="_blank" rel="noopener">Escolher este plano</a>
-        </article>
-      </div>
-
-      <p class="servicos__note reveal">Os planos de Personal Training incluem avaliação física a cada 2 meses e acompanhamento direto por WhatsApp entre sessões.</p>
-    </div>
-  </section>
-
-  <!-- ============ RESULTADOS ============ -->
-  <!--
-    PLACEHOLDER CONTENT: the client names, avatars and star ratings below
-    are NOT real — the briefing has no client testimonials. Keep this
-    clearly marked until Isaías supplies real client quotes (and, with
-    their permission, real photos/ratings) — see README.md.
-  -->
-  <section class="resultados" id="resultados">
-    <div class="container">
-      <p class="eyebrow center">Resultados</p>
-      <h2 class="section-title reveal center">Resultados que se sentem,<br>sessão após sessão.</h2>
-      <p class="objetivos__sub reveal center">Estas são algumas das histórias de quem já começou.</p>
-
-      <div class="testimonials__grid">
-        <figure class="testimonial reveal">
-          <figcaption class="testimonial__header">
-            <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-            <span class="testimonial__who">
-              <span class="testimonial__name">Mariana C.</span>
-              <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              </span>
-            </span>
-          </figcaption>
-          <h3 class="testimonial__headline">Melhorei a minha postura e sinto muito mais confiança no meu corpo.</h3>
-          <blockquote class="testimonial__body">Comecei a treinar com o Isaías por causa de um desconforto na zona lombar. Hoje sinto o corpo muito mais alinhado e forte — e isso mudou também a forma como me sinto no dia a dia, não só no ginásio.</blockquote>
-        </figure>
-
-        <figure class="testimonial reveal">
-          <figcaption class="testimonial__header">
-            <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-            <span class="testimonial__who">
-              <span class="testimonial__name">Rui A.</span>
-              <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              </span>
-            </span>
-          </figcaption>
-          <h3 class="testimonial__headline">Finalmente comecei a ver resultados no ganho de massa muscular.</h3>
-          <blockquote class="testimonial__body">Já tinha tentado treinar sozinho, sem grande evolução. Com um plano feito à minha medida e ajustado sempre que precisava, finalmente vejo os resultados que procurava há tempo — mais força e mais massa muscular.</blockquote>
-        </figure>
-
-        <figure class="testimonial reveal">
-          <figcaption class="testimonial__header">
-            <span class="testimonial__avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.5" r="4"/><path d="M4 21a8 8 0 0 1 16 0Z"/></svg></span>
-            <span class="testimonial__who">
-              <span class="testimonial__name">Beatriz S.</span>
-              <span class="testimonial__stars" aria-label="5 de 5 estrelas">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7Z"/></svg>
-              </span>
-            </span>
-          </figcaption>
-          <h3 class="testimonial__headline">Sinto-me mais forte, com mais energia e muito mais consistente.</h3>
-          <blockquote class="testimonial__body">O que mais mudou foi a consistência. O acompanhamento por WhatsApp e os ajustes constantes ao plano fazem toda a diferença — sinto-me mais forte, com mais energia no dia a dia, e finalmente consigo manter uma rotina.</blockquote>
-        </figure>
-      </div>
-
-      <div class="resultados__cta center reveal">
-        <a href="#" class="btn btn--primary btn--lg" data-whatsapp="Olá Isaías, gostava de começar a treinar e sentir estes resultados. Pode ajudar-me?" target="_blank" rel="noopener">Quero começar a sentir a diferença</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LOCALIZAÇÃO ============ -->
-  <section class="localizacao" id="localizacao">
-    <div class="container">
-      <div class="localizacao__intro reveal">
-        <p class="eyebrow">Localização</p>
-        <h2>Vamos fazer o treino<br>caber na tua vida.</h2>
-        <p class="lede">Presencial na VivaGym Almirante Reis, ao domicílio na Grande Lisboa ou outdoor, consoante a tua disponibilidade — o treino adapta-se a ti, não o contrário.</p>
-      </div>
-      <div class="loc-card reveal">
-        <div class="loc-map">
-          <svg class="loc-map__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
-        </div>
-        <div class="loc-panel">
-          <h3>Onde treinamos</h3>
-          <ul class="loc-panel__list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
-              <span>
-                <span class="loc-panel__title">VivaGym Almirante Reis</span>
-                <span class="loc-panel__desc">Personal Training presencial, em Lisboa.</span>
-              </span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h5v-5h2v5h5v-9"/></svg>
-              <span>
-                <span class="loc-panel__title">Ao domicílio</span>
-                <span class="loc-panel__desc">Deslocações por toda a Grande Lisboa.</span>
-              </span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4 12h2M18 12h2"/></svg>
-              <span>
-                <span class="loc-panel__title">Outdoor</span>
-                <span class="loc-panel__desc">Treinos ao ar livre, mediante disponibilidade.</span>
-              </span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
-              <span>
-                <span class="loc-panel__title">Horário: 06:00–21:00</span>
-                <span class="loc-panel__desc">Cancelamentos até 24h antes, sem complicações.</span>
-              </span>
-            </li>
-          </ul>
-          <div class="loc-panel__actions">
-            <a href="#" class="btn btn--primary btn--block" data-whatsapp="Olá Isaías, gostava de perguntar sobre horários e disponibilidade." target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
-              Falar comigo no WhatsApp
-            </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=VivaGym+Almirante+Reis+Lisboa" class="loc-panel__maps" target="_blank" rel="noopener">Ver localização no Google Maps →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="faq__intro reveal">
-        <p class="eyebrow">Perguntas frequentes</p>
-        <h2>Ainda tens dúvidas?<br>Aqui vão as respostas.</h2>
-      </div>
-
-      <div class="faq__list reveal">
-        <details class="faq-item">
-          <summary>Nunca treinei com um Personal Trainer. Posso começar contigo?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-          <div class="faq-item__body"><p>Claro. Não precisas de ter experiência nem de estar "em forma" para começar. Na primeira sessão percebemos o teu ponto de partida, os teus objetivos e aquilo de que o teu corpo precisa. O treino evolui contigo.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Tenho dores ou algumas limitações. Posso treinar?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-          <div class="faq-item__body"><p>Sim, o treino pode ser adaptado a limitações ou desconfortos existentes, como na zona lombar ou nos joelhos. Antes de começar, falamos sobre o teu histórico e avaliamos o movimento para perceber o que faz sentido para ti. Quando necessário, o treino deve respeitar também a orientação do teu profissional de saúde.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Preciso de ser membro do VivaGym?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-          <div class="faq-item__body"><p>Sim, para os treinos realizados no VivaGym Almirante Reis é necessária a mensalidade do ginásio, atualmente cerca de <strong>€30/mês</strong>. Se preferires, também existem opções ao domicílio e outdoor.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Quanto custa o Personal Training?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-          <div class="faq-item__body"><p>No VivaGym Almirante Reis, uma sessão individual avulso custa <strong>€30</strong>. Existem também packs mensais para quem quer treinar uma ou duas vezes por semana. Ao domicílio, as sessões começam nos <strong>€40</strong>.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Como marco a primeira sessão?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-          <div class="faq-item__body"><p>Envia-me uma mensagem no <strong>WhatsApp</strong> e conta-me brevemente o que gostavas de alcançar. A partir daí vemos juntos qual é a melhor forma de começar.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACTO ============ -->
-  <section class="contacto" id="contacto">
-    <div class="container contacto__inner">
-      <p class="eyebrow reveal center">Contacto</p>
-      <h2 class="section-title reveal center">O primeiro passo pode<br>ser só uma conversa.</h2>
-      <p class="contacto__sub reveal center">Sem compromisso, sem pressa. Conta-me o que procuras e vemos juntos como posso ajudar.</p>
-
-      <div class="contacto__cta reveal">
-        <a href="#" class="btn btn--primary btn--xl" data-whatsapp="Olá Isaías, gostava de falar sobre os meus objetivos de treino." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero__copy">
+      <span class="eyebrow">Personal Training em Lisboa</span>
+      <h1 id="hero-title">Um treino <em>feito para ti</em>, não um plano genérico.</h1>
+      <p class="hero__lede">Antes de te dar um exercício, quero perceber como te moves, o que te limita e o que procuras. Treinamos com rigor — e também com boa disposição.</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="https://wa.me/351900000000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.19 0 4.25.85 5.8 2.4a8.2 8.2 0 0 1 2.41 5.84c0 4.55-3.7 8.24-8.24 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.71-8.24 8.27-8.24zm-4.5 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.7 2.68 4.19 3.66 2.07.82 2.49.66 2.94.62.45-.04 1.44-.59 1.65-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.45-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47z"/></svg>
           Falar comigo no WhatsApp
         </a>
-        <p class="contacto__hours">Horário: 06:00–21:00 · Marcações e dúvidas por WhatsApp</p>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços e preços</a>
+      </div>
+      <div class="hero__meta">
+        <div><strong>Alívio &amp; força</strong><span>Dores lombares, joelhos, mobilidade e postura</span></div>
+        <div><strong>Pilates &amp; Cycling</strong><span>Além do PT 1:1, aulas de grupo</span></div>
+        <div><strong>06:00–21:00</strong><span>VivaGym · domicílio · outdoor</span></div>
       </div>
     </div>
-  </section>
+    <div class="hero__media reveal">
+      <div class="hero__frame">
+        <img src="assets/img/isaias-hero.webp" width="1120" height="1565" alt="Isaías Rocha, personal trainer, a acompanhar um exercício durante uma sessão de treino" loading="eager" fetchpriority="high">
+      </div>
+      <div class="hero__badge">
+        <p>“O que me deixa mais feliz é ver um cliente perceber a sua evolução.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section class="sobre" id="sobre" aria-labelledby="sobre-title">
+  <div class="container">
+    <blockquote class="sobre__quote reveal">
+      O que me deixa mais feliz é ver um cliente perceber a sua evolução e saber que estamos, juntos, cada vez mais perto do objetivo.
+      <cite>Isaías Rocha</cite>
+    </blockquote>
+    <div>
+      <span class="eyebrow">Sobre mim</span>
+      <h2 id="sobre-title" class="reveal">Natural de Minas Gerais, a treinar em Lisboa.</h2>
+      <div class="sobre__body reveal" style="margin-top: var(--sp-6);">
+        <p>Desde cedo tenho uma paixão por <strong>ensinar e ajudar pessoas</strong>. O que mais gosto neste trabalho é acompanhar alguém ao longo do tempo e vê-lo perceber a sua própria evolução: sentir-se mais forte, mover-se melhor, perder peso, ganhar massa muscular ou simplesmente ganhar mais confiança no próprio corpo.</p>
+        <p>Acredito que um bom treino começa por conhecer a pessoa — o objetivo, mas também como se movimenta, as suas limitações, a sua experiência e até como chega a cada sessão. Há dias para desafiar mais e outros em que é preciso adaptar.</p>
+        <p>A minha formação em exercício físico, Pilates e diferentes áreas de massagem deu-me um conhecimento mais profundo do corpo, movimento e execução dos exercícios, que aplico diariamente com os meus clientes. Levo o trabalho a sério, mas gosto que os treinos sejam também um momento positivo do dia: podemos treinar com rigor, rir e desfrutar do processo ao mesmo tempo.</p>
+        <p>Além do Personal Training, dou aulas de Cycling, treino em circuito, GAP e Pilates.</p>
+      </div>
+      <div class="certs reveal">
+        <h3>Certificações</h3>
+        <ul class="certs__list">
+          <li>Técnico de Exercício Físico — TEF</li>
+          <li>Professor de Pilates</li>
+          <li>Certificação Clínica das Conchas</li>
+          <li>Massagem Desportiva — CEM</li>
+          <li>Massagem Terapêutica — CEM</li>
+          <li>Massagem Relaxante — CEM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Valores -->
+<section class="valores" aria-labelledby="valores-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">A minha forma de treinar</span>
+      <h2 id="valores-title">Três coisas que não abro mão.</h2>
+    </div>
+    <div class="valores__grid">
+      <article class="valores__item reveal">
+        <span class="num">01</span>
+        <h3>Um treino feito para ti</h3>
+        <p>Não acredito em treinos iguais para toda a gente. Duas pessoas podem ter o mesmo objetivo e precisar de abordagens completamente diferentes — avalio objetivos, mobilidade, flexibilidade, experiência, limitações e condição física para construir um treino individual.</p>
+      </article>
+      <article class="valores__item reveal">
+        <span class="num">02</span>
+        <h3>Técnica e atenção ao detalhe</h3>
+        <p>Estou atento à forma como cada exercício é executado e à resposta do corpo. O objetivo não é fazer mais repetições — é treinar melhor, evoluir e construir resultados de forma segura e consistente.</p>
+      </article>
+      <article class="valores__item reveal">
+        <span class="num">03</span>
+        <h3>Proximidade e confiança</h3>
+        <p>Quero conhecer a pessoa que está à minha frente, não apenas o seu plano de treino. Gosto de ouvir, adaptar, motivar e criar um ambiente descontraído onde existe confiança.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Treino / focos -->
+<section class="treino" id="treino" aria-labelledby="treino-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Como posso ajudar</span>
+      <h2 id="treino-title">Objetivos de treino que acompanho todos os dias.</h2>
+      <p>Seja qual for o ponto de partida, o treino é construído à volta do que precisas agora.</p>
+    </div>
+    <div class="foco-list">
+      <div class="foco reveal">
+        <span class="foco__index">01</span>
+        <h3 class="foco__title">Alívio de dores e fortalecimento</h3>
+        <p class="foco__desc">Treinos adaptados para quem sente dores ou desconfortos, nomeadamente na zona lombar ou nos joelhos, com foco no fortalecimento muscular, mobilidade e melhoria da forma como o corpo se movimenta no dia a dia.</p>
+      </div>
+      <div class="foco reveal">
+        <span class="foco__index">02</span>
+        <h3 class="foco__title">Ganhar massa muscular e força</h3>
+        <p class="foco__desc">Treino progressivo e personalizado para desenvolver força, massa muscular e confiança no treino.</p>
+      </div>
+      <div class="foco reveal">
+        <span class="foco__index">03</span>
+        <h3 class="foco__title">Perder peso e melhorar a condição física</h3>
+        <p class="foco__desc">Um plano adaptado ao teu nível e rotina para aumentar a atividade física, condição cardiovascular e consistência.</p>
+      </div>
+      <div class="foco reveal">
+        <span class="foco__index">04</span>
+        <h3 class="foco__title">Postura, mobilidade e fortalecimento</h3>
+        <p class="foco__desc">Trabalho de força, mobilidade e consciência corporal adaptado às características e limitações de cada pessoa.</p>
+      </div>
+      <div class="foco reveal">
+        <span class="foco__index">05</span>
+        <h3 class="foco__title">Começar — ou voltar — a treinar</h3>
+        <p class="foco__desc">Para quem quer fazer exercício, mas não sabe por onde começar, como executar corretamente os movimentos ou como criar uma rotina sustentável.</p>
+      </div>
+      <div class="foco reveal">
+        <span class="foco__index">06</span>
+        <h3 class="foco__title">Tonificação</h3>
+        <p class="foco__desc">Treino orientado para melhorar a composição corporal, definir a musculatura e aumentar a sensação de firmeza e força no corpo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Como é um treino -->
+<section class="processo" aria-labelledby="processo-title">
+  <div class="container">
+    <div>
+      <span class="eyebrow reveal">Como é um treino</span>
+      <h2 id="processo-title" class="reveal" style="margin-bottom: var(--sp-7);">Do primeiro contacto ao plano em curso.</h2>
+      <div class="processo__steps">
+        <div class="processo__step reveal">
+          <span class="num">01</span>
+          <div><h3>Falamos sobre ti</h3><p>Objetivos, experiência de treino, rotina, cirurgias, lesões ou limitações.</p></div>
+        </div>
+        <div class="processo__step reveal">
+          <span class="num">02</span>
+          <div><h3>Avaliamos o ponto de partida</h3><p>Avaliação física e alguns exercícios para compreender mobilidade e movimento.</p></div>
+        </div>
+        <div class="processo__step reveal">
+          <span class="num">03</span>
+          <div><h3>Construímos e acompanhamos o teu treino</h3><p>Plano personalizado, acompanhamento da evolução e ajustes sempre que necessário.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="processo__note reveal">
+      <span class="eyebrow">Entre sessões</span>
+      <p>Podes falar comigo por WhatsApp sempre que tiveres dúvidas sobre exercícios ou execução — o acompanhamento não termina quando a sessão acaba.</p>
+      <a class="btn btn-ghost" href="https://wa.me/351900000000" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços -->
+<section class="servicos" id="servicos" aria-labelledby="servicos-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Serviços</span>
+      <h2 id="servicos-title">Preços claros, sem surpresas.</h2>
+      <p>Sessões de 45 minutos. Todos os planos incluem treino personalizado, plano de treino, acompanhamento por WhatsApp e análise por bioimpedância a cada 2 meses.</p>
+    </div>
+    <div class="servicos__grid">
+      <article class="plano reveal plano--featured">
+        <h3>Personal Training — 1:1</h3>
+        <p class="plano__tag">Treino individual, 45 minutos</p>
+        <div class="plano__prices">
+          <div class="plano__price"><span>Sessão avulso</span><strong>30 €</strong></div>
+          <div class="plano__price"><span>1x / semana</span><strong>120 €/mês</strong></div>
+          <div class="plano__price"><span>2x / semana</span><strong>200 €/mês</strong></div>
+        </div>
+        <p class="plano__where"><strong>VivaGym Almirante Reis</strong><br>+ 30 €/mês de mensalidade VivaGym</p>
+        <a class="btn btn-primary" href="https://wa.me/351900000000" target="_blank" rel="noopener">Marcar sessão</a>
+      </article>
+
+      <article class="plano reveal">
+        <h3>Personal Training — Ao domicílio</h3>
+        <p class="plano__tag">Treino individual, 45 minutos</p>
+        <div class="plano__prices">
+          <div class="plano__price"><span>Sessão avulso</span><strong>40 €</strong></div>
+          <div class="plano__price"><span>1x / semana</span><strong>160 €/mês</strong></div>
+          <div class="plano__price"><span>2x / semana</span><strong>280 €/mês</strong></div>
+        </div>
+        <p class="plano__where"><strong>Grande Lisboa</strong><br>Desloco-me até ti</p>
+        <a class="btn btn-ghost" href="https://wa.me/351900000000" target="_blank" rel="noopener">Marcar sessão</a>
+      </article>
+
+      <article class="plano reveal">
+        <h3>Bring Your Friend</h3>
+        <p class="plano__tag">Treino personalizado para duas pessoas, 45 minutos</p>
+        <div class="plano__prices">
+          <div class="plano__price"><span>Sessão avulso</span><strong>45 €</strong></div>
+          <div class="plano__price"><span>1x / semana</span><strong>180 €/mês</strong></div>
+          <div class="plano__price"><span>2x / semana</span><strong>300 €/mês</strong></div>
+        </div>
+        <p class="plano__where"><strong>Disponível em:</strong><br>VivaGym · domicílio · outdoor</p>
+        <a class="btn btn-ghost" href="https://wa.me/351900000000" target="_blank" rel="noopener">Marcar sessão</a>
+      </article>
+
+      <article class="plano reveal">
+        <h3>Avaliação Física + Plano de Treino</h3>
+        <p class="plano__tag">Renovação a cada 2 meses</p>
+        <div class="plano__prices">
+          <div class="plano__price"><span>Avaliação completa</span><strong>50 €</strong></div>
+        </div>
+        <p class="plano__where"><strong>VivaGym Almirante Reis</strong><br>Conversa sobre objetivos, avaliação física, plano de treino e bioimpedância (peso, massa muscular, massa gorda, água corporal, IMC)</p>
+        <a class="btn btn-ghost" href="https://wa.me/351900000000" target="_blank" rel="noopener">Marcar avaliação</a>
+      </article>
+    </div>
+    <p class="servicos__note reveal">Todos os planos de Personal Training incluem avaliação física a cada 2 meses e plano de treino. Preços sujeitos a confirmação — fala comigo por WhatsApp para o plano mais indicado para ti.</p>
+  </div>
+</section>
+
+<!-- Localização -->
+<section class="local" id="localizacao" aria-labelledby="local-title">
+  <div class="container">
+    <div>
+      <span class="eyebrow reveal">Onde treinamos</span>
+      <h2 id="local-title" class="reveal" style="margin-bottom: var(--sp-7);">Três formas de treinar comigo.</h2>
+      <div class="local__places">
+        <div class="local__place reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><h3>VivaGym Almirante Reis — Lisboa</h3><p>Personal Training presencial no ginásio.</p></div>
+        </div>
+        <div class="local__place reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+          <div><h3>Ao domicílio</h3><p>Deslocações na Grande Lisboa.</p></div>
+        </div>
+        <div class="local__place reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <div><h3>Outdoor</h3><p>Treinos ao ar livre, mediante disponibilidade.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="local__panel reveal">
+      <dl>
+        <div class="row"><dt>Horário</dt><dd>06:00 – 21:00</dd></div>
+        <div class="row"><dt>Cancelamentos</dt><dd>até 24h antes</dd></div>
+        <div class="row"><dt>Marcações</dt><dd>WhatsApp</dd></div>
+      </dl>
+      <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=VivaGym+Almirante+Reis+Lisboa" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Ver localização no Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-final" aria-labelledby="cta-title">
+  <div class="container">
+    <span class="eyebrow reveal" style="color:var(--accent-lt);">Vamos começar</span>
+    <h2 id="cta-title" class="reveal">Fala comigo e conta-me o teu objetivo.</h2>
+    <p class="reveal">Sem compromisso — respondo por WhatsApp com o plano mais indicado para ti.</p>
+    <div class="hero__actions reveal">
+      <a class="btn btn-on-deep btn-primary" href="https://wa.me/351900000000" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="#top" class="footer__logo">Isaías Rocha</a>
-    <nav class="footer__links" aria-label="Navegação de rodapé">
-      <a href="#objetivos">Objetivos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#metodo">Método</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#localizacao">Localização</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <p class="footer__copy">© <span id="year"></span> Isaías Rocha · Personal Trainer, Lisboa</p>
+<footer class="site-footer">
+  <div class="container">
+    <a href="#topo" class="logo">Isaías<span>.</span>Rocha</a>
+    <p>Personal Trainer · Lisboa · © 2026</p>
   </div>
 </footer>
 
-<a href="#" class="fab" id="fab" data-whatsapp="Olá Isaías, gostava de saber mais sobre o treino personalizado." target="_blank" rel="noopener" aria-label="Contactar via WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.7 13.4L3 21l3.7-1.2A9 9 0 1 0 17.6 6.3ZM12 19.5a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4a1 1 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.6 4.6 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a2.4 2.4 0 0 0 1.5-.1 2.2 2.2 0 0 0 1.4-1 1.7 1.7 0 0 0 .1-1c-.1-.1-.2-.2-.5-.3Z"/></svg>
+<a class="fab" href="https://wa.me/351900000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.19 0 4.25.85 5.8 2.4a8.2 8.2 0 0 1 2.41 5.84c0 4.55-3.7 8.24-8.24 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.71-8.24 8.27-8.24zm-4.5 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.7 2.68 4.19 3.66 2.07.82 2.49.66 2.94.62.45-.04 1.44-.59 1.65-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.45-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47z"/></svg>
+  <span class="fab__label">WhatsApp</span>
 </a>
 
 <script src="assets/js/main.js"></script>

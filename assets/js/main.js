@@ -1,64 +1,65 @@
-(() => {
+(function () {
   "use strict";
 
-  /* ----------------------------------------------------------
-     Single source of truth for the WhatsApp number.
-     Format: country code + number, no spaces, no "+".
-     e.g. Portugal mobile -> "351912345678"
-     TODO: replace with the real number before launch.
-  ---------------------------------------------------------- */
-  const WHATSAPP_NUMBER = "351900000000";
-  const DEFAULT_MESSAGE = "Olá Isaías, gostava de saber mais sobre o treino personalizado.";
-
-  document.querySelectorAll("[data-whatsapp]").forEach((el) => {
-    const msg = el.getAttribute("data-whatsapp") || DEFAULT_MESSAGE;
-    el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  // Single source of truth for the WhatsApp number. Placeholder — see README.
+  var WHATSAPP_NUMBER = "351900000000";
+  var waLinks = document.querySelectorAll('a[href*="wa.me/351900000000"]');
+  waLinks.forEach(function (a) {
+    var text = a.getAttribute("data-wa-text");
+    var url = "https://wa.me/" + WHATSAPP_NUMBER + (text ? "?text=" + encodeURIComponent(text) : "");
+    a.setAttribute("href", url);
   });
 
-  /* ---------------- Nav scroll state ---------------- */
-  const nav = document.getElementById("nav");
-  const onScroll = () => {
-    nav.classList.toggle("is-scrolled", window.scrollY > 40);
-    fab.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
-  };
+  // Mobile nav
+  var header = document.querySelector(".site-header");
+  var toggle = document.querySelector(".nav-toggle");
+  if (header && toggle) {
+    toggle.addEventListener("click", function () {
+      var isOpen = header.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    header.querySelectorAll(".nav__links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        header.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
-  /* ---------------- Mobile menu ---------------- */
-  const burger = document.getElementById("burger");
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    burger.setAttribute("aria-expanded", "false");
-  };
-  burger.addEventListener("click", () => {
-    const open = document.body.classList.toggle("menu-open");
-    burger.setAttribute("aria-expanded", String(open));
-  });
-  document.querySelectorAll(".mobile-menu a").forEach((a) => a.addEventListener("click", closeMenu));
-
-  /* ---------------- Floating WhatsApp button ---------------- */
-  const fab = document.getElementById("fab");
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  /* ---------------- Reveal on scroll ---------------- */
-  const revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+  // Scroll reveal
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry, i) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
+            setTimeout(function () {
+              entry.target.classList.add("is-visible");
+            }, (i % 6) * 70);
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
-    revealEls.forEach((el) => io.observe(el));
+    revealEls.forEach(function (el) { observer.observe(el); });
   } else {
-    revealEls.forEach((el) => el.classList.add("is-visible"));
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------------- Footer year ---------------- */
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // Hide floating WhatsApp button once the footer CTA is in view
+  var fab = document.querySelector(".fab");
+  var ctaFinal = document.querySelector(".cta-final");
+  if (fab && ctaFinal && "IntersectionObserver" in window) {
+    var fabObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          fab.style.opacity = entry.isIntersecting ? "0" : "1";
+          fab.style.pointerEvents = entry.isIntersecting ? "none" : "auto";
+        });
+      },
+      { threshold: 0.3 }
+    );
+    fabObserver.observe(ctaFinal);
+  }
 })();
