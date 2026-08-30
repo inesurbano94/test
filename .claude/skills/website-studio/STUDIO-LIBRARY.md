@@ -100,7 +100,7 @@ their `Origin` line says where they actually came from instead.
   shouldn't feel handmade.
 
 **Bricolage Grotesque + Inter + Roboto Mono**
-- Reference: referenced from Say Briefly — not yet used on a real project.
+- Reference: referenced from Say Briefly.
 - Roles: Bricolage Grotesque — headings/display. Inter — body. Roboto Mono —
   mono/accent (stats, labels, prices, anything numeric or code-like).
 - Licence: both on Google Fonts, OFL 1.1 (Bricolage Grotesque, Inter) /
@@ -110,6 +110,32 @@ their `Origin` line says where they actually came from instead.
   of borrowing the body font's.
 - Best for: sites with real data to show off (prices, stats, specs) that
   want a grotesque-led, slightly technical feel without going cold.
+- **Used on the Isaías rebuild (2026-08-30), then swapped out the same day**
+  — the Bricolage Grotesque display face read as too soft/rounded for what
+  was wanted; replaced with Archivo (below) for a more Swiss-grotesque
+  character. Inter (body) and Roboto Mono (accent) both stayed. Not a
+  licence or technical problem — a taste correction, still valid for a
+  project that wants Bricolage Grotesque's warmer character specifically.
+
+**Archivo + Inter + Roboto Mono**
+- Reference: used on the Isaías rebuild (2026-08-30) — a same-day swap for
+  Bricolage Grotesque above. Originally the ask was Switzer (Fontshare) +
+  Inter, but Fontshare's CDN (`api.fontshare.com`) is blocked by this
+  sandbox's network policy and isn't on the Artifact preview tool's allowed
+  CDN list either — neither this session nor its preview links could
+  actually render or verify it, so Inés chose this Google Fonts alternative
+  instead, verified in every preview.
+- Roles: Archivo — headings/display. Inter — body. Roboto Mono — mono/accent
+  (stats, labels, prices, anything numeric or code-like) — same accent role
+  as the Bricolage Grotesque combo above.
+- Licence: all three on Google Fonts, OFL 1.1 (Archivo, Inter) / Apache 2.0
+  (Roboto Mono) — free for commercial web use, confirmed.
+- What I like: a genuine Swiss neo-grotesque for headings — squarer,
+  higher-contrast weight jumps than Bricolage Grotesque's rounder warmth.
+  Reads confident and precise rather than soft.
+- Best for: sites that want a crisp, editorial-grotesque title face without
+  going cold — the closest free Google Fonts match to Switzer for that
+  register.
 
 **Inter + Azeret Mono**
 - Reference: referenced from Stykka — not yet used on a real project.

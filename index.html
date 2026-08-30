@@ -11,7 +11,7 @@
 <meta property="og:image" content="assets/img/isaias-hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
 </head>
@@ -54,34 +54,28 @@
 <main id="top">
 
   <!-- ============ HERO ============ -->
+  <!-- Full-bleed: the photo is the hero, not an element beside the text -
+       per taste.md T12/T14 and the Cowboy/Superpower/AG1 references. Trust
+       stats moved out of a boxed card into a bottom strip sitting directly
+       on the image (Cowboy's own pattern), so they read as part of the
+       composition, not a disconnected panel. -->
   <section class="hero">
-    <div class="hero__grid">
-      <div class="hero__text">
-        <div class="hero__kicker"><span class="dot"></span> Personal Training em Lisboa</div>
-        <h1>Um treino feito <em>para ti</em>, com resultados que consegues medir.</h1>
-        <p class="hero__lede">Plano à tua medida. Resultados que consegues medir, a cada 2 meses.</p>
-        <div class="hero__actions">
-          <a href="#" class="btn btn--primary wa-link">Marcar sessão no WhatsApp</a>
-          <a href="#servicos" class="btn btn--ghost">Ver serviços e preços</a>
-        </div>
-        <div class="hero__stats reveal">
-          <div class="hero__stat">
-            <span class="hero__stat-num">6</span>
-            <span class="hero__stat-label">certificações</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">2/2m</span>
-            <span class="hero__stat-label">avaliação por bioimpedância</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">06–21h</span>
-            <span class="hero__stat-label">disponibilidade diária</span>
-          </div>
-        </div>
+    <div class="hero__media">
+      <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, personal trainer, no ginásio VivaGym Almirante Reis" width="1119" height="1400" fetchpriority="high">
+    </div>
+    <div class="hero__content">
+      <div class="hero__kicker"><span class="dot"></span> Personal Training em Lisboa</div>
+      <h1>Um treino feito <em>para ti</em>.</h1>
+      <p class="hero__lede">Plano à tua medida. Resultados que consegues medir, a cada 2 meses.</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--onphoto wa-link">Marcar sessão no WhatsApp</a>
+        <a href="#servicos" class="hero__more">Ver serviços e preços <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero__media">
-        <img src="assets/img/isaias-hero.webp" alt="Isaías Rocha, personal trainer, no ginásio VivaGym Almirante Reis" width="1119" height="1400" fetchpriority="high">
-      </div>
+    </div>
+    <div class="hero__trust">
+      <div class="hero__trust-item"><span>6</span>certificações</div>
+      <div class="hero__trust-item"><span>2/2m</span>avaliação por bioimpedância</div>
+      <div class="hero__trust-item"><span>06–21h</span>disponibilidade diária</div>
     </div>
   </section>
 

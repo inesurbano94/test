@@ -88,6 +88,49 @@ photography is thin, say so plainly and use tasteful stock or a clearly
 marked placeholder rather than letting the design go image-light to match
 what's on hand - it should still read as intended once real photos land.
 
+**T14 - Full-bleed imagery is right; overlaid content still aligns to the
+site's own container.** (2026-08-30)
+T7 said "use the whole viewport" and that's correct - a section's image
+should fill it edge to edge. What went wrong on the first pass: the hero's
+*text* was given its own raw gutter padding instead of the site's shared
+--container width, so it landed at a different left edge than the logo and
+nav sitting directly above it - "text outside the margins." That
+misalignment, not the full-bleed image itself, is what read as broken. Full
+immersion and consistent alignment aren't in tension - an image can bleed
+to the true edge while every piece of text on the page still shares one
+left edge, always.
+
+**T15 - Overlay the image, don't put text beside a framed one.** (2026-08-30)
+A "text column + a photo in its own card" hero, even built cleanly with
+real margins, reads like a generic template landing page - this was tried
+directly and rejected. What the loved references actually do: the photo or
+video fills the whole hero, and the text sits directly on top of it, graded
+for contrast. Trust signals belong in that same frame too - a thin strip
+pinned to the bottom of the image, not a separate bordered card living next
+to the text, which reads disconnected and adds busyness rather than proof.
+*From: cowboy.com, superpower.com, ag1.com. "Amble" was also named as a
+reference in this round - not independently inspected (no screenshot or
+fetch), noted here without a specific visual claim.*
+
+**T16 - A headline earns short, elegant line breaks, not many forced short
+ones.** (2026-08-30)
+A long, multi-clause headline crammed into a narrow column wraps into four
+or five choppy lines and reads heavy, not elegant. Split the idea across
+the headline and the lede instead - a short, confident headline (two lines,
+not four or five), with the qualifying clause moved down into the lede.
+
+**T17 - The site's own deeper accent reads more considered than a bright
+brand-utility colour on every button.** (2026-08-30)
+A saturated action colour paired with a colour-matched glow on hover (e.g.
+WhatsApp's own bright green, with a green-tinted shadow) is a common,
+generic "sign up now" SaaS button pattern. Prefer the site's own deeper
+accent for primary buttons site-wide; reserve the brighter brand-utility
+colour for one clearly recognisable touchpoint where recognition genuinely
+matters more than restraint (e.g. the floating WhatsApp icon). On a photo
+or video background specifically, a plain white or near-white pill reads
+cleaner than any coloured button - true in every reference this round.
+*From: cowboy.com, superpower.com, ag1.com, anthropic.com*
+
 ---
 
 ## Website References
@@ -124,6 +167,35 @@ the image with almost no scrim at all - confident enough not to need one.
 Referenced by name, alongside Cowboy, for viewport usage and image-led
 composition - not independently inspected in this session (no screenshot or
 fetch), so noted here without a specific visual claim.
+
+**superpower.com** (2026-08-30)
+Full-bleed portrait, warm circular glow isolating the subject from
+whatever's actually behind them - a real technique for calming a busy or
+plain background without losing the person. White pill CTA plus a
+translucent dark-outline secondary, both sitting directly on the image. A
+bottom trust strip (whole-body check / accessible / trusted), same pattern
+as Cowboy's.
+
+**ag1.com** (2026-08-30)
+Full-bleed video hero, headline and one line of support overlaid directly
+on it - bright brand-green primary CTA ("Shop Now") *does* work here, next
+to a white-outline secondary, so a saturated accent isn't wrong on
+principle - it read right on AG1 because the rest of the page is
+restrained enough to earn it (see T2). Everything above the fold in one
+uninterrupted composition.
+
+**anthropic.com** (2026-08-30)
+A different valid pattern from the other three here: headline and support
+text first, on a plain ground, a video or image sits *below* rather than
+behind the text. Solid black CTA, no colour. Referenced as an alternative
+approach for a future project that wants text-first rather than image-first
+- not what was chosen for Isaías's hero, but worth remembering as a second
+option.
+
+**amble** (2026-08-30)
+Referenced by name alongside Cowboy - not independently inspected in this
+session (no screenshot or fetch), so noted here without a specific visual
+claim.
 
 ---
 
