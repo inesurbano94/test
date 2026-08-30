@@ -356,6 +356,10 @@ in two different saved design systems side by side, proving the same
 layout survives a totally different look - never the markdown, never a
 static screenshot.
 
+**This is an optional inspiration tool, not the default build method.** It
+exists to expand what's possible, never to cap it - see **Default: design
+it, don't assemble it** below for what actually drives a build.
+
 **The token contract.** A pattern's code in `patterns/*.html` consumes only
 design-system tokens (`--ink`, `--ink-soft`, `--ground`, `--raised`,
 `--line`, `--accent`, `--accent-lt`, `--accent-ink`, `--display`, `--body`,
@@ -366,27 +370,49 @@ aliases" comment in each file). This is what makes "adapt to the current
 design system" close to free: swap which system's tokens are loaded, the
 pattern doesn't change at all. When deriving a new design system (`add-system`
 or the Inspiration flow), give it this same set or the pattern library won't
-work with it.
+work with it. This contract still applies on the rare occasion a saved
+pattern *is* used (below) - never exempt it just because it came from
+elsewhere in the library.
 
-### Default flow for a section request
+## Default: design it, don't assemble it
 
-Triggered by something like "add a testimonial section" - a request for one
-section, not a whole project phase.
+**Every section, every build, by default: designed fresh, not assembled
+from `PATTERN-LIBRARY.md`.** The library is real, useful, and not where a
+build starts unless asked for by name. What actually drives a design
+decision, in this order:
 
-1. **Choose a suitable pattern from `PATTERN-LIBRARY.md` by default.** Decide
-   based on the category and what fits the business and the content
-   available (e.g. many short quotes -> a marquee pattern; a few strong ones
-   -> a rotating-quote pattern). Don't ask which - per **Decide, then show**.
-2. **Adapt it to the current design system** - the token contract above.
-3. **Build it** - write it into the project's actual files. Real copy,
-   never lorem - per `guidelines.md`'s Copy and SEO sections, not generic
-   filler even for one section.
-4. **Verify it** - operating principle 6, every time, not only at phase 5.
-   A section is not done because the markup is valid.
-5. **Give a preview link** - operating principle 5, same as any build step.
+1. **Understand the business** - the briefing, what makes it different,
+   what the visitor should do.
+2. **`taste.md`** - the accumulated principles and banned list.
+3. **The Website References section of `taste.md`** (see below) - whole
+   sites loved, for how they think about a problem, never for what to copy.
+4. **The chosen design system** - its tokens, its register, what it's
+   already said about itself.
+5. **Everything else is judgement** - design knowledge, what this specific
+   business needs, the strongest solution for *this* case. Per **Decide,
+   then show** - commit to a real answer, don't hedge toward the safest
+   generic layout because it's defensible.
 
-**If it's not right,** offer exactly these three, in this order, and let the
-pick happen without pre-selecting:
+`PATTERN-LIBRARY.md` gets reached for only on one of these three triggers,
+never speculatively:
+
+1. **Explicitly asked to browse options** - "show me hero options," "what
+   testimonial patterns do I have."
+2. **Unhappy with a section, wants alternatives** - "I don't like this
+   hero. Show me hero options." -> open `pattern-library.html`, scrolled or
+   linked to that category.
+3. **Explicitly asked for inspiration on one section** - "give me
+   inspiration for the pricing section."
+
+On any of these three: open `pattern-library.html` (per **Show, don't
+tell**), let the pick happen without pre-selecting, adapt the chosen
+pattern to the token contract above, build it, verify it (operating
+principle 6), give a preview link (operating principle 5). Same rigor as a
+from-scratch section - a saved pattern is a starting point for structure,
+never a shortcut past adapting it properly.
+
+**Unhappy with what got built** (trigger 2 above) - offer exactly these
+three, in this order, and let the pick happen without pre-selecting:
 
 1. **Browse the Pattern Library** - open `pattern-library.html` so the saved
    options for this category can actually be seen and compared.
@@ -394,19 +420,25 @@ pick happen without pre-selecting:
    `resources.md`'s "Inspiration browsing" list (see **Inspiration flow**
    above) - a reminder of where to look, not a re-run of the whole flow from
    scratch.
-3. **Create something new** - design a pattern from scratch for this
-   project, same token-only discipline as everything else in the library.
+3. **A different fresh design** - not the library, a second creative attempt
+   informed by what was wrong with the first one - that reaction is a taste
+   signal, log it per **Learning**.
 
-**If something new gets built and genuinely liked,** ask whether to save it
-as a reusable pattern. Only on yes: assign the next ID in that category,
-write it to `patterns/`, add an entry to `PATTERN-LIBRARY.md` and a card to
-`pattern-library.html` in the same turn.
+**A section built from scratch, once genuinely liked, can still be saved**
+as a reusable pattern - see `save as a pattern` in Side modes. Ask first,
+never automatic. The library grows from real work either way; it just
+isn't where the work starts.
 
 ## Side modes
 
 Invoked any time, mid-project or standalone:
 
 - **learn** - "remember that I..." / "never do X again" -> append to `taste.md`
+- **add this website / I love this site** - a whole site loved, by URL ->
+  append to `taste.md`'s Website References section: the URL, the date,
+  what's actually loved about it. Kept as the reference itself, not
+  reduced to a principle - if a genuine principle falls out of it too, that
+  can go under Principles as its own entry, cited back to this one.
 - **add this design system** / **add-system** - a website or Refero link (or
   screenshot): save the full system to `design-systems/*.md` per
   `_adding.md` - real tokens, not vibes, and never invented if a fetch is

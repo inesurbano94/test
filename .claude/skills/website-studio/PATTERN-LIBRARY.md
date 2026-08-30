@@ -12,6 +12,15 @@ This is the layout counterpart to `STUDIO-LIBRARY.md`, which holds the style
 layer (design systems, fonts, animations). Keep them separate — that
 separation is the point.
 
+**Optional inspiration, not the default build method.** website-studio
+designs every section fresh by default — the business, `taste.md`, the
+Website References section of `taste.md`, the chosen design system, and
+its own judgement. This library gets opened only when asked to browse
+options, when a built section isn't working and alternatives are wanted,
+or when asked for inspiration on one section by name. It exists to expand
+what's possible, not to cap it. See **Default: design it, don't assemble
+it** in SKILL.md.
+
 **To browse:** ask "show me my patterns" or "browse the pattern library" any
 time - opens `pattern-library.html`, never this markdown file.
 

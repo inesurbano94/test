@@ -45,6 +45,31 @@ matter more than others and the layout should say so.
 
 ---
 
+## Website References
+
+Whole sites loved, kept as direct creative inspiration - not distilled into
+a principle here (see Principles above for that), the actual site itself.
+Reach for these when designing something fresh: how they think about a
+problem, never what to copy. Append only, same rule as everywhere else.
+
+**drinkag1.com** (2026-08-28)
+Credibility through people - customer feedback, people in action, everywhere.
+Simple frame: white space, restrained palette, few type sizes, so the photos
+and the words carry the page. Three-card grids used well - structured, not
+just decorative.
+
+**airbnb.com** (2026-08-28)
+Simple, minimalist, yet the content stays genuinely engaging - simplicity as
+the container, never the content itself. Copy always speaks to the visitor
+directly, never about the company.
+
+**tonyrobbins.com** (2026-08-28)
+Motion used as a sign of life - small looping video, considered hover states
+- not decoration. Copy speaks directly to the visitor even in a busier,
+less minimal layout than the other two references here.
+
+---
+
 ## Banned by default
 
 Override per project only with a stated reason.
