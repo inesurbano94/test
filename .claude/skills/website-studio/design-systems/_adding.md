@@ -31,9 +31,9 @@ of these happen, same turn:
 5. **Test it against the guidelines before saving.** Contrast ratios, minimum
    body size, motion durations. A system that violates `guidelines.md` gets
    fixed, not saved as-is.
-6. **Add it to `STUDIO-LIBRARY.md` and `studio-library.html` in the same
-   turn** - see **Show, don't tell** in SKILL.md. The gallery card's source
-   link points at the same URL as the file's Source line.
+6. **Add it to `STUDIO-LIBRARY.md` and `configurator.html`'s Design System
+   category in the same turn** - see **Show, don't tell** in SKILL.md. The
+   card's source link points at the same URL as the file's Source line.
 
 ## Using a saved system on a project
 

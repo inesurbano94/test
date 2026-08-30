@@ -22,7 +22,7 @@ what's possible, not to cap it. See **Default: design it, don't assemble
 it** in SKILL.md.
 
 **To browse:** ask "show me my patterns" or "browse the pattern library" any
-time - opens `pattern-library.html`, never this markdown file.
+time - opens `configurator.html`, never this markdown file.
 
 **To add something new:** build a pattern from scratch for a project, and if
 it's genuinely reusable and liked, say `save as a pattern` - see SKILL.md's

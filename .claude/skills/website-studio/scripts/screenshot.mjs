@@ -94,11 +94,31 @@ for (const width of widths) {
   page.on("pageerror", (e) => errors.push("pageerror: " + e.message));
   page.on("console", (m) => { if (m.type() === "error") errors.push("console: " + m.text()); });
 
-  await page.goto(fileUrl, { waitUntil: "load" });
+  // "load" blocks on every iframe's own subresources finishing - a page
+  // with many independent iframes (each pulling its own Google Fonts
+  // request) can hang well past any reasonable timeout even though the
+  // actual DOM is long since ready to look at. "domcontentloaded" plus the
+  // explicit --wait settle time is what we actually care about here.
+  await page.goto(fileUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
   await page.waitForTimeout(wait);
 
   const outPath = `${args.outDir}/${label}-${width}.png`;
-  await page.screenshot({ path: outPath, fullPage: width >= 1200 ? false : true });
+  // Best-effort real fonts first. If a font request is hanging on a broken
+  // connection (not a clean failure - a dead network can leave the browser
+  // waiting indefinitely on document.fonts.ready), page.screenshot() can
+  // block past any reasonable timeout even though the page is otherwise
+  // ready. Fall back to blocking font requests and retrying once, rather
+  // than let a network problem stop verification from completing at all -
+  // this is about layout/JS correctness, not exact font rendering anyway.
+  try {
+    await page.screenshot({ path: outPath, fullPage: width >= 1200 ? false : true, timeout: 20000 });
+  } catch (e) {
+    console.log(`  font/network stall at ${width}px, retrying with web fonts blocked: ${e.message.split("\n")[0]}`);
+    await page.route(/fonts\.(googleapis|gstatic)\.com/, (route) => route.abort());
+    await page.reload({ waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(wait);
+    await page.screenshot({ path: outPath, fullPage: width >= 1200 ? false : true, timeout: 20000 });
+  }
 
   console.log(`wrote ${outPath}`);
   if (errors.length) {
