@@ -131,6 +131,43 @@ or video background specifically, a plain white or near-white pill reads
 cleaner than any coloured button - true in every reference this round.
 *From: cowboy.com, superpower.com, ag1.com, anthropic.com*
 
+**T17 correction - bright brand-utility green is fine on plain ground; the
+glow shadow was the actual tell, not the hue.** (2026-08-30)
+T17 above prescribed the site's deeper accent for primary buttons
+site-wide. Overcorrected: on a follow-up, a concrete reference mock-up
+(provided directly, not a general site) used the bright WhatsApp green with
+a WhatsApp icon inside the button, on plain ground, and it was pointed to
+as the wanted direction. Reverted to bright green + icon for every
+WhatsApp-action button (nav, hero, final CTA) - the icon ties the colour to
+the specific channel it names, same logic T17 already granted AG1's
+"Shop Now." What still holds from T17: no colour-matched glow shadow on
+hover (flat, a small lift only), and a white pill specifically for a button
+sitting directly on a photo/video background. The real lesson: judge a
+button by hue *and* context together, not hue alone - and when a concrete
+mock-up is provided, it settles the question over a general principle.
+
+**T18 - A hero can bleed its image to the true edge and still stay
+container-aligned - the two aren't in tension.** (2026-08-30)
+The reliable technique, arrived at after the T14 misalignment: let
+`.hero__grid` span the full viewport width (not capped at `--container`) so
+the image column can reach the real right edge, but give the text column's
+own left padding a calculated value -
+`max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)))`
+- so it lands at exactly the same x-position `.container`'s content does
+at any viewport width. A diagonal cut on the image's inner edge (a
+`clip-path` polygon, a few percent inset at the top, flush at the bottom)
+reads as a considered, editorial detail rather than a plain rectangle or
+card - came from a concrete reference mock-up, not a photo library.
+
+**T19 - Don't vertically centre a short text block inside a tall
+image-driven row.** (2026-08-30)
+Centering a hero's text block inside a row whose height is set by the
+image next to it (rather than by the text's own content) creates large,
+equal gaps above and below the text - exactly the "dead space" complaint
+this was meant to fix. Top-align the text column instead, with a fixed top
+padding tuned to sit close under the header - let the image simply run
+taller than the text below it, which reads as intentional, not empty.
+
 ---
 
 ## Website References
