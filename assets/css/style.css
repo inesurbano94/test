@@ -386,7 +386,7 @@ section[id] { scroll-margin-top: 96px; }
 .final-cta { text-align: center; }
 .final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); max-width: 18ch; margin: 0 auto 1rem; }
 .final-cta p { max-width: 46ch; margin: 0 auto 2rem; }
-.final-cta .hero__actions { justify-content: center; }
+.final-cta__actions { display: flex; justify-content: center; }
 
 /* ---------- footer ---------- */
 .site-footer { padding: 3rem 0 2rem; border-top: 1px solid var(--line); }

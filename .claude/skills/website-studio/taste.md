@@ -168,6 +168,18 @@ this was meant to fix. Top-align the text column instead, with a fixed top
 padding tuned to sit close under the header - let the image simply run
 taller than the text below it, which reads as intentional, not empty.
 
+**Resolving T15 vs. T18/T19.** T15 said "overlay the image, don't put text
+beside a framed one" - built, and rejected in favour of the diagonal
+text-beside-image split captured in T18/T19. Both stay recorded rather than
+deleting T15, per the append-only rule, but T15 is *not* the standing
+guidance for a hero layout - T18/T19 is, confirmed by a concrete mock-up.
+T15's actual point still holds for a different case: a dedicated full-bleed
+video/image *statement* moment (VIDEO-02 in the Pattern Library) - there,
+overlaying the image with a localised scrim is still correct, because that
+pattern's whole job is to be the image, not a supporting element next to
+text. Read T15 as "true for a full-bleed statement section," not "true for
+every hero."
+
 ---
 
 ## Website References

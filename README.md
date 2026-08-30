@@ -7,17 +7,22 @@ Rebuild feito com a skill `website-studio`, fase 4 (build) — ver
 `clinic-white` adaptado a quente, sem testemunhos fictícios — a prova vem do
 método, da avaliação por bioimpedância e das certificações.
 
-**Revisão de 2026-08-30** (feedback direto sobre viewport, tipografia,
-hierarquia, copy e imagem): tipografia trocada para Bricolage Grotesque +
-Inter + Roboto Mono (mono usado em números/labels — preços, métricas,
-passos do método); container alargado e secções passaram a usar mais do
-viewport (hero e "sobre" com imagem edge-to-edge); hero reconstruído como
-split imagem/texto, completo acima da dobra, com uma faixa fina de provas
-em vez do cartão antigo; copy do hero e do "sobre" cortada a metade;
-secção de afirmação trocada do padrão VIDEO-01 (contido) para VIDEO-02
-(full-bleed, ver Pattern Library) com um overlay em scrim radial centrado
-em vez do gradiente plano anterior; hierarquia de títulos (h2/h3)
-uniformizada em todo o site.
+**Revisão de 2026-08-30/31** (várias rondas de feedback direto sobre
+viewport, tipografia, hierarquia, copy, imagem e composição do hero —
+registadas em `taste.md` T7–T19): tipografia final Archivo (títulos) +
+Inter (corpo) + Roboto Mono (números/labels — preços, métricas, passos do
+método); container alargado, secções a usar mais do viewport; hero
+reconstruído a partir de uma referência visual concreta — texto alinhado
+ao mesmo container do resto do site, foto real a sangrar até à margem
+direita com um corte diagonal, botões WhatsApp em verde vivo com o ícone;
+"sobre" com imagem contida, margens e um scrim de calibração sobre a foto
+real (só existe uma, ver abaixo); secção de afirmação trocada do padrão
+VIDEO-01 (contido) para VIDEO-02 (full-bleed, ver Pattern Library) com um
+overlay em scrim radial centrado em vez do gradiente plano anterior;
+hierarquia de títulos (h2/h3) uniformizada em todo o site. Todo o resto do
+site (Método, Medição, Serviços, Localização, FAQ, CTA final) foi revisto
+secção a secção contra o perfil de gosto acumulado — já estava consistente,
+sem alterações estruturais necessárias.
 
 ## Estrutura
 
@@ -67,11 +72,11 @@ credibilidade vem da secção `#medicao` (bioimpedância), das certificações e
 6. **Secção "afirmação" (entre `#metodo` e `#medicao`)** — não existe vídeo
    ainda. Usa a foto real do hero como frame provisório (marcado em
    comentário HTML no `index.html`). Substituir o `<img>` por
-   `<video>`/`<source>` quando houver filmagem — o layout (moldura, margens,
-   cantos arredondados, texto sobreposto) não muda, só o `<video>` entra no
-   lugar do `<img>`. Padrão vem de
-   `.claude/skills/website-studio/patterns/video-contained-statement.html`
-   (VIDEO-01 na Pattern Library).
+   `<video>`/`<source>` quando houver filmagem — o layout (full-bleed,
+   scrim radial centrado, texto sobreposto) não muda, só o `<video>` entra
+   no lugar do `<img>`. Padrão vem de
+   `.claude/skills/website-studio/patterns/video-fullbleed-statement.html`
+   (VIDEO-02 na Pattern Library).
 
 ## Adicionar versão em inglês
 
