@@ -605,6 +605,14 @@
 
 
 <script>
+  // Force every page load to start at the top — mobile browsers often
+  // restore the previous scroll position on reload/revisit, which makes
+  // the sticky nav look like it's "missing" until the visitor scrolls up.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   requestAnimationFrame(() => requestAnimationFrame(() => {
     document.querySelector('.hero').classList.add('is-revealed');
   }));
