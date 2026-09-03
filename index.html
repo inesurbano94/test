@@ -344,8 +344,9 @@
   @media (min-width:640px){ .lisboa-cards{ grid-template-columns:repeat(3,1fr); } }
   .lisboa-card{
     position:relative; display:block; border-radius:1rem; overflow:hidden;
-    aspect-ratio:4/3.4; transition:transform .4s var(--ease);
+    aspect-ratio:3/2; transition:transform .4s var(--ease);
   }
+  @media (min-width:640px){ .lisboa-card{ aspect-ratio:4/3.4; } }
   @media (min-width:1024px){ .lisboa-card{ aspect-ratio:auto; height:100%; min-height:26rem; } }
   @media (hover:hover){ .lisboa-card:hover{ transform:translateY(-4px); } }
   .lisboa-card-img{
