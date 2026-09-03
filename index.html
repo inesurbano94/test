@@ -22,7 +22,12 @@
   @media (hover:hover){ .pill:hover{ background:rgba(255,255,255,.8); } }
 
   /* NAV */
-  .nav{ position:sticky; top:0; z-index:40; background:var(--white); color:var(--dark); border-bottom:1px solid rgba(12,12,13,.08); }
+  /* position:fixed, not sticky — sticky positioning on mobile browsers can
+     render the nav as if it had already scrolled off/away on first load
+     (a viewport/scroll-restore quirk, browser-dependent, not reproducible
+     in desktop testing). Fixed is always pinned to the viewport top
+     regardless of scroll state, so it's immune to that class of bug. */
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:40; background:var(--white); color:var(--dark); border-bottom:1px solid rgba(12,12,13,.08); }
   .nav .pill{ background:var(--dark); color:var(--white); }
   @media (hover:hover){ .nav .pill:hover{ background:#000; } }
   /* 2026-09-01: was grid-template-columns:1fr 1fr, which forced the logo
@@ -88,7 +93,11 @@
   /* HERO */
   /* 2026-09-01: hero was inset in a padded wrap with rounded corners —
      client asked for it full-bleed instead, no margins. */
-  .hero-wrap{ padding:0; }
+  /* margin-top:4rem compensates for .nav now being position:fixed (out of
+     flow) instead of sticky — without this the hero would render right
+     under the fixed nav bar, hidden behind it. 4rem matches .nav-row's
+     fixed height (same at every breakpoint, no media-query override). */
+  .hero-wrap{ padding:0; margin-top:4rem; }
   /* 2026-09-01: hero rebuilt to match the client's reference (Tony Robbins
      style) — image dominates the whole first screen on every breakpoint
      (not just desktop), content stripped to headline + one CTA only, no
