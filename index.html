@@ -333,17 +333,19 @@
   /* Interactions & reveal — restored to match the pattern library */
   .nav.is-scrolled{ background:var(--white); box-shadow:0 1px 0 rgba(12,12,13,.08); }
 
-  .hero-main h1, .hero-main .pill{
+  .hero-main .eyebrow, .hero-main h1, .hero-main .pill{
     opacity:0; transform:translateY(16px);
     transition:opacity .6s var(--ease), transform .9s var(--ease);
   }
-  .hero-main h1{ transition-delay:0ms; }
-  .hero-main .pill{ transition-delay:150ms; }
+  .hero-main .eyebrow{ margin:0; transition-delay:0ms; }
+  .hero-main h1{ transition-delay:150ms; }
+  .hero-main .pill{ transition-delay:300ms; }
+  .hero.is-revealed .hero-main .eyebrow,
   .hero.is-revealed .hero-main h1,
   .hero.is-revealed .hero-main .pill{ opacity:1; transform:translateY(0); }
 
   @media (prefers-reduced-motion: reduce){
-    .hero-main h1, .hero-main .pill{
+    .hero-main .eyebrow, .hero-main h1, .hero-main .pill{
       transition:none !important; opacity:1 !important; transform:none !important;
     }
   }
@@ -407,6 +409,7 @@
     <div class="hero-photo"></div>
     <div class="hero-body">
       <div class="hero-main">
+        <p class="eyebrow">Personal Trainer · Lisboa</p>
         <h1>Um treino feito para ti.</h1>
         <a href="https://wa.me/351935581508" target="_blank" rel="noopener"><span class="pill">Entrar em contacto</span></a>
       </div>
