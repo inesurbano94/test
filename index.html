@@ -143,6 +143,11 @@
   @media (min-width:768px){ .sec-head h2{ font-size:40px; } }
   .sec-head p{ margin:1.5rem 0 0; font-size:20px; line-height:1.6; color:rgba(12,12,13,.65); max-width:34rem; }
   .sec.dark .sec-head p{ color:var(--contrast-60); }
+  /* 2026-09-03: client tried left-aligned here too, then asked for the
+     centered look back specifically for Lisboa — every other section stays
+     left-aligned to the nav logo, this one is the deliberate exception. */
+  .sec-head.centered{ flex-direction:column; align-items:center; text-align:center; max-width:36rem; margin-left:auto; margin-right:auto; }
+  .sec-head.centered p{ margin-left:auto; margin-right:auto; }
 
   .eyebrow{ font-family:ui-monospace,monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--contrast-60); margin:0 0 1rem; }
 
@@ -173,7 +178,13 @@
   @media (min-width:1024px){ .obj-cards-outer{ margin-top:3rem; } }
   .obj-cards{
     display:flex; gap:1.25rem; scroll-snap-type:x mandatory;
-    padding:0 var(--section-x); width:max-content;
+    /* left inset must match .wrap's own content start (section-x PLUS the
+       extra auto-centering margin .wrap gets once the viewport is wider
+       than --wrap-max) — a flat var(--section-x) here left the first card
+       ~20px short of the title/nav-logo above it on wide screens. */
+    padding-left:calc(max(0px, (100vw - var(--wrap-max)) / 2) + var(--section-x));
+    padding-right:var(--section-x);
+    width:max-content;
   }
   .obj-card{
     position:relative; flex:0 0 auto; width:15.5rem; aspect-ratio:3/4;
@@ -510,7 +521,7 @@
 
 <section class="sec tint" id="lisboa">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head centered reveal">
       <div>
         <h2>Treina onde preferires — VivaGym, casa ou ar livre</h2>
         <p>Disponível onde for mais fácil para ti.</p>
