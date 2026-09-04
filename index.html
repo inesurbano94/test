@@ -360,8 +360,11 @@
      as the Lisboa cards, just with a fixed-width panel instead of a bottom
      scrim so it reads as a distinct CTA banner, not another location card. */
   .tr-card{ position:relative; border-radius:1.25rem; overflow:hidden; }
-  .tr-photo{ display:block; width:100%; aspect-ratio:3/4; background-size:cover; background-position:center 8%; }
-  @media (min-width:1024px){ .tr-photo{ aspect-ratio:auto; height:38rem; background-position:center 8%; } }
+  .tr-photo{ display:block; width:100%; aspect-ratio:3/4; background-size:cover; background-position:65% 8%; }
+  /* desktop crop is exactly as wide as the source photo at cover size (no
+     horizontal slack), so background-position alone can't shift him right —
+     zoomed in slightly to create room to pan */
+  @media (min-width:1024px){ .tr-photo{ aspect-ratio:auto; height:38rem; background-size:140% auto; background-position:75% 15%; } }
   .tr-panel{
     display:flex; flex-direction:column; gap:1rem;
     padding:1.85rem; text-align:center; color:var(--white); background:var(--dark);
