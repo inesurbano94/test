@@ -177,7 +177,11 @@
   }
   .obj-arrow svg{ width:18px; height:18px; }
   @media (hover:hover){ .obj-arrow:hover{ background:rgba(12,12,13,.05); border-color:rgba(12,12,13,.3); } }
-  .obj-cards-outer{ margin-top:2.5rem; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  /* touch-action:pan-x — without it, a vertical swipe that starts over this
+     row can get captured as horizontal drag/rubber-banding on mobile
+     instead of passing through to the page scroll, making the cards feel
+     draggable up/down. Restricting to horizontal panning only fixes that. */
+  .obj-cards-outer{ margin-top:2.5rem; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; touch-action:pan-x; overscroll-behavior-x:contain; }
   .obj-cards-outer::-webkit-scrollbar{ display:none; }
   @media (min-width:1024px){ .obj-cards-outer{ margin-top:3rem; } }
   .obj-cards{
