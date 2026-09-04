@@ -181,7 +181,7 @@
      row can get captured as horizontal drag/rubber-banding on mobile
      instead of passing through to the page scroll, making the cards feel
      draggable up/down. Restricting to horizontal panning only fixes that. */
-  .obj-cards-outer{ margin-top:2.5rem; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; touch-action:pan-x; overscroll-behavior-x:contain; }
+  .obj-cards-outer{ margin-top:2.5rem; width:100%; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-width:none; touch-action:pan-x; overscroll-behavior-x:contain; }
   .obj-cards-outer::-webkit-scrollbar{ display:none; }
   @media (min-width:1024px){ .obj-cards-outer{ margin-top:3rem; } }
   .obj-cards{
