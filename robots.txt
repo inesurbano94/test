@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://SUBSTITUIR-PELO-DOMINIO-REAL.vercel.app/sitemap.xml
+Sitemap: https://isaias-rocha-personal-trainer.vercel.app/sitemap.xml
