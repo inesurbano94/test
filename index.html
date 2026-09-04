@@ -229,19 +229,30 @@
      heavy against everything else on this section being light. Switched to a
      white bordered card (matches .testi-card3's weight) and added a small
      line icon per metric, since the section had no graphical element at all. */
-  .metrics-card{ background:var(--white); color:var(--dark); border:1px solid rgba(12,12,13,.1); border-radius:1.25rem; padding:2rem; box-shadow:0 24px 48px -14px rgba(12,12,13,.16); }
+  /* 2026-09-04: card scaled down on mobile (was the same size as desktop) —
+     smaller padding/icons/type below 640px, back to the original sizing
+     from 640px up. */
+  .metrics-card{ background:var(--white); color:var(--dark); border:1px solid rgba(12,12,13,.1); border-radius:1rem; padding:1.25rem; box-shadow:0 24px 48px -14px rgba(12,12,13,.16); }
+  @media (min-width:640px){ .metrics-card{ border-radius:1.25rem; padding:2rem; } }
   .metrics-grid{ display:grid; grid-template-columns:1fr 1fr; }
-  .metrics-item{ display:flex; flex-direction:column; gap:.6rem; padding:1.25rem 1.25rem 1.25rem 0; }
-  .metrics-item:nth-child(odd){ border-right:1px solid rgba(12,12,13,.1); padding-right:1.25rem; }
-  .metrics-item:nth-child(even){ padding-left:1.25rem; }
-  .metrics-item:nth-child(n+3){ border-top:1px solid rgba(12,12,13,.1); padding-top:1.25rem; }
+  .metrics-item{ display:flex; flex-direction:column; gap:.4rem; padding:.85rem .85rem .85rem 0; }
+  @media (min-width:640px){ .metrics-item{ gap:.6rem; padding:1.25rem 1.25rem 1.25rem 0; } }
+  .metrics-item:nth-child(odd){ border-right:1px solid rgba(12,12,13,.1); padding-right:.85rem; }
+  @media (min-width:640px){ .metrics-item:nth-child(odd){ padding-right:1.25rem; } }
+  .metrics-item:nth-child(even){ padding-left:.85rem; }
+  @media (min-width:640px){ .metrics-item:nth-child(even){ padding-left:1.25rem; } }
+  .metrics-item:nth-child(n+3){ border-top:1px solid rgba(12,12,13,.1); padding-top:.85rem; }
+  @media (min-width:640px){ .metrics-item:nth-child(n+3){ padding-top:1.25rem; } }
   .metrics-icon{
     display:flex; align-items:center; justify-content:center;
-    width:2.25rem; height:2.25rem; border-radius:.65rem;
+    width:1.75rem; height:1.75rem; border-radius:.5rem;
     background:rgba(255,83,46,.1);
   }
-  .metrics-icon svg{ width:18px; height:18px; color:#FF532E; }
-  .metrics-item h3{ margin:0; font-size:20px; font-weight:600; }
+  @media (min-width:640px){ .metrics-icon{ width:2.25rem; height:2.25rem; border-radius:.65rem; } }
+  .metrics-icon svg{ width:14px; height:14px; color:#FF532E; }
+  @media (min-width:640px){ .metrics-icon svg{ width:18px; height:18px; } }
+  .metrics-item h3{ margin:0; font-size:16px; font-weight:600; }
+  @media (min-width:640px){ .metrics-item h3{ font-size:20px; } }
   .metrics-item p{ margin:.35rem 0 0; font-size:14px; color:rgba(12,12,13,.55); }
 
   /* PROCESS INTRO: photo left (rounded, like services cards), title+subtext right.
@@ -295,10 +306,9 @@
     background-size: 100% 100%, 24px 24px;
     background-position: center, center;
   }
-  /* 2026-09-03: left-aligned (was centered) so this title starts at the
-     same x as the nav logo, per client request that every section align
-     to the header — was the last of the deliberately-centered intros. */
-  .cta-final{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:flex-start; gap:1rem; text-align:left; padding:2.5rem 0; }
+  /* 2026-09-03: tried left-aligned to match the nav logo, client asked for
+     the centered look back here too — same exception as Lisboa/Testemunhos. */
+  .cta-final{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:1rem; text-align:center; padding:2.5rem 0; }
   .cta-final h2{ margin:0; font-size:28px; font-weight:500; letter-spacing:-.01em; }
   @media (min-width:768px){ .cta-final h2{ font-size:40px; } }
   .cta-final p{ margin:0; font-size:20px; line-height:1.6; color:var(--contrast-60); max-width:32rem; }
