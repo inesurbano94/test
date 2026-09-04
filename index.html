@@ -361,7 +361,10 @@
      scrim so it reads as a distinct CTA banner, not another location card. */
   .tr-card{ position:relative; border-radius:1.25rem; overflow:hidden; }
   .tr-photo{ display:block; width:100%; aspect-ratio:3/4; background-size:cover; background-position:center 5%; }
-  @media (min-width:1024px){ .tr-photo{ aspect-ratio:auto; height:38rem; } }
+  /* desktop crop is much wider than the mobile one (full card height vs a
+     3/4 portrait), so the same horizontal centering that worked on mobile
+     leaves his face oddly centered in a wide frame — shifted right instead */
+  @media (min-width:1024px){ .tr-photo{ aspect-ratio:auto; height:38rem; background-position:75% 5%; } }
   .tr-panel{
     display:flex; flex-direction:column; gap:1rem;
     padding:1.85rem; text-align:center; color:var(--white); background:var(--dark);
@@ -381,7 +384,7 @@
      one-off values this section started with */
   .tr-panel h3{ margin:0; font-size:28px; font-weight:500; letter-spacing:-.01em; line-height:1.25; }
   @media (min-width:768px){ .tr-panel h3{ font-size:40px; } }
-  .tr-panel p{ margin:0; font-size:20px; line-height:1.6; color:var(--contrast-60); }
+  .tr-panel p{ margin:0; font-size:16px; line-height:1.6; color:var(--contrast-60); }
   .tr-panel p strong{ color:var(--white); font-weight:600; }
   .tr-cta{ margin-top:.4rem; align-self:center; font-size:15px; padding:.8rem 1.4rem; }
   @media (min-width:1024px){ .tr-cta{ align-self:flex-start; } }
